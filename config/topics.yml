@@ -1,9 +1,11 @@
 project:
-  title: "Audio AI Radar"
-  subtitle: "每日追踪音频方向的新论文、开源项目与产品动态"
+  title: "Audio × Video AI Radar"
+  subtitle: "每日追踪音视频 AI 的新论文、开源项目、产品动态与创意玩法"
   timezone: "Asia/Shanghai"
   lookback_hours: 72
   max_items_per_section: 30
+  min_topic_score: 1
+  product_min_topic_score: 2
 
 topics:
   speech_generation:
@@ -73,13 +75,85 @@ topics:
       - audio watermark
       - speech watermark
       - audio evaluation
+      - video deepfake
+      - deepfake detection
+      - media provenance
+      - content credentials
+
+  video_generation:
+    label: "视频生成"
+    keywords:
+      - video generation
+      - text-to-video
+      - text to video
+      - image-to-video
+      - image to video
+      - generative video
+      - video diffusion
+      - world model
+      - camera control
+
+  avatar_lipsync:
+    label: "数字人/口型"
+    keywords:
+      - digital human
+      - ai avatar
+      - talking avatar
+      - talking head
+      - lip sync
+      - lip-sync
+      - audio-driven portrait
+      - portrait animation
+      - virtual human
+
+  video_editing:
+    label: "视频编辑/理解"
+    keywords:
+      - video editing
+      - video editor
+      - video understanding
+      - video segmentation
+      - video inpainting
+      - video restoration
+      - video translation
+      - video dubbing
+      - generative fill
+
+  multimodal_creation:
+    label: "跨模态创作"
+    keywords:
+      - multimodal creation
+      - multimodal generation
+      - audio visual generation
+      - audio-visual generation
+      - audio to video
+      - audio-to-video
+      - video to audio
+      - video-to-audio
+      - music video
+      - beat sync
+      - visual storytelling
+      - interactive media
+
+  creator_tools:
+    label: "创作者工具"
+    keywords:
+      - creator tool
+      - creative workflow
+      - ai filmmaking
+      - ai film
+      - ai podcast
+      - podcast editing
+      - video podcast
+      - automatic dubbing
+      - media localization
+      - content creation
 
 paper_sources:
-  arxiv_categories:
-    - cs.SD
-    - eess.AS
-    - cs.CL
-  max_results: 180
+  arxiv_category_groups:
+    - [cs.SD, eess.AS, cs.CL]
+    - [cs.CV, cs.MM]
+  max_results_per_group: 180
 
 github_sources:
   min_stars: 15
@@ -92,7 +166,17 @@ github_sources:
     - "topic:music-generation"
     - "topic:source-separation"
     - "topic:audio-deepfake-detection"
+    - "topic:video-generation"
+    - "topic:text-to-video"
+    - "topic:image-to-video"
+    - "topic:lip-sync"
+    - "topic:talking-head"
+    - "topic:digital-human"
+    - "topic:video-editing"
+    - "topic:video-to-audio"
+    - "topic:multimodal-generation"
     - "speech audio model in:name,description,readme"
+    - "video avatar generative in:name,description,readme"
 
 product_sources:
   feeds:
@@ -108,8 +192,34 @@ product_sources:
       url: https://huggingface.co/blog/feed.xml
     - name: NVIDIA Technical Blog
       url: https://developer.nvidia.com/blog/feed/
+    - name: Product Hunt
+      url: https://www.producthunt.com/feed
+    - name: Google AI
+      url: https://blog.google/technology/ai/rss/
+    - name: Adobe Blog
+      url: https://blog.adobe.com/en/feed.xml
+    - name: Stability AI
+      url: https://stability.ai/news/rss.xml
   news_queries:
     - '"AI audio" OR "speech AI" OR "voice AI" when:3d'
     - '"text-to-speech" OR "voice cloning" product when:3d'
     - '"music generation" AI product when:3d'
+    - '"AI video" product launch OR release when:3d'
+    - '"text-to-video" OR "image-to-video" product when:3d'
+    - '"AI avatar" OR "lip sync" OR "video dubbing" product when:3d'
+    - '"video-to-audio" OR "AI Foley" OR "audio-to-video" when:3d'
+    - '"AI filmmaking" OR "creative AI tool" video when:3d'
+    - 'site:runwayml.com OR site:heygen.com OR site:synthesia.io product update when:3d'
+    - 'site:adobe.com "AI video" OR "AI audio" when:3d'
+  hacker_news_queries:
+    - "Show HN AI video"
+    - "Show HN audio AI"
+    - "Show HN music generation"
+    - "Show HN voice"
 
+enrichment:
+  enabled: true
+  api_base: https://api.openai.com/v1
+  model: gpt-5.6-luna
+  batch_size: 6
+  max_items: 45
