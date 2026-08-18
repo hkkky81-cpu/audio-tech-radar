@@ -1,5 +1,7 @@
 # Audio AI Radar
 
+[![Daily Audio AI Radar](https://github.com/hkkky81-cpu/audio-tech-radar/actions/workflows/daily-radar.yml/badge.svg)](https://github.com/hkkky81-cpu/audio-tech-radar/actions/workflows/daily-radar.yml)
+
 在线页面：<https://hkkky81-cpu.github.io/audio-tech-radar/>
 
 一个可直接部署到 GitHub Pages 的音频技术情报站。每天自动抓取并整理：
