@@ -1,0 +1,115 @@
+project:
+  title: "Audio AI Radar"
+  subtitle: "每日追踪音频方向的新论文、开源项目与产品动态"
+  timezone: "Asia/Shanghai"
+  lookback_hours: 72
+  max_items_per_section: 30
+
+topics:
+  speech_generation:
+    label: "语音生成"
+    keywords:
+      - text-to-speech
+      - text to speech
+      - speech synthesis
+      - voice cloning
+      - zero-shot tts
+      - expressive speech
+      - speech language model
+  speech_editing:
+    label: "语音编辑/转换"
+    keywords:
+      - speech editing
+      - voice conversion
+      - audio editing
+      - speech restoration
+      - speech enhancement
+      - source separation
+  audio_generation:
+    label: "音频/音效生成"
+    keywords:
+      - audio generation
+      - text-to-audio
+      - text to audio
+      - sound generation
+      - video-to-audio
+      - Foley
+      - diffusion audio
+  music:
+    label: "音乐智能"
+    keywords:
+      - music generation
+      - music understanding
+      - singing voice
+      - audio-to-midi
+      - music language model
+  speech_understanding:
+    label: "语音理解"
+    keywords:
+      - speech recognition
+      - automatic speech recognition
+      - speech-to-text
+      - speaker diarization
+      - spoken language model
+      - audio language model
+      - speech translation
+  codec_streaming:
+    label: "Codec/实时音频"
+    keywords:
+      - neural audio codec
+      - speech codec
+      - audio codec
+      - streaming speech
+      - real-time speech
+      - realtime speech
+      - low latency audio
+  safety_evaluation:
+    label: "安全与评测"
+    keywords:
+      - audio deepfake
+      - speech deepfake
+      - spoofing detection
+      - synthetic speech detection
+      - audio watermark
+      - speech watermark
+      - audio evaluation
+
+paper_sources:
+  arxiv_categories:
+    - cs.SD
+    - eess.AS
+    - cs.CL
+  max_results: 180
+
+github_sources:
+  min_stars: 15
+  max_results_per_query: 12
+  queries:
+    - "topic:text-to-speech"
+    - "topic:voice-conversion"
+    - "topic:speech-recognition"
+    - "topic:audio-generation"
+    - "topic:music-generation"
+    - "topic:source-separation"
+    - "topic:audio-deepfake-detection"
+    - "speech audio model in:name,description,readme"
+
+product_sources:
+  feeds:
+    - name: AssemblyAI
+      url: https://www.assemblyai.com/blog/rss/
+    - name: Deepgram
+      url: https://deepgram.com/learn/rss.xml
+    - name: ElevenLabs
+      url: https://elevenlabs.io/blog/rss.xml
+    - name: Descript
+      url: https://www.descript.com/blog/rss.xml
+    - name: Hugging Face
+      url: https://huggingface.co/blog/feed.xml
+    - name: NVIDIA Technical Blog
+      url: https://developer.nvidia.com/blog/feed/
+  news_queries:
+    - '"AI audio" OR "speech AI" OR "voice AI" when:3d'
+    - '"text-to-speech" OR "voice cloning" product when:3d'
+    - '"music generation" AI product when:3d'
+
