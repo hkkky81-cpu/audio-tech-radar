@@ -7,8 +7,8 @@ on:
       - "docs/**"
       - "reports/**"
   schedule:
-    # 00:30 UTC = 08:30 China Standard Time / 09:30 Korea Standard Time
-    - cron: "30 0 * * *"
+    # 23:30 UTC = next day 07:30 China Standard Time / 08:30 Korea Standard Time
+    - cron: "30 23 * * *"
   workflow_dispatch:
 
 concurrency:

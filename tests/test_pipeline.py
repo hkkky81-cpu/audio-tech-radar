@@ -30,6 +30,19 @@ class PipelineTest(unittest.TestCase):
         self.assertTrue(all(item.score > 0 for item in items))
         self.assertTrue(all(item.keywords_cn for item in items))
         self.assertTrue(all(item.creative_cn for item in items))
+        self.assertTrue(all(item.icon for item in items))
+        products = [item for item in items if item.kind == "product"]
+        self.assertTrue(all(item.product_name_cn for item in products))
+        self.assertTrue(all(item.company_cn for item in products))
+        self.assertTrue(all(item.what_is_it_cn for item in products))
+
+    def test_report_date_uses_project_timezone(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "config").mkdir()
+            (root / "config" / "topics.yml").write_text((ROOT / "config" / "topics.yml").read_text(encoding="utf-8"), encoding="utf-8")
+            run(root, root / "config" / "topics.yml", demo=True, now=datetime(2026, 8, 18, 23, 40, tzinfo=timezone.utc))
+            self.assertTrue((root / "reports" / "2026-08-19.md").exists())
 
     def test_keyword_matching_respects_token_boundaries(self):
         self.assertTrue(keyword_present("new asr model", "asr"))

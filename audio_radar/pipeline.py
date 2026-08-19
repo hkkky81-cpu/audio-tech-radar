@@ -17,6 +17,7 @@ from email.utils import parsedate_to_datetime
 from pathlib import Path
 from typing import Any, Iterable
 from urllib.parse import quote_plus
+from zoneinfo import ZoneInfo
 
 import yaml
 
@@ -50,6 +51,10 @@ class Item:
     keywords_cn: list[str] = field(default_factory=list)
     creative_cn: str = ""
     enrichment_fingerprint: str = ""
+    icon: str = ""
+    product_name_cn: str = ""
+    company_cn: str = ""
+    what_is_it_cn: str = ""
 
     def finalize(self) -> "Item":
         self.title = clean_text(self.title)
@@ -232,7 +237,15 @@ def fetch_feed(name: str, url: str, session: requests.Session) -> list[Item]:
         link = entry.get("link") or ""
         if not link:
             continue
-        items.append(Item("product", entry.get("title", ""), link, summary, name, iso(parse_dt(published))).finalize())
+        title = entry.get("title", "")
+        publisher = name
+        entry_source = entry.get("source") or {}
+        if name == "Google News":
+            publisher = entry_source.get("title") or publisher
+            suffix = f" - {publisher}"
+            if title.endswith(suffix):
+                title = title[: -len(suffix)]
+        items.append(Item("product", title, link, summary, publisher, iso(parse_dt(published))).finalize())
     return items
 
 
@@ -306,6 +319,40 @@ def fallback_creative(item: Item, labels: dict[str, str]) -> str:
     return f"可拆解其「{topic_text}」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。"
 
 
+def item_icon(item: Item) -> str:
+    if item.kind == "paper":
+        return "📄"
+    if item.kind == "github":
+        return "🧩"
+    icon_by_topic = {
+        "speech_generation": "🎙️",
+        "speech_editing": "🎛️",
+        "speech_understanding": "🗣️",
+        "codec_streaming": "⚡",
+        "audio_generation": "🔊",
+        "music": "🎵",
+        "video_generation": "🎬",
+        "avatar_lipsync": "🧑‍🎤",
+        "video_editing": "✂️",
+        "multimodal_creation": "✨",
+        "creator_tools": "🛠️",
+        "safety_evaluation": "🛡️",
+    }
+    return next((icon_by_topic[tag] for tag in item.tags if tag in icon_by_topic), "🚀")
+
+
+def fallback_product_identity(item: Item, labels: dict[str, str]) -> None:
+    if item.kind != "product":
+        return
+    topic_text = "、".join(labels[tag] for tag in item.tags[:3])
+    if not item.product_name_cn:
+        item.product_name_cn = item.title_cn or item.title
+    if not item.company_cn:
+        item.company_cn = item.source
+    if not item.what_is_it_cn:
+        item.what_is_it_cn = f"一项围绕{topic_text}的产品、功能更新或创意工具，具体开放范围以原文为准。"
+
+
 def enrichment_fingerprint(item: Item) -> str:
     value = f"v2\n{item.title}\n{item.summary}"
     return hashlib.sha1(value.encode("utf-8")).hexdigest()[:16]
@@ -325,10 +372,12 @@ def fallback_keywords(item: Item, config: dict[str, Any], labels: dict[str, str]
 def apply_fallback_enrichment(items: list[Item], config: dict[str, Any], labels: dict[str, str]) -> None:
     for item in items:
         item.enrichment_fingerprint = enrichment_fingerprint(item)
+        item.icon = item_icon(item)
         if not item.keywords_cn:
             item.keywords_cn = fallback_keywords(item, config, labels)
         if not item.creative_cn:
             item.creative_cn = fallback_creative(item, labels)
+        fallback_product_identity(item, labels)
 
 
 def load_enrichment_cache(root: Path) -> dict[str, dict[str, Any]]:
@@ -348,7 +397,15 @@ def reuse_enrichment(items: list[Item], cache: dict[str, dict[str, Any]]) -> int
         previous = cache.get(item.item_id)
         if not previous or previous.get("enrichment_fingerprint") != enrichment_fingerprint(item):
             continue
-        for field_name in ("title_cn", "summary_cn", "keywords_cn", "creative_cn"):
+        for field_name in (
+            "title_cn",
+            "summary_cn",
+            "keywords_cn",
+            "creative_cn",
+            "product_name_cn",
+            "company_cn",
+            "what_is_it_cn",
+        ):
             value = previous.get(field_name)
             if value:
                 setattr(item, field_name, value)
@@ -366,8 +423,20 @@ def enrichment_schema() -> dict[str, Any]:
             "summary_cn": {"type": "string"},
             "keywords_cn": {"type": "array", "items": {"type": "string"}},
             "creative_cn": {"type": "string"},
+            "product_name_cn": {"type": "string"},
+            "company_cn": {"type": "string"},
+            "what_is_it_cn": {"type": "string"},
         },
-        "required": ["id", "title_cn", "summary_cn", "keywords_cn", "creative_cn"],
+        "required": [
+            "id",
+            "title_cn",
+            "summary_cn",
+            "keywords_cn",
+            "creative_cn",
+            "product_name_cn",
+            "company_cn",
+            "what_is_it_cn",
+        ],
         "additionalProperties": False,
     }
     return {
@@ -401,6 +470,8 @@ def enrich_batch(batch: list[Item], config: dict[str, Any], session: requests.Se
         "title_cn 准确翻译标题；summary_cn 用 2-3 句说明做了什么、核心方法/功能和意义，信息不足就明确说信息有限。"
         "keywords_cn 输出 3-6 个短关键词，优先使用给定 topic_codes 对应的受控标签，再补充模型/玩法词。"
         "creative_cn 用一句话给出具体可验证的创意玩法，包含输入、处理或输出，不写空泛建议。"
+        "对于 product：product_name_cn 给出产品或功能名称，company_cn 给出开发公司/团队或明确来源，"
+        "what_is_it_cn 用一句简洁中文说明它是什么和核心用途。对于 paper/github，这三个字段返回空字符串。"
     )
     payload = {
         "model": model,
@@ -454,6 +525,9 @@ def enrich_items(items: list[Item], config: dict[str, Any], root: Path, errors: 
                     item.summary_cn = clean_text(result.get("summary_cn", ""))
                     item.keywords_cn = [clean_text(value) for value in result.get("keywords_cn", []) if clean_text(value)][:6]
                     item.creative_cn = clean_text(result.get("creative_cn", ""))
+                    item.product_name_cn = clean_text(result.get("product_name_cn", ""))
+                    item.company_cn = clean_text(result.get("company_cn", ""))
+                    item.what_is_it_cn = clean_text(result.get("what_is_it_cn", ""))
             except Exception as exc:
                 message = f"AI 摘要批次降级：{type(exc).__name__}: {exc}"
                 errors.append(message)
@@ -535,6 +609,15 @@ def render_markdown(items: list[Item], date_text: str, labels: dict[str, str], e
                 f"### {index}. [{item.title_cn or item.title}]({item.url})",
                 "",
                 f"- **来源/时间**：{item.source} · {item.published_at[:10]}{metric}",
+                *(
+                    [
+                        f"- **产品**：{item.product_name_cn}",
+                        f"- **公司/来源**：{item.company_cn}",
+                        f"- **是什么**：{item.what_is_it_cn}",
+                    ]
+                    if kind == "product"
+                    else []
+                ),
                 f"- **方向**：{tags}",
                 f"- **定位关键词**：{' / '.join(item.keywords_cn)}",
                 f"- **关注理由**：{item.why_cn}",
@@ -573,27 +656,29 @@ def render_html(items: list[Item], date_text: str, config: dict[str, Any], label
     .tabs{{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 14px}} button{{border:1px solid var(--line);background:#fff;padding:9px 15px;border-radius:999px;cursor:pointer;color:#475569;font-weight:700}}
     button.active{{background:var(--ink);border-color:var(--ink);color:#fff}} .grid{{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}}
     .card{{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:20px;box-shadow:0 4px 14px #13223808;transition:.18s ease}} .card:hover{{transform:translateY(-2px);box-shadow:0 12px 28px #13223812}}
+    .title-row{{display:grid;grid-template-columns:46px 1fr;gap:12px;align-items:start;margin-top:13px}} .icon{{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,#eff6ff,#ecfeff);display:grid;place-items:center;font-size:24px;border:1px solid #dbeafe}} .title-row h2{{margin:0 0 8px}}
     .topline{{display:flex;justify-content:space-between;gap:12px;align-items:center}} .type{{font-size:12px;font-weight:800;border-radius:999px;padding:4px 9px;background:#dbeafe;color:#1d4ed8}} .github .type{{background:#ede9fe;color:#6d28d9}} .product .type{{background:#ccfbf1;color:#0f766e}}
     .date{{font-size:12px;color:var(--muted)}} h2{{font-size:18px;line-height:1.4;margin:13px 0 8px}} h2 a{{text-decoration:none}} h2 a:hover{{color:var(--brand)}}
-    .original{{font-size:12px;color:var(--muted);margin:-3px 0 10px}} .summary{{color:#475569;margin:0 0 12px}} .why{{background:#f8fafc;border-left:3px solid #60a5fa;padding:9px 11px;color:#334155;border-radius:5px;margin:12px 0}} .creative{{background:#f0fdfa;border-left-color:#14b8a6}}
+    .original{{font-size:12px;color:var(--muted);margin:-3px 0 10px}} .summary{{color:#475569;margin:0 0 12px}} .why{{background:#f8fafc;border-left:3px solid #60a5fa;padding:9px 11px;color:#334155;border-radius:5px;margin:12px 0}} .creative{{background:#f0fdfa;border-left-color:#14b8a6}} .identity{{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}} .identity div{{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:8px 10px;color:#334155}} .identity .what{{grid-column:1/-1}} .identity b{{display:block;color:#64748b;font-size:11px;letter-spacing:.04em;margin-bottom:2px}}
     .tags{{display:flex;gap:6px;flex-wrap:wrap}} .tag{{font-size:12px;background:#eef2f7;color:#475569;border-radius:7px;padding:3px 7px}} .keyword{{background:#fff7ed;color:#9a3412}} .metric{{color:var(--muted);font-size:12px;margin-top:11px}}
     .empty{{grid-column:1/-1;text-align:center;color:var(--muted);padding:46px}} footer{{color:var(--muted);border-top:1px solid var(--line);padding:24px 0 38px;font-size:13px}}
-    @media(max-width:760px){{.grid{{grid-template-columns:1fr}}.toolbar{{grid-template-columns:1fr}}.hero{{padding-top:40px}}}}
+    @media(max-width:760px){{.grid{{grid-template-columns:1fr}}.toolbar{{grid-template-columns:1fr}}.hero{{padding-top:40px}}.identity{{grid-template-columns:1fr}}.identity .what{{grid-column:auto}}}}
   </style>
 </head>
 <body>
-  <header class="hero"><div class="wrap"><div class="eyebrow">DAILY CREATIVE INTELLIGENCE · {date_text}</div><h1>Audio × Video AI Radar</h1><p class="lead">{html.escape(config['project']['subtitle'])}</p><div class="stats"><div class="stat"><b>{counts['paper']}</b><span>最新论文</span></div><div class="stat"><b>{counts['github']}</b><span>GitHub 项目</span></div><div class="stat"><b>{counts['product']}</b><span>产品/玩法</span></div></div></div></header>
-  <main class="wrap"><section class="toolbar"><input id="search" placeholder="搜索中英文标题、摘要、关键词、来源…"><select id="topic"><option value="all">全部方向</option>{topic_options}</select></section><nav class="tabs"><button class="active" data-kind="all">全部</button><button data-kind="paper">论文</button><button data-kind="github">GitHub</button><button data-kind="product">产品/玩法</button></nav><section id="grid" class="grid"></section></main>
+  <header class="hero"><div class="wrap"><div class="eyebrow">DAILY CREATIVE INTELLIGENCE · {date_text}</div><h1>Audio × Video AI Radar</h1><p class="lead">{html.escape(config['project']['subtitle'])}</p><div class="stats"><div class="stat"><b>📄 {counts['paper']}</b><span>最新论文</span></div><div class="stat"><b>🧩 {counts['github']}</b><span>GitHub 项目</span></div><div class="stat"><b>🚀 {counts['product']}</b><span>产品/玩法</span></div></div></div></header>
+  <main class="wrap"><section class="toolbar"><input id="search" placeholder="搜索中英文标题、摘要、产品、公司、关键词…"><select id="topic"><option value="all">全部方向</option>{topic_options}</select></section><nav class="tabs"><button class="active" data-kind="all">✨ 全部</button><button data-kind="paper">📄 论文</button><button data-kind="github">🧩 GitHub</button><button data-kind="product">🚀 产品/玩法</button></nav><section id="grid" class="grid"></section></main>
   <footer><div class="wrap">每日自动更新 · 综合时效、相关性与开源热度排序 · 请以原始链接为准</div></footer>
   <script>const DATA={payload};const LABELS={json.dumps(labels, ensure_ascii=False)};let kind='all';
   const esc=s=>String(s??'').replace(/[&<>\"]/g,c=>({{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}}[c]));
-  function draw(){{const q=document.querySelector('#search').value.trim().toLowerCase(),topic=document.querySelector('#topic').value;const list=DATA.filter(x=>(kind==='all'||x.kind===kind)&&(topic==='all'||x.tags.includes(topic))&&(!q||([x.title,x.title_cn,x.summary,x.summary_cn,x.source,...(x.keywords_cn||[])].join(' ')).toLowerCase().includes(q)));document.querySelector('#grid').innerHTML=list.length?list.map(x=>`<article class="card ${{x.kind}}"><div class="topline"><span class="type">${{{{paper:'论文',github:'GitHub',product:'产品/玩法'}}[x.kind]}}</span><span class="date">${{esc(x.published_at.slice(0,10))}}</span></div><h2><a href="${{esc(x.url)}}" target="_blank" rel="noopener">${{esc(x.title_cn||x.title)}}</a></h2>${{x.title_cn?`<p class="original">${{esc(x.title)}}</p>`:''}}<p class="summary">${{esc((x.summary_cn||x.summary).slice(0,360))}}${{(x.summary_cn||x.summary).length>360?'…':''}}</p><div class="why">${{esc(x.why_cn)}}</div><div class="why creative"><b>创意玩法：</b>${{esc(x.creative_cn||'等待进一步拆解')}}</div><div class="tags">${{x.tags.map(t=>`<span class="tag">${{esc(LABELS[t])}}</span>`).join('')}}${{(x.keywords_cn||[]).map(t=>`<span class="tag keyword">${{esc(t)}}</span>`).join('')}}</div>${{x.kind==='github'?`<div class="metric">⭐ ${{Number(x.metrics.stars||0).toLocaleString()}} · ${{esc(x.metrics.language||'未标注语言')}}</div>`:`<div class="metric">${{esc(x.source)}}</div>`}}</article>`).join(''):'<div class="empty">没有符合当前筛选条件的条目</div>'}}
+  function draw(){{const q=document.querySelector('#search').value.trim().toLowerCase(),topic=document.querySelector('#topic').value;const list=DATA.filter(x=>(kind==='all'||x.kind===kind)&&(topic==='all'||x.tags.includes(topic))&&(!q||([x.title,x.title_cn,x.summary,x.summary_cn,x.source,x.product_name_cn,x.company_cn,x.what_is_it_cn,...(x.keywords_cn||[])].join(' ')).toLowerCase().includes(q)));document.querySelector('#grid').innerHTML=list.length?list.map(x=>`<article class="card ${{x.kind}}"><div class="topline"><span class="type">${{{{paper:'论文',github:'GitHub',product:'产品/玩法'}}[x.kind]}}</span><span class="date">${{esc(x.published_at.slice(0,10))}}</span></div><div class="title-row"><span class="icon" aria-hidden="true">${{esc(x.icon||'✨')}}</span><div><h2><a href="${{esc(x.url)}}" target="_blank" rel="noopener">${{esc(x.title_cn||x.title)}}</a></h2>${{x.title_cn?`<p class="original">${{esc(x.title)}}</p>`:''}}</div></div>${{x.kind==='product'?`<div class="identity"><div><b>产品 / 功能</b>${{esc(x.product_name_cn||x.title)}}</div><div><b>公司 / 来源</b>${{esc(x.company_cn||x.source)}}</div><div class="what"><b>它是什么</b>${{esc(x.what_is_it_cn||'等待进一步识别')}}</div></div>`:''}}<p class="summary">${{esc((x.summary_cn||x.summary).slice(0,360))}}${{(x.summary_cn||x.summary).length>360?'…':''}}</p><div class="why">${{esc(x.why_cn)}}</div><div class="why creative"><b>💡 创意玩法：</b>${{esc(x.creative_cn||'等待进一步拆解')}}</div><div class="tags">${{x.tags.map(t=>`<span class="tag">${{esc(LABELS[t])}}</span>`).join('')}}${{(x.keywords_cn||[]).map(t=>`<span class="tag keyword">${{esc(t)}}</span>`).join('')}}</div>${{x.kind==='github'?`<div class="metric">⭐ ${{Number(x.metrics.stars||0).toLocaleString()}} · ${{esc(x.metrics.language||'未标注语言')}}</div>`:`<div class="metric">${{esc(x.source)}}</div>`}}</article>`).join(''):'<div class="empty">没有符合当前筛选条件的条目</div>'}}
   document.querySelectorAll('button[data-kind]').forEach(b=>b.onclick=()=>{{kind=b.dataset.kind;document.querySelectorAll('button').forEach(x=>x.classList.remove('active'));b.classList.add('active');draw()}});document.querySelector('#search').oninput=draw;document.querySelector('#topic').onchange=draw;draw();</script>
 </body></html>'''
 
 
 def write_outputs(root: Path, items: list[Item], config: dict[str, Any], now: datetime, errors: list[str]) -> None:
-    date_text = now.date().isoformat()
+    report_timezone = ZoneInfo(config["project"].get("timezone", "Asia/Shanghai"))
+    date_text = now.astimezone(report_timezone).date().isoformat()
     _, labels = topic_catalog(config)
     reports = root / "reports"
     data_dir = root / "docs" / "data"
