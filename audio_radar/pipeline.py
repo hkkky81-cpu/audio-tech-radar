@@ -55,6 +55,8 @@ class Item:
     product_name_cn: str = ""
     company_cn: str = ""
     what_is_it_cn: str = ""
+    first_seen_at: str = ""
+    last_seen_at: str = ""
 
     def finalize(self) -> "Item":
         self.title = clean_text(self.title)
@@ -554,6 +556,54 @@ def deduplicate(items: Iterable[Item]) -> list[Item]:
     return output
 
 
+def item_from_dict(payload: dict[str, Any]) -> Item | None:
+    required = {"kind", "title", "url", "summary", "source", "published_at"}
+    if not required.issubset(payload):
+        return None
+    allowed = set(Item.__dataclass_fields__)
+    values = {key: value for key, value in payload.items() if key in allowed}
+    return Item(**values).finalize()
+
+
+def load_history(root: Path) -> list[Item]:
+    data_dir = root / "docs" / "data"
+    history_path = data_dir / "history.json"
+    paths = [history_path] if history_path.exists() else sorted(data_dir.glob("????-??-??.json"))
+    collected: dict[str, Item] = {}
+    for path in paths:
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        record_date = payload.get("date") or path.stem
+        for entry in payload.get("items", []):
+            item = item_from_dict(entry)
+            if item is None:
+                continue
+            previous = collected.get(item.item_id)
+            if previous:
+                item.first_seen_at = previous.first_seen_at or record_date
+            else:
+                item.first_seen_at = item.first_seen_at or record_date
+            item.last_seen_at = item.last_seen_at or record_date
+            collected[item.item_id] = item
+    return list(collected.values())
+
+
+def merge_history(root: Path, current: list[Item], date_text: str) -> list[Item]:
+    collected = {item.item_id: item for item in load_history(root)}
+    for item in current:
+        previous = collected.get(item.item_id)
+        item.first_seen_at = (previous.first_seen_at if previous else "") or date_text
+        item.last_seen_at = date_text
+        collected[item.item_id] = item
+    return sorted(
+        collected.values(),
+        key=lambda value: (value.first_seen_at, value.score, value.published_at),
+        reverse=True,
+    )
+
+
 def process(items: Iterable[Item], config: dict[str, Any], now: datetime) -> list[Item]:
     catalog, labels = topic_catalog(config)
     cutoff = now - timedelta(hours=int(config["project"]["lookback_hours"]))
@@ -632,10 +682,14 @@ def render_markdown(items: list[Item], date_text: str, labels: dict[str, str], e
     return "\n".join(lines)
 
 
-def render_html(items: list[Item], date_text: str, config: dict[str, Any], labels: dict[str, str]) -> str:
-    counts = {kind: sum(item.kind == kind for item in items) for kind in ("paper", "github", "product")}
+def render_html(items: list[Item], latest_ids: set[str], date_text: str, config: dict[str, Any], labels: dict[str, str]) -> str:
+    latest_items = [item for item in items if item.item_id in latest_ids]
+    counts = {kind: sum(item.kind == kind for item in latest_items) for kind in ("paper", "github", "product")}
     payload = json.dumps([asdict(item) for item in items], ensure_ascii=False).replace("</", "<\\/")
+    latest_payload = json.dumps(sorted(latest_ids), ensure_ascii=False)
     topic_options = "".join(f'<option value="{html.escape(key)}">{html.escape(label)}</option>' for key, label in labels.items())
+    dates = sorted({item.first_seen_at for item in items if item.first_seen_at}, reverse=True)
+    date_options = "".join(f'<option value="{html.escape(value)}">{html.escape(value)}</option>' for value in dates)
     return f'''<!doctype html>
 <html lang="zh-CN">
 <head>
@@ -651,7 +705,7 @@ def render_html(items: list[Item], date_text: str, config: dict[str, Any], label
     h1{{font-size:clamp(32px,6vw,58px);line-height:1.05;margin:10px 0 14px;letter-spacing:-.035em}} .lead{{font-size:18px;color:#dbeafe;max-width:660px;margin:0}}
     .stats{{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}} .stat{{min-width:134px;background:#ffffff12;border:1px solid #ffffff25;border-radius:16px;padding:12px 16px}}
     .stat b{{display:block;font-size:25px}} .stat span{{color:#bfdbfe;font-size:13px}}
-    main{{margin-top:-28px;padding-bottom:64px}} .toolbar{{display:grid;grid-template-columns:1fr 190px;gap:12px;padding:16px;background:#fff;border:1px solid var(--line);box-shadow:0 12px 35px #14213d12;border-radius:18px}}
+    main{{margin-top:-28px;padding-bottom:64px}} .toolbar{{display:grid;grid-template-columns:minmax(240px,1fr) repeat(3,170px);gap:12px;padding:16px;background:#fff;border:1px solid var(--line);box-shadow:0 12px 35px #14213d12;border-radius:18px}}
     input,select{{width:100%;border:1px solid var(--line);border-radius:11px;padding:12px 14px;background:#fff;color:var(--ink);font:inherit;outline:none}} input:focus,select:focus{{border-color:#60a5fa;box-shadow:0 0 0 3px #dbeafe}}
     .tabs{{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 14px}} button{{border:1px solid var(--line);background:#fff;padding:9px 15px;border-radius:999px;cursor:pointer;color:#475569;font-weight:700}}
     button.active{{background:var(--ink);border-color:var(--ink);color:#fff}} .grid{{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}}
@@ -666,13 +720,13 @@ def render_html(items: list[Item], date_text: str, config: dict[str, Any], label
   </style>
 </head>
 <body>
-  <header class="hero"><div class="wrap"><div class="eyebrow">DAILY CREATIVE INTELLIGENCE · {date_text}</div><h1>Audio × Video AI Radar</h1><p class="lead">{html.escape(config['project']['subtitle'])}</p><div class="stats"><div class="stat"><b>📄 {counts['paper']}</b><span>最新论文</span></div><div class="stat"><b>🧩 {counts['github']}</b><span>GitHub 项目</span></div><div class="stat"><b>🚀 {counts['product']}</b><span>产品/玩法</span></div></div></div></header>
-  <main class="wrap"><section class="toolbar"><input id="search" placeholder="搜索中英文标题、摘要、产品、公司、关键词…"><select id="topic"><option value="all">全部方向</option>{topic_options}</select></section><nav class="tabs"><button class="active" data-kind="all">✨ 全部</button><button data-kind="paper">📄 论文</button><button data-kind="github">🧩 GitHub</button><button data-kind="product">🚀 产品/玩法</button></nav><section id="grid" class="grid"></section></main>
+  <header class="hero"><div class="wrap"><div class="eyebrow">DAILY CREATIVE INTELLIGENCE · {date_text}</div><h1>Audio × Video AI Radar</h1><p class="lead">{html.escape(config['project']['subtitle'])}</p><div class="stats"><div class="stat"><b>📄 {counts['paper']}</b><span>本期论文</span></div><div class="stat"><b>🧩 {counts['github']}</b><span>本期 GitHub</span></div><div class="stat"><b>🚀 {counts['product']}</b><span>本期产品/玩法</span></div><div class="stat"><b>🗂️ {len(items)}</b><span>历史去重总数</span></div></div></div></header>
+  <main class="wrap"><section class="toolbar"><input id="search" placeholder="搜索中英文标题、摘要、产品、公司、关键词…"><select id="scope"><option value="latest">仅看本期</option><option value="all">全部历史</option></select><select id="date"><option value="all">全部收录日期</option>{date_options}</select><select id="topic"><option value="all">全部方向</option>{topic_options}</select></section><nav class="tabs"><button class="active" data-kind="all">✨ 全部</button><button data-kind="paper">📄 论文</button><button data-kind="github">🧩 GitHub</button><button data-kind="product">🚀 产品/玩法</button></nav><section id="grid" class="grid"></section></main>
   <footer><div class="wrap">每日自动更新 · 综合时效、相关性与开源热度排序 · 请以原始链接为准</div></footer>
-  <script>const DATA={payload};const LABELS={json.dumps(labels, ensure_ascii=False)};let kind='all';
+  <script>const DATA={payload};const LATEST_IDS=new Set({latest_payload});const LABELS={json.dumps(labels, ensure_ascii=False)};let kind='all';
   const esc=s=>String(s??'').replace(/[&<>\"]/g,c=>({{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}}[c]));
-  function draw(){{const q=document.querySelector('#search').value.trim().toLowerCase(),topic=document.querySelector('#topic').value;const list=DATA.filter(x=>(kind==='all'||x.kind===kind)&&(topic==='all'||x.tags.includes(topic))&&(!q||([x.title,x.title_cn,x.summary,x.summary_cn,x.source,x.product_name_cn,x.company_cn,x.what_is_it_cn,...(x.keywords_cn||[])].join(' ')).toLowerCase().includes(q)));document.querySelector('#grid').innerHTML=list.length?list.map(x=>`<article class="card ${{x.kind}}"><div class="topline"><span class="type">${{{{paper:'论文',github:'GitHub',product:'产品/玩法'}}[x.kind]}}</span><span class="date">${{esc(x.published_at.slice(0,10))}}</span></div><div class="title-row"><span class="icon" aria-hidden="true">${{esc(x.icon||'✨')}}</span><div><h2><a href="${{esc(x.url)}}" target="_blank" rel="noopener">${{esc(x.title_cn||x.title)}}</a></h2>${{x.title_cn?`<p class="original">${{esc(x.title)}}</p>`:''}}</div></div>${{x.kind==='product'?`<div class="identity"><div><b>产品 / 功能</b>${{esc(x.product_name_cn||x.title)}}</div><div><b>公司 / 来源</b>${{esc(x.company_cn||x.source)}}</div><div class="what"><b>它是什么</b>${{esc(x.what_is_it_cn||'等待进一步识别')}}</div></div>`:''}}<p class="summary">${{esc((x.summary_cn||x.summary).slice(0,360))}}${{(x.summary_cn||x.summary).length>360?'…':''}}</p><div class="why">${{esc(x.why_cn)}}</div><div class="why creative"><b>💡 创意玩法：</b>${{esc(x.creative_cn||'等待进一步拆解')}}</div><div class="tags">${{x.tags.map(t=>`<span class="tag">${{esc(LABELS[t])}}</span>`).join('')}}${{(x.keywords_cn||[]).map(t=>`<span class="tag keyword">${{esc(t)}}</span>`).join('')}}</div>${{x.kind==='github'?`<div class="metric">⭐ ${{Number(x.metrics.stars||0).toLocaleString()}} · ${{esc(x.metrics.language||'未标注语言')}}</div>`:`<div class="metric">${{esc(x.source)}}</div>`}}</article>`).join(''):'<div class="empty">没有符合当前筛选条件的条目</div>'}}
-  document.querySelectorAll('button[data-kind]').forEach(b=>b.onclick=()=>{{kind=b.dataset.kind;document.querySelectorAll('button').forEach(x=>x.classList.remove('active'));b.classList.add('active');draw()}});document.querySelector('#search').oninput=draw;document.querySelector('#topic').onchange=draw;draw();</script>
+  function draw(){{const q=document.querySelector('#search').value.trim().toLowerCase(),topic=document.querySelector('#topic').value,scope=document.querySelector('#scope').value,date=document.querySelector('#date').value;const list=DATA.filter(x=>(scope==='all'||LATEST_IDS.has(x.item_id))&&(date==='all'||x.first_seen_at===date)&&(kind==='all'||x.kind===kind)&&(topic==='all'||x.tags.includes(topic))&&(!q||([x.title,x.title_cn,x.summary,x.summary_cn,x.source,x.product_name_cn,x.company_cn,x.what_is_it_cn,...(x.keywords_cn||[])].join(' ')).toLowerCase().includes(q)));document.querySelector('#grid').innerHTML=list.length?list.map(x=>`<article class="card ${{x.kind}}"><div class="topline"><span class="type">${{{{paper:'论文',github:'GitHub',product:'产品/玩法'}}[x.kind]}}</span><span class="date">发布 ${{esc(x.published_at.slice(0,10))}} · 首次收录 ${{esc(x.first_seen_at||'—')}}</span></div><div class="title-row"><span class="icon" aria-hidden="true">${{esc(x.icon||'✨')}}</span><div><h2><a href="${{esc(x.url)}}" target="_blank" rel="noopener">${{esc(x.title_cn||x.title)}}</a></h2>${{x.title_cn?`<p class="original">${{esc(x.title)}}</p>`:''}}</div></div>${{x.kind==='product'?`<div class="identity"><div><b>产品 / 功能</b>${{esc(x.product_name_cn||x.title)}}</div><div><b>公司 / 来源</b>${{esc(x.company_cn||x.source)}}</div><div class="what"><b>它是什么</b>${{esc(x.what_is_it_cn||'等待进一步识别')}}</div></div>`:''}}<p class="summary">${{esc((x.summary_cn||x.summary).slice(0,360))}}${{(x.summary_cn||x.summary).length>360?'…':''}}</p><div class="why">${{esc(x.why_cn)}}</div><div class="why creative"><b>💡 创意玩法：</b>${{esc(x.creative_cn||'等待进一步拆解')}}</div><div class="tags">${{x.tags.map(t=>`<span class="tag">${{esc(LABELS[t])}}</span>`).join('')}}${{(x.keywords_cn||[]).map(t=>`<span class="tag keyword">${{esc(t)}}</span>`).join('')}}</div>${{x.kind==='github'?`<div class="metric">⭐ ${{Number(x.metrics.stars||0).toLocaleString()}} · ${{esc(x.metrics.language||'未标注语言')}}</div>`:`<div class="metric">${{esc(x.source)}}</div>`}}</article>`).join(''):'<div class="empty">没有符合当前筛选条件的条目</div>'}}
+  document.querySelectorAll('button[data-kind]').forEach(b=>b.onclick=()=>{{kind=b.dataset.kind;document.querySelectorAll('button[data-kind]').forEach(x=>x.classList.remove('active'));b.classList.add('active');draw()}});document.querySelector('#search').oninput=draw;document.querySelector('#topic').onchange=draw;document.querySelector('#scope').onchange=draw;document.querySelector('#date').onchange=e=>{{if(e.target.value!=='all')document.querySelector('#scope').value='all';draw()}};draw();</script>
 </body></html>'''
 
 
@@ -689,12 +743,21 @@ def write_outputs(root: Path, items: list[Item], config: dict[str, Any], now: da
     for kind in ("paper", "github", "product"):
         trimmed.extend([item for item in items if item.kind == kind][:limit])
     trimmed.sort(key=lambda value: value.score, reverse=True)
+    history = merge_history(root, trimmed, date_text)
+    latest_ids = {item.item_id for item in trimmed}
     data = {"generated_at": iso(now), "date": date_text, "items": [asdict(item) for item in trimmed], "errors": errors}
     text = json.dumps(data, ensure_ascii=False, indent=2) + "\n"
     (data_dir / f"{date_text}.json").write_text(text, encoding="utf-8")
     (data_dir / "latest.json").write_text(text, encoding="utf-8")
+    history_data = {
+        "generated_at": iso(now),
+        "date": date_text,
+        "total": len(history),
+        "items": [asdict(item) for item in history],
+    }
+    (data_dir / "history.json").write_text(json.dumps(history_data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (reports / f"{date_text}.md").write_text(render_markdown(trimmed, date_text, labels, errors), encoding="utf-8")
-    (root / "docs" / "index.html").write_text(render_html(trimmed, date_text, config, labels), encoding="utf-8")
+    (root / "docs" / "index.html").write_text(render_html(history, latest_ids, date_text, config, labels), encoding="utf-8")
     (root / "docs" / ".nojekyll").touch()
     archive = sorted(path.stem for path in reports.glob("????-??-??.md"))
     (data_dir / "archive.json").write_text(json.dumps(archive, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

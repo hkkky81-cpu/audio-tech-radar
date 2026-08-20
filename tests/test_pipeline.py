@@ -1,3 +1,4 @@
+import json
 import tempfile
 import unittest
 from datetime import datetime, timezone
@@ -19,7 +20,11 @@ class PipelineTest(unittest.TestCase):
             self.assertEqual(len(items), 4)
             self.assertTrue((root / "docs" / "index.html").exists())
             self.assertTrue((root / "docs" / "data" / "latest.json").exists())
+            self.assertTrue((root / "docs" / "data" / "history.json").exists())
             self.assertTrue((root / "reports" / "2026-08-18.md").exists())
+            page = (root / "docs" / "index.html").read_text(encoding="utf-8")
+            self.assertIn("全部历史", page)
+            self.assertIn("首次收录", page)
 
     def test_items_are_tagged_and_scored(self):
         config = load_config(ROOT / "config" / "topics.yml")
@@ -43,6 +48,28 @@ class PipelineTest(unittest.TestCase):
             (root / "config" / "topics.yml").write_text((ROOT / "config" / "topics.yml").read_text(encoding="utf-8"), encoding="utf-8")
             run(root, root / "config" / "topics.yml", demo=True, now=datetime(2026, 8, 18, 23, 40, tzinfo=timezone.utc))
             self.assertTrue((root / "reports" / "2026-08-19.md").exists())
+
+    def test_history_accumulates_and_deduplicates(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "config").mkdir()
+            config_path = root / "config" / "topics.yml"
+            config_path.write_text((ROOT / "config" / "topics.yml").read_text(encoding="utf-8"), encoding="utf-8")
+            run(root, config_path, demo=True, now=datetime(2026, 8, 18, 0, 0, tzinfo=timezone.utc))
+            history_path = root / "docs" / "data" / "history.json"
+            history = json.loads(history_path.read_text(encoding="utf-8"))
+            legacy = Item("product", "Legacy AI Music Tool", "https://example.com/legacy-music", "A music generation product.", "Legacy", "2026-08-17T00:00:00Z").finalize()
+            legacy.tags = ["music"]
+            legacy.first_seen_at = "2026-08-17"
+            legacy.last_seen_at = "2026-08-17"
+            history["items"].append(legacy.__dict__)
+            history_path.write_text(json.dumps(history, ensure_ascii=False), encoding="utf-8")
+            run(root, config_path, demo=True, now=datetime(2026, 8, 19, 0, 0, tzinfo=timezone.utc))
+            updated = json.loads(history_path.read_text(encoding="utf-8"))
+            self.assertEqual(updated["total"], 5)
+            self.assertEqual(len({item["item_id"] for item in updated["items"]}), 5)
+            retained = next(item for item in updated["items"] if item["item_id"] == legacy.item_id)
+            self.assertEqual(retained["first_seen_at"], "2026-08-17")
 
     def test_keyword_matching_respects_token_boundaries(self):
         self.assertTrue(keyword_present("new asr model", "asr"))

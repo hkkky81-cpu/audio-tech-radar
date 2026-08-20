@@ -23,6 +23,7 @@ GitHub Pages 首页：`https://<你的用户名>.github.io/audio-tech-radar/`
 docs/index.html              # 最新一期可视化首页
 docs/data/latest.json        # 最新结构化数据
 docs/data/YYYY-MM-DD.json    # 历史结构化数据
+docs/data/history.json       # 跨日期去重后的累计历史库
 reports/YYYY-MM-DD.md        # 每日 Markdown 简报
 config/topics.yml            # 方向、关键词、抓取源与阈值
 ```
@@ -34,9 +35,10 @@ config/topics.yml            # 方向、关键词、抓取源与阈值
 1. 抓取各数据源，单个源失败不会中断整份报告；
 2. 标题高权重、摘要低权重地匹配音频、视频与跨模态受控标签；
 3. 按时效性、相关性、Stars 和项目新鲜度综合评分；
-4. URL/标题去重，生成网页、Markdown 与 JSON；
-5. 复用上一期翻译缓存，避免为未变化条目重复调用模型；
-6. 自动提交当日报告并部署 GitHub Pages。
+4. URL/标题去重，生成当日网页、Markdown 与 JSON；
+5. 将本期条目增量合并到累计历史库，保留首次收录和最近出现日期；
+6. 复用上一期翻译缓存，避免为未变化条目重复调用模型；
+7. 自动提交当日报告并部署 GitHub Pages。
 
 ## 本地运行
 
@@ -75,7 +77,7 @@ python -m unittest discover -s tests -v
 
 编辑 `config/topics.yml`：
 
-- `lookback_hours`：默认 72 小时，避免周末或源延迟导致漏项；
+- `lookback_hours`：默认 72 小时，仅控制每次向外部数据源抓取的时间范围，不会删除历史内容；
 - `keywords`：每个技术方向的匹配词；标题命中权重高于摘要命中；
 - `product_min_topic_score`：产品源的最低相关度阈值；
 - `github_sources.min_stars`：GitHub 最低 Stars；
