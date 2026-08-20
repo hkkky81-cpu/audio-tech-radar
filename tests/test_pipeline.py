@@ -3,8 +3,19 @@ import tempfile
 import unittest
 from datetime import datetime, timezone
 from pathlib import Path
+from unittest.mock import Mock, patch
 
-from audio_radar.pipeline import Item, keyword_present, load_config, process, reuse_enrichment, run
+from audio_radar.pipeline import (
+    Item,
+    arxiv_hf_paper_url,
+    fetch_huggingface_spaces,
+    fetch_semantic_scholar,
+    keyword_present,
+    load_config,
+    process,
+    reuse_enrichment,
+    run,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -29,6 +40,9 @@ class PipelineTest(unittest.TestCase):
             self.assertIn("综合推荐", page)
             self.assertIn("只看收藏", page)
             self.assertIn("历史数据", page)
+            self.assertIn("仅看 Demo", page)
+            self.assertIn("可体验 Demo", page)
+            self.assertIn("toolkit-demo", page)
 
     def test_items_are_tagged_and_scored(self):
         config = load_config(ROOT / "config" / "topics.yml")
@@ -41,6 +55,8 @@ class PipelineTest(unittest.TestCase):
         self.assertTrue(all(item.creative_cn for item in items))
         self.assertTrue(all(item.icon for item in items))
         self.assertTrue(all(item.resource_type_cn for item in items))
+        self.assertTrue(all(isinstance(item.resource_links, dict) for item in items))
+        self.assertTrue(any(item.resource_links.get("demo") for item in items))
         products = [item for item in items if item.kind == "product"]
         self.assertTrue(all(item.product_name_cn for item in products))
         self.assertTrue(all(item.company_cn for item in products))
@@ -94,6 +110,58 @@ class PipelineTest(unittest.TestCase):
         }
         self.assertEqual(reuse_enrichment([item], cached), 1)
         self.assertEqual(item.summary_cn, "缓存摘要")
+
+    def test_arxiv_id_builds_huggingface_paper_link(self):
+        self.assertEqual(
+            arxiv_hf_paper_url("https://arxiv.org/abs/2608.12345v2"),
+            "https://huggingface.co/papers/2608.12345",
+        )
+
+    @patch("audio_radar.pipeline.request")
+    def test_huggingface_space_is_marked_as_demo(self, mocked_request):
+        response = Mock()
+        response.json.return_value = [
+            {
+                "id": "demo/audio-video-lab",
+                "lastModified": "2026-08-20T00:00:00Z",
+                "likes": 42,
+                "private": False,
+                "tags": ["text-to-audio", "text-to-video"],
+                "cardData": {"title": "Audio Video Lab", "short_description": "Generate audio and video from text."},
+            }
+        ]
+        mocked_request.return_value = response
+        items = fetch_huggingface_spaces(
+            {"huggingface_sources": {"space_searches": ["audio video"], "min_likes": 2, "max_results_per_query": 5}},
+            Mock(),
+        )
+        self.assertEqual(len(items), 1)
+        self.assertEqual(items[0].resource_type_cn, "可运行 Demo")
+        self.assertEqual(items[0].resource_links["demo"], "https://huggingface.co/spaces/demo/audio-video-lab")
+
+    @patch("audio_radar.pipeline.request")
+    def test_semantic_scholar_adds_paper_resources(self, mocked_request):
+        response = Mock()
+        response.json.return_value = {
+            "data": [
+                {
+                    "title": "Recent Audio Generation Study",
+                    "abstract": "A recent audio generation method.",
+                    "publicationDate": "2026-08-20",
+                    "authors": [{"name": "A. Researcher"}],
+                    "externalIds": {"ArXiv": "2608.12345"},
+                    "openAccessPdf": {"url": "https://arxiv.org/pdf/2608.12345"},
+                    "citationCount": 3,
+                }
+            ]
+        }
+        mocked_request.return_value = response
+        items = fetch_semantic_scholar(
+            {"semantic_scholar_sources": {"queries": ["audio generation"], "max_results_per_query": 5}},
+            Mock(),
+        )
+        self.assertEqual(items[0].resource_links["paper"], "https://arxiv.org/abs/2608.12345")
+        self.assertIn("hf_paper", items[0].resource_links)
 
 
 if __name__ == "__main__":

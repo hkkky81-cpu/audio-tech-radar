@@ -6,9 +6,10 @@
 
 一个可直接部署到 GitHub Pages 的音视频 AI 技术与创意玩法情报站。每天自动抓取并整理：
 
-- 最新论文：arXiv 的语音/音频组与视频/多媒体组分别抓取，避免 `cs.CV` 的体量挤掉音频条目
+- 最新论文：arXiv 的语音/音频组与视频/多媒体组分别抓取，并由 Semantic Scholar 补充已索引论文
 - GitHub 项目：音频/音乐生成、视频生成、数字人、口型、编辑、跨模态创作与安全评测
-- 产品与玩法：厂商博客、Product Hunt、Google News、Hacker News / Show HN
+- 可运行 Demo：Hugging Face Spaces、Show HN 试玩地址，以及 GitHub 项目中可确认的在线 Demo；普通主页单独标为 Project
+- 产品与玩法：厂商博客、Product Hunt、中英文 Google News、Bing News、Hacker News / Show HN
 - 中文提炼：可选接入 OpenAI，生成技术中文标题、准确摘要、定位关键词与可验证的创意玩法
 
 页面支持按内容类型、技术方向筛选和全文搜索，同时保留每日 Markdown 报告与 JSON 数据，便于二次分析。首页还提供：
@@ -18,6 +19,7 @@
 - **多维排序**：支持综合推荐、最新发布、GitHub Stars 与最近收录；
 - **研究身份信息**：论文显示作者，开源项目显示项目方，产品显示公司/来源，并自动标注模型、数据集、基准、工具等资源类型；
 - **资源入口与收藏**：直接进入 Paper、Code 或产品原文，并可在浏览器本地收藏。
+- **Demo 标识与筛选**：对确认存在的 Hugging Face Space、项目主页或 Show HN 试玩地址显示 `▶ Demo`，支持一键只看 Demo。
 
 ## 最终效果
 
@@ -38,7 +40,7 @@ config/topics.yml            # 方向、关键词、抓取源与阈值
 
 `.github/workflows/daily-radar.yml` 在首次推送及代码/配置变更时执行，并于每天 23:30 UTC 自动执行，对应次日北京时间 07:30、韩国时间 08:30。报告日期使用项目时区计算，不会再出现本地已到第二天、页面仍显示前一天的问题。流水线会：
 
-1. 抓取各数据源，单个源失败不会中断整份报告；
+1. 抓取 arXiv、Semantic Scholar、GitHub、Hugging Face Spaces、资讯搜索与厂商源，单个源失败不会中断整份报告；
 2. 标题高权重、摘要低权重地匹配音频、视频与跨模态受控标签；
 3. 按时效性、相关性、Stars 和项目新鲜度综合评分；
 4. URL/标题去重，生成本期精选、方向热度、当日网页、Markdown 与 JSON；
@@ -89,6 +91,9 @@ python -m unittest discover -s tests -v
 - `github_sources.min_stars`：GitHub 最低 Stars；
 - `max_items_per_section`：每类最多展示数量；
 - `feeds` / `news_queries` / `hacker_news_queries`：产品、新闻与独立创意项目来源；
+- `semantic_scholar_sources`：补充论文搜索关键词；
+- `huggingface_sources.space_searches`：可直接运行的 Demo 搜索词；
+- `google_news_zh_queries` / `bing_news_queries`：中文资讯与第二搜索引擎查询；
 - `enrichment`：翻译模型、批大小和每日最多处理条数。
 
 ## 摘要与关键词策略

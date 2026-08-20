@@ -155,6 +155,29 @@ paper_sources:
     - [cs.CV, cs.MM]
   max_results_per_group: 180
 
+semantic_scholar_sources:
+  enabled: true
+  max_results_per_query: 25
+  queries:
+    - "audio generation"
+    - "speech synthesis voice conversion"
+    - "audio language model speech understanding"
+    - "video generation audio visual"
+
+huggingface_sources:
+  enabled: true
+  min_likes: 2
+  max_results_per_query: 10
+  space_searches:
+    - "text-to-speech"
+    - "voice cloning"
+    - "audio generation"
+    - "music generation"
+    - "text-to-video"
+    - "image-to-video"
+    - "lip sync"
+    - "video editing"
+
 github_sources:
   min_stars: 15
   max_results_per_query: 12
@@ -175,6 +198,10 @@ github_sources:
     - "topic:video-editing"
     - "topic:video-to-audio"
     - "topic:multimodal-generation"
+    - "topic:audio-llm"
+    - "topic:voice-agent"
+    - "topic:video-dubbing"
+    - "topic:ai-video-editor"
     - "speech audio model in:name,description,readme"
     - "video avatar generative in:name,description,readme"
 
@@ -211,6 +238,20 @@ product_sources:
     - '"AI filmmaking" OR "creative AI tool" video when:3d'
     - 'site:runwayml.com OR site:heygen.com OR site:synthesia.io product update when:3d'
     - 'site:adobe.com "AI video" OR "AI audio" when:3d'
+    - 'site:replicate.com OR site:fal.ai audio video model when:3d'
+    - 'site:huggingface.co/spaces audio OR video AI demo when:3d'
+  google_news_zh_queries:
+    - 'AI 音频 OR 语音生成 OR 音色克隆 when:3d'
+    - 'AI 视频生成 OR 数字人 OR 口型同步 when:3d'
+    - '音乐生成 OR AI 音效 OR 视频配音 when:3d'
+    - '音视频 大模型 OR 多模态 创作工具 when:3d'
+  bing_news_queries:
+    - 'AI audio product launch'
+    - 'voice AI speech generation release'
+    - 'AI music generation tool'
+    - 'AI video generation product launch'
+    - 'AI avatar lip sync video dubbing'
+    - 'video to audio AI demo'
   hacker_news_queries:
     - "Show HN AI video"
     - "Show HN audio AI"

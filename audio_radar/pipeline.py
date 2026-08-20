@@ -56,6 +56,7 @@ class Item:
     company_cn: str = ""
     what_is_it_cn: str = ""
     resource_type_cn: str = ""
+    resource_links: dict[str, str] = field(default_factory=dict)
     first_seen_at: str = ""
     last_seen_at: str = ""
 
@@ -68,6 +69,35 @@ class Item:
 
 def clean_text(value: str) -> str:
     return re.sub(r"\s+", " ", html.unescape(value or "")).strip()
+
+
+def safe_http_url(value: Any) -> str:
+    value = clean_text(str(value or ""))
+    return value if re.match(r"^https?://", value, re.IGNORECASE) else ""
+
+
+def arxiv_hf_paper_url(url: str) -> str:
+    match = re.search(r"arxiv\.org/(?:abs|pdf)/([^?#/]+)", url, re.IGNORECASE)
+    if not match:
+        return ""
+    arxiv_id = re.sub(r"v\d+$", "", match.group(1)).removesuffix(".pdf")
+    return f"https://huggingface.co/papers/{arxiv_id}"
+
+
+def homepage_resource_kind(url: str) -> str:
+    """Avoid calling a documentation/project homepage a runnable demo."""
+    value = url.lower()
+    demo_markers = (
+        "huggingface.co/spaces/",
+        "hf.space",
+        "gradio.live",
+        "streamlit.app",
+        "replicate.com/",
+        "fal.ai/models/",
+        "/demo",
+        "playground",
+    )
+    return "demo" if any(marker in value for marker in demo_markers) else "project"
 
 
 def parse_dt(value: Any) -> datetime:
@@ -177,7 +207,78 @@ def fetch_arxiv(config: dict[str, Any], session: requests.Session) -> list[Item]
                     break
             if not link:
                 link = entry.findtext("a:id", default="", namespaces=ns)
-            items.append(Item("paper", title, link, summary, "arXiv", iso(parse_dt(published)), authors).finalize())
+            resource_links = {"paper": link}
+            hf_paper = arxiv_hf_paper_url(link)
+            if hf_paper:
+                resource_links["hf_paper"] = hf_paper
+            items.append(
+                Item(
+                    "paper",
+                    title,
+                    link,
+                    summary,
+                    "arXiv",
+                    iso(parse_dt(published)),
+                    authors,
+                    resource_links=resource_links,
+                ).finalize()
+            )
+    return items
+
+
+def fetch_semantic_scholar(config: dict[str, Any], session: requests.Session) -> list[Item]:
+    """Cover recent conference/indexed papers that may not surface in the arXiv category pull."""
+    settings = config.get("semantic_scholar_sources", {})
+    if not settings.get("enabled", True):
+        return []
+    headers = {"User-Agent": USER_AGENT}
+    api_key = os.getenv("SEMANTIC_SCHOLAR_API_KEY", "").strip()
+    if api_key:
+        headers["x-api-key"] = api_key
+    fields = "paperId,title,abstract,url,publicationDate,authors,externalIds,openAccessPdf,citationCount"
+    items: list[Item] = []
+    for query in settings.get("queries", []):
+        params = {"query": query, "limit": int(settings.get("max_results_per_query", 30)), "fields": fields}
+        try:
+            payload = request(
+                session,
+                "https://api.semanticscholar.org/graph/v1/paper/search",
+                params=params,
+                headers=headers,
+            ).json()
+        except RuntimeError as exc:
+            print(f"warning: Semantic Scholar query failed ({query}): {exc}", file=sys.stderr)
+            continue
+        for paper in payload.get("data", []):
+            published = paper.get("publicationDate") or ""
+            title = paper.get("title") or ""
+            summary = paper.get("abstract") or ""
+            if not published or not title or not summary:
+                continue
+            external_ids = paper.get("externalIds") or {}
+            arxiv_id = external_ids.get("ArXiv") or ""
+            paper_url = f"https://arxiv.org/abs/{arxiv_id}" if arxiv_id else safe_http_url(paper.get("url"))
+            if not paper_url:
+                continue
+            resource_links = {"paper": paper_url}
+            pdf_url = safe_http_url((paper.get("openAccessPdf") or {}).get("url"))
+            if pdf_url:
+                resource_links["pdf"] = pdf_url
+            if arxiv_id:
+                resource_links["hf_paper"] = f"https://huggingface.co/papers/{arxiv_id}"
+            items.append(
+                Item(
+                    "paper",
+                    title,
+                    paper_url,
+                    summary,
+                    "Semantic Scholar",
+                    iso(parse_dt(published)),
+                    [author.get("name", "") for author in paper.get("authors", []) if author.get("name")],
+                    metrics={"citations": int(paper.get("citationCount") or 0)},
+                    resource_links=resource_links,
+                ).finalize()
+            )
     return items
 
 
@@ -201,6 +302,10 @@ def fetch_github(config: dict[str, Any], session: requests.Session, cutoff: date
             description = repo.get("description") or ""
             topics = repo.get("topics") or []
             summary = description + (f" Topics: {', '.join(topics)}." if topics else "")
+            homepage = safe_http_url(repo.get("homepage"))
+            if homepage.rstrip("/") == str(repo.get("html_url") or "").rstrip("/"):
+                homepage = ""
+            homepage_kind = homepage_resource_kind(homepage) if homepage else ""
             item = Item(
                 "github",
                 repo["full_name"],
@@ -213,14 +318,76 @@ def fetch_github(config: dict[str, Any], session: requests.Session, cutoff: date
                     "forks": repo.get("forks_count", 0),
                     "language": repo.get("language") or "",
                     "created_at": repo.get("created_at") or "",
+                    "homepage": homepage,
+                },
+                resource_links={
+                    "code": repo["html_url"],
+                    **({homepage_kind: homepage} if homepage else {}),
                 },
             ).finalize()
             collected[item.url] = item
     return list(collected.values())
 
 
-def google_news_url(query: str) -> str:
+def fetch_huggingface_spaces(config: dict[str, Any], session: requests.Session) -> list[Item]:
+    """Discover recently updated, directly runnable audio/video demos."""
+    settings = config.get("huggingface_sources", {})
+    if not settings.get("enabled", True):
+        return []
+    collected: dict[str, Item] = {}
+    for query in settings.get("space_searches", []):
+        params = {
+            "search": query,
+            "sort": "lastModified",
+            "direction": -1,
+            "limit": int(settings.get("max_results_per_query", 12)),
+            "full": "true",
+        }
+        try:
+            payload = request(session, "https://huggingface.co/api/spaces", params=params).json()
+        except RuntimeError as exc:
+            print(f"warning: Hugging Face Spaces query failed ({query}): {exc}", file=sys.stderr)
+            continue
+        for space in payload if isinstance(payload, list) else []:
+            if space.get("private") or int(space.get("likes") or 0) < int(settings.get("min_likes", 2)):
+                continue
+            space_id = space.get("id") or space.get("modelId") or ""
+            updated = space.get("lastModified") or ""
+            if not space_id or not updated:
+                continue
+            card = space.get("cardData") or {}
+            tags = [clean_text(tag) for tag in (space.get("tags") or []) if clean_text(tag)]
+            description = clean_text(card.get("short_description") or card.get("description") or "")
+            summary = description or f"Runnable Hugging Face Space. Tags: {', '.join(tags[:18])}."
+            if tags and "Tags:" not in summary:
+                summary += f" Tags: {', '.join(tags[:18])}."
+            url = f"https://huggingface.co/spaces/{space_id}"
+            item = Item(
+                "product",
+                space_id,
+                url,
+                summary,
+                "Hugging Face Spaces",
+                iso(parse_dt(updated)),
+                metrics={"likes": int(space.get("likes") or 0), "sdk": space.get("sdk") or ""},
+                product_name_cn=clean_text(card.get("title") or space_id),
+                company_cn=space_id.split("/", 1)[0],
+                what_is_it_cn="一个可直接在线体验的 Hugging Face Space，可进入页面验证输入、输出与运行状态。",
+                resource_type_cn="可运行 Demo",
+                resource_links={"demo": url},
+            ).finalize()
+            collected[item.url] = item
+    return list(collected.values())
+
+
+def google_news_url(query: str, locale: str = "en") -> str:
+    if locale == "zh":
+        return f"https://news.google.com/rss/search?q={quote_plus(query)}&hl=zh-CN&gl=CN&ceid=CN:zh-Hans"
     return f"https://news.google.com/rss/search?q={quote_plus(query)}&hl=en-US&gl=US&ceid=US:en"
+
+
+def bing_news_url(query: str) -> str:
+    return f"https://www.bing.com/news/search?q={quote_plus(query)}&format=rss"
 
 
 def fetch_feed(name: str, url: str, session: requests.Session) -> list[Item]:
@@ -243,12 +410,22 @@ def fetch_feed(name: str, url: str, session: requests.Session) -> list[Item]:
         title = entry.get("title", "")
         publisher = name
         entry_source = entry.get("source") or {}
-        if name == "Google News":
+        if name.startswith("Google News") or name == "Bing News":
             publisher = entry_source.get("title") or publisher
             suffix = f" - {publisher}"
             if title.endswith(suffix):
                 title = title[: -len(suffix)]
-        items.append(Item("product", title, link, summary, publisher, iso(parse_dt(published))).finalize())
+        items.append(
+            Item(
+                "product",
+                title,
+                link,
+                summary,
+                publisher,
+                iso(parse_dt(published)),
+                resource_links={"source": link},
+            ).finalize()
+        )
     return items
 
 
@@ -259,6 +436,10 @@ def fetch_products(config: dict[str, Any], session: requests.Session) -> list[It
         items.extend(fetch_feed(feed["name"], feed["url"], session))
     for query in settings.get("news_queries", []):
         items.extend(fetch_feed("Google News", google_news_url(query), session))
+    for query in settings.get("google_news_zh_queries", []):
+        items.extend(fetch_feed("Google News 中文", google_news_url(query, "zh"), session))
+    for query in settings.get("bing_news_queries", []):
+        items.extend(fetch_feed("Bing News", bing_news_url(query), session))
     items.extend(fetch_hacker_news(settings, session))
     return items
 
@@ -275,7 +456,9 @@ def fetch_hacker_news(settings: dict[str, Any], session: requests.Session) -> li
             continue
         for hit in payload.get("hits", []):
             title = hit.get("title") or ""
-            story_url = hit.get("url") or f"https://news.ycombinator.com/item?id={hit.get('objectID', '')}"
+            discussion_url = f"https://news.ycombinator.com/item?id={hit.get('objectID', '')}"
+            external_url = safe_http_url(hit.get("url"))
+            story_url = external_url or discussion_url
             summary = re.sub(r"<[^>]+>", " ", hit.get("story_text") or "")
             items.append(
                 Item(
@@ -286,6 +469,10 @@ def fetch_hacker_news(settings: dict[str, Any], session: requests.Session) -> li
                     "Hacker News",
                     iso(parse_dt(hit.get("created_at"))),
                     metrics={"points": hit.get("points", 0), "comments": hit.get("num_comments", 0)},
+                    resource_links={
+                        **({"demo": external_url} if external_url and title.lower().startswith("show hn") else {}),
+                        "discussion": discussion_url,
+                    },
                 ).finalize()
             )
     return items
@@ -302,7 +489,8 @@ def score_item(item: Item, now: datetime, labels: dict[str, str]) -> None:
         if (now - created).days <= 90:
             popularity += 8.0
     source_bonus = 8.0 if item.kind == "paper" else 5.0
-    item.score = round(recency + specificity + popularity + source_bonus, 1)
+    demo_bonus = 6.0 if item.resource_links.get("demo") else 0.0
+    item.score = round(recency + specificity + popularity + source_bonus + demo_bonus, 1)
     topic_text = "、".join(labels[tag] for tag in item.tags[:3])
     if item.kind == "paper":
         item.why_cn = f"研究方向：{topic_text}。建议重点查看方法创新、数据集与客观/主观评测设置。"
@@ -310,7 +498,8 @@ def score_item(item: Item, now: datetime, labels: dict[str, str]) -> None:
         stars = int(item.metrics.get("stars", 0))
         item.why_cn = f"开源方向：{topic_text}；当前约 {stars:,} Stars，可优先判断许可证、推理显存和 Demo 完整度。"
     else:
-        item.why_cn = f"产品方向：{topic_text}。建议关注实际工作流、输入输出可控性、API/定价与可分享性。"
+        demo_note = "已有可直接体验的 Demo；" if item.resource_links.get("demo") else ""
+        item.why_cn = f"产品方向：{topic_text}。{demo_note}建议关注实际工作流、输入输出可控性、API/定价与可分享性。"
 
 
 def fallback_creative(item: Item, labels: dict[str, str]) -> str:
@@ -652,10 +841,10 @@ def process(items: Iterable[Item], config: dict[str, Any], now: datetime) -> lis
 
 def demo_items(now: datetime) -> list[Item]:
     samples = [
-        Item("paper", "Demo: Controllable Speech Editing with Flow Matching", "https://arxiv.org/abs/demo-audio-radar", "A placeholder paper used to verify the complete report pipeline.", "Demo", iso(now - timedelta(hours=3)), ["Audio Radar"]).finalize(),
-        Item("github", "demo/audio-generation-toolkit", "https://github.com/demo/audio-generation-toolkit", "A placeholder audio generation repository for offline validation.", "Demo", iso(now - timedelta(hours=6)), metrics={"stars": 128, "forks": 12, "language": "Python", "created_at": iso(now - timedelta(days=20))}).finalize(),
-        Item("product", "Demo: Realtime Speech API Update", "https://example.com/audio-radar-demo", "A placeholder realtime speech API product update.", "Demo", iso(now - timedelta(hours=9))).finalize(),
-        Item("product", "Demo: Turn Songs into Generative Music Videos", "https://example.com/video-radar-demo", "An AI video generation workflow with beat sync and editable camera motion.", "Demo", iso(now - timedelta(hours=11))).finalize(),
+        Item("paper", "Demo: Controllable Speech Editing with Flow Matching", "https://arxiv.org/abs/demo-audio-radar", "A placeholder paper used to verify the complete report pipeline.", "Demo", iso(now - timedelta(hours=3)), ["Audio Radar"], resource_links={"paper": "https://arxiv.org/abs/demo-audio-radar"}).finalize(),
+        Item("github", "demo/audio-generation-toolkit", "https://github.com/demo/audio-generation-toolkit", "A placeholder audio generation repository for offline validation.", "Demo", iso(now - timedelta(hours=6)), metrics={"stars": 128, "forks": 12, "language": "Python", "created_at": iso(now - timedelta(days=20))}, resource_links={"code": "https://github.com/demo/audio-generation-toolkit", "demo": "https://example.com/toolkit-demo"}).finalize(),
+        Item("product", "Demo: Realtime Speech API Update", "https://example.com/audio-radar-demo", "A placeholder realtime speech API product update.", "Demo", iso(now - timedelta(hours=9)), resource_links={"source": "https://example.com/audio-radar-demo"}).finalize(),
+        Item("product", "Demo: Turn Songs into Generative Music Videos", "https://example.com/video-radar-demo", "An AI video generation workflow with beat sync and editable camera motion.", "Demo", iso(now - timedelta(hours=11)), resource_links={"demo": "https://example.com/video-radar-demo"}).finalize(),
     ]
     return samples
 
@@ -665,12 +854,28 @@ def short_summary(value: str, limit: int = 360) -> str:
     return value if len(value) <= limit else value[: limit - 1].rstrip() + "…"
 
 
+def markdown_resource_links(item: Item) -> str:
+    labels = {
+        "demo": "▶ Demo",
+        "code": "Code",
+        "paper": "Paper",
+        "pdf": "PDF",
+        "hf_paper": "HF Paper",
+        "model": "Model",
+        "project": "Project",
+        "discussion": "Discussion",
+        "source": "原文",
+    }
+    links = item.resource_links or {"source": item.url}
+    return " / ".join(f"[{labels.get(key, key)}]({url})" for key, url in links.items() if safe_http_url(url))
+
+
 def render_markdown(items: list[Item], date_text: str, labels: dict[str, str], errors: list[str]) -> str:
     counts = {kind: sum(item.kind == kind for item in items) for kind in ("paper", "github", "product")}
     lines = [
         f"# Audio × Video AI Radar · {date_text}",
         "",
-        f"> 今日收录：论文 {counts['paper']} 篇 · GitHub 项目 {counts['github']} 个 · 产品动态 {counts['product']} 条",
+        f"> 今日收录：论文 {counts['paper']} 篇 · GitHub 项目 {counts['github']} 个 · 产品动态 {counts['product']} 条 · 可体验 Demo {sum(bool(item.resource_links.get('demo')) for item in items)} 个",
         "",
     ]
     names = {"paper": "最新论文", "github": "GitHub 项目", "product": "产品动态"}
@@ -700,6 +905,7 @@ def render_markdown(items: list[Item], date_text: str, labels: dict[str, str], e
                 ),
                 f"- **方向**：{tags}",
                 f"- **资源类型**：{item.resource_type_cn}",
+                f"- **资源入口**：{markdown_resource_links(item)}",
                 f"- **定位关键词**：{' / '.join(item.keywords_cn)}",
                 f"- **关注理由**：{item.why_cn}",
                 f"- **创意玩法**：{item.creative_cn}",
@@ -716,6 +922,7 @@ def render_markdown(items: list[Item], date_text: str, labels: dict[str, str], e
 def render_html(items: list[Item], latest_ids: set[str], date_text: str, config: dict[str, Any], labels: dict[str, str]) -> str:
     latest_items = [item for item in items if item.item_id in latest_ids]
     counts = {kind: sum(item.kind == kind for item in latest_items) for kind in ("paper", "github", "product")}
+    demo_count = sum(bool(item.resource_links.get("demo")) for item in latest_items)
     payload = json.dumps([asdict(item) for item in items], ensure_ascii=False).replace("</", "<\\/")
     latest_payload = json.dumps(sorted(latest_ids), ensure_ascii=False)
     topic_options = "".join(f'<option value="{html.escape(key)}">{html.escape(label)}</option>' for key, label in labels.items())
@@ -739,14 +946,14 @@ def render_html(items: list[Item], latest_ids: set[str], date_text: str, config:
     .stat b{{display:block;font-size:25px}} .stat span{{color:#bfdbfe;font-size:13px}}
     main{{margin-top:-34px;padding-bottom:64px}} .featured-shell{{background:#fff;border:1px solid var(--line);box-shadow:0 14px 40px #14213d14;border-radius:22px;padding:20px;margin-bottom:18px}} .section-head{{display:flex;justify-content:space-between;gap:18px;align-items:end;margin-bottom:14px}} .section-head h2{{margin:0;font-size:20px}} .section-head p{{margin:2px 0 0;color:var(--muted);font-size:13px}} .trend-list{{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}} .trend{{font-size:12px;color:#0f766e;background:#ecfdf5;border:1px solid #a7f3d0;padding:4px 8px;border-radius:999px;font-weight:700}}
     .featured-grid{{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}} .feature{{position:relative;min-height:166px;border:1px solid #dbe7f3;border-radius:16px;padding:16px;background:linear-gradient(145deg,#fff,#f8fbff);overflow:hidden}} .feature:after{{content:'';position:absolute;width:88px;height:88px;border-radius:50%;right:-28px;bottom:-36px;background:#dbeafe80}} .feature-top{{display:flex;justify-content:space-between;gap:10px;align-items:center}} .feature-type{{font-size:11px;font-weight:800;color:#1d4ed8;background:#dbeafe;padding:3px 8px;border-radius:999px}} .feature-score{{font-size:11px;color:var(--muted)}} .feature h3{{font-size:16px;line-height:1.4;margin:12px 0 5px;position:relative;z-index:1}} .feature h3 a{{text-decoration:none}} .feature h3 a:hover{{color:var(--brand)}} .feature-owner{{color:var(--muted);font-size:12px;margin:0 0 8px}} .feature-summary{{color:#475569;font-size:13px;line-height:1.55;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}}
-    .toolbar{{display:grid;grid-template-columns:minmax(230px,1fr) repeat(4,150px);gap:10px;padding:16px;background:#fff;border:1px solid var(--line);box-shadow:0 8px 26px #14213d0d;border-radius:18px}}
+    .toolbar{{display:grid;grid-template-columns:minmax(220px,1fr) repeat(5,140px);gap:10px;padding:16px;background:#fff;border:1px solid var(--line);box-shadow:0 8px 26px #14213d0d;border-radius:18px}}
     input,select{{width:100%;border:1px solid var(--line);border-radius:11px;padding:12px 14px;background:#fff;color:var(--ink);font:inherit;outline:none}} input:focus,select:focus{{border-color:#60a5fa;box-shadow:0 0 0 3px #dbeafe}}
     .list-head{{display:flex;justify-content:space-between;gap:14px;align-items:center;margin:20px 0 14px}} .tabs{{display:flex;gap:8px;flex-wrap:wrap}} button{{border:1px solid var(--line);background:#fff;padding:9px 15px;border-radius:999px;cursor:pointer;color:#475569;font-weight:700}}
     .list-tools{{display:flex;gap:9px;align-items:center;color:var(--muted);font-size:13px}} .save-filter.active{{color:#92400e;background:#fffbeb;border-color:#fcd34d}}
     button.active{{background:var(--ink);border-color:var(--ink);color:#fff}} .grid{{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}}
     .card{{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:20px;box-shadow:0 4px 14px #13223808;transition:.18s ease}} .card:hover{{transform:translateY(-2px);box-shadow:0 12px 28px #13223812}}
     .title-row{{display:grid;grid-template-columns:46px 1fr auto;gap:12px;align-items:start;margin-top:13px}} .icon{{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,#eff6ff,#ecfeff);display:grid;place-items:center;font-size:24px;border:1px solid #dbeafe}} .title-row h2{{margin:0 0 4px}} .owner{{font-size:12px;color:var(--muted);margin:0}} .save{{width:34px;height:34px;padding:0;border-radius:10px;font-size:17px}} .save.saved{{color:#b45309;background:#fffbeb;border-color:#fcd34d}}
-    .topline{{display:flex;justify-content:space-between;gap:12px;align-items:center}} .type-group{{display:flex;gap:6px;flex-wrap:wrap}} .type,.subtype{{font-size:12px;font-weight:800;border-radius:999px;padding:4px 9px;background:#dbeafe;color:#1d4ed8}} .subtype{{background:#f1f5f9;color:#475569}} .github .type{{background:#ede9fe;color:#6d28d9}} .product .type{{background:#ccfbf1;color:#0f766e}}
+    .topline{{display:flex;justify-content:space-between;gap:12px;align-items:center}} .type-group{{display:flex;gap:6px;flex-wrap:wrap}} .type,.subtype,.demo-badge{{font-size:12px;font-weight:800;border-radius:999px;padding:4px 9px;background:#dbeafe;color:#1d4ed8}} .subtype{{background:#f1f5f9;color:#475569}} .demo-badge{{text-decoration:none;background:#fee2e2;color:#b91c1c;border:1px solid #fecaca}} .demo-badge:hover{{background:#fecaca}} .github .type{{background:#ede9fe;color:#6d28d9}} .product .type{{background:#ccfbf1;color:#0f766e}}
     .date{{font-size:12px;color:var(--muted)}} h2{{font-size:18px;line-height:1.4;margin:13px 0 8px}} h2 a{{text-decoration:none}} h2 a:hover{{color:var(--brand)}}
     .original{{font-size:12px;color:var(--muted);margin:-3px 0 10px}} .summary{{color:#475569;margin:0 0 12px}} .why{{background:#f8fafc;border-left:3px solid #60a5fa;padding:9px 11px;color:#334155;border-radius:5px;margin:12px 0}} .creative{{background:#f0fdfa;border-left-color:#14b8a6}} .identity{{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}} .identity div{{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:8px 10px;color:#334155}} .identity .what{{grid-column:1/-1}} .identity b{{display:block;color:#64748b;font-size:11px;letter-spacing:.04em;margin-bottom:2px}}
     .tags{{display:flex;gap:6px;flex-wrap:wrap}} .tag{{font-size:12px;background:#eef2f7;color:#475569;border-radius:7px;padding:3px 7px}} .keyword{{background:#fff7ed;color:#9a3412}} .card-foot{{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-top:12px}} .metric{{color:var(--muted);font-size:12px}} .resource-links{{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}} .resource{{text-decoration:none;font-size:12px;font-weight:800;color:#1d4ed8;background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:4px 8px}} .resource:hover{{background:#dbeafe}}
@@ -756,17 +963,19 @@ def render_html(items: list[Item], latest_ids: set[str], date_text: str, config:
   </style>
 </head>
 <body>
-  <header class="hero"><div class="wrap"><div class="hero-nav"><div class="brand"><span class="brand-mark">A/V</span><span>Creative Intelligence Radar</span></div><div class="hero-links"><a class="hero-link" href="https://github.com/hkkky81-cpu/audio-tech-radar" target="_blank" rel="noopener">GitHub ↗</a><a class="hero-link" href="data/history.json" target="_blank" rel="noopener">历史数据 ↗</a></div></div><div class="eyebrow">DAILY CREATIVE INTELLIGENCE · {date_text}</div><h1>Audio × Video AI Radar</h1><p class="lead">{html.escape(config['project']['subtitle'])}</p><div class="stats"><div class="stat"><b>📄 {counts['paper']}</b><span>本期论文</span></div><div class="stat"><b>🧩 {counts['github']}</b><span>本期 GitHub</span></div><div class="stat"><b>🚀 {counts['product']}</b><span>本期产品/玩法</span></div><div class="stat"><b>🗂️ {len(items)}</b><span>历史去重总数</span></div></div></div></header>
-  <main class="wrap"><section class="featured-shell"><div class="section-head"><div><h2>⭐ 本期精选</h2><p>从论文、开源项目和产品玩法中综合筛选，适合优先阅读与验证</p></div><div id="trends" class="trend-list"></div></div><div id="featured" class="featured-grid"></div></section><section class="toolbar"><input id="search" placeholder="搜索标题、摘要、作者、项目方、公司或关键词…"><select id="scope"><option value="latest">仅看本期</option><option value="all">全部历史</option></select><select id="date"><option value="all">全部收录日期</option>{date_options}</select><select id="topic"><option value="all">全部方向</option>{topic_options}</select><select id="sort"><option value="score">综合推荐</option><option value="newest">最新发布</option><option value="stars">GitHub Stars</option><option value="first_seen">最近收录</option></select></section><div class="list-head"><nav class="tabs"><button class="active" data-kind="all">✨ 全部</button><button data-kind="paper">📄 论文</button><button data-kind="github">🧩 GitHub</button><button data-kind="product">🚀 产品/玩法</button></nav><div class="list-tools"><span id="result-count"></span><button id="saved-only" class="save-filter" type="button">☆ 只看收藏</button></div></div><section id="grid" class="grid"></section></main>
+  <header class="hero"><div class="wrap"><div class="hero-nav"><div class="brand"><span class="brand-mark">A/V</span><span>Creative Intelligence Radar</span></div><div class="hero-links"><a class="hero-link" href="https://github.com/hkkky81-cpu/audio-tech-radar" target="_blank" rel="noopener">GitHub ↗</a><a class="hero-link" href="data/history.json" target="_blank" rel="noopener">历史数据 ↗</a></div></div><div class="eyebrow">DAILY CREATIVE INTELLIGENCE · {date_text}</div><h1>Audio × Video AI Radar</h1><p class="lead">{html.escape(config['project']['subtitle'])}</p><div class="stats"><div class="stat"><b>📄 {counts['paper']}</b><span>本期论文</span></div><div class="stat"><b>🧩 {counts['github']}</b><span>本期 GitHub</span></div><div class="stat"><b>🚀 {counts['product']}</b><span>本期产品/玩法</span></div><div class="stat"><b>▶ {demo_count}</b><span>可体验 Demo</span></div><div class="stat"><b>🗂️ {len(items)}</b><span>历史去重总数</span></div></div></div></header>
+  <main class="wrap"><section class="featured-shell"><div class="section-head"><div><h2>⭐ 本期精选</h2><p>从论文、开源项目和产品玩法中综合筛选，优先呈现可直接体验的 Demo</p></div><div id="trends" class="trend-list"></div></div><div id="featured" class="featured-grid"></div></section><section class="toolbar"><input id="search" placeholder="搜索标题、摘要、作者、项目方、公司或关键词…"><select id="scope"><option value="latest">仅看本期</option><option value="all">全部历史</option></select><select id="date"><option value="all">全部收录日期</option>{date_options}</select><select id="topic"><option value="all">全部方向</option>{topic_options}</select><select id="availability"><option value="all">全部可用性</option><option value="demo">▶ 仅看 Demo</option></select><select id="sort"><option value="score">综合推荐</option><option value="newest">最新发布</option><option value="stars">GitHub Stars</option><option value="first_seen">最近收录</option></select></section><div class="list-head"><nav class="tabs"><button class="active" data-kind="all">✨ 全部</button><button data-kind="paper">📄 论文</button><button data-kind="github">🧩 GitHub</button><button data-kind="product">🚀 产品/玩法</button></nav><div class="list-tools"><span id="result-count"></span><button id="saved-only" class="save-filter" type="button">☆ 只看收藏</button></div></div><section id="grid" class="grid"></section></main>
   <footer><div class="wrap">每日自动更新 · 支持本期精选、历史检索与本地收藏 · 条目信息请以原始链接为准</div></footer>
   <script>const DATA={payload};const LATEST_IDS=new Set({latest_payload});const LABELS={json.dumps(labels, ensure_ascii=False)};let kind='all',savedOnly=false;let SAVED=new Set();try{{SAVED=new Set(JSON.parse(localStorage.getItem('av-radar-saved')||'[]'))}}catch(e){{SAVED=new Set()}}
   const esc=s=>String(s??'').replace(/[&<>\"]/g,c=>({{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}}[c]));
   const typeName=x=>({{paper:'论文',github:'GitHub',product:'产品/玩法'}}[x.kind]||'条目');
   const owner=x=>x.kind==='paper'?((x.authors||[]).slice(0,3).join(' · ')||x.source):x.kind==='github'?(x.title.split('/')[0]||'开源社区'):(x.company_cn||x.source);
-  const resourceName=x=>x.kind==='paper'?'Paper ↗':x.kind==='github'?'Code ↗':'原文 ↗';
-  function renderFeatured(){{const latest=DATA.filter(x=>LATEST_IDS.has(x.item_id)).sort((a,b)=>(b.score||0)-(a.score||0));const chosen=[],used=new Set();for(const x of latest){{if(!used.has(x.kind)){{chosen.push(x);used.add(x.kind)}}if(chosen.length===3)break}}for(const x of latest){{if(chosen.length===3)break;if(!chosen.some(y=>y.item_id===x.item_id))chosen.push(x)}}document.querySelector('#featured').innerHTML=chosen.map(x=>`<article class="feature"><div class="feature-top"><span class="feature-type">${{esc(x.icon||'✨')}} ${{esc(x.resource_type_cn||typeName(x))}}</span><span class="feature-score">推荐度 ${{Math.round(x.score||0)}}</span></div><h3><a href="${{esc(x.url)}}" target="_blank" rel="noopener">${{esc(x.title_cn||x.title)}}</a></h3><p class="feature-owner">${{esc(owner(x))}}</p><p class="feature-summary">${{esc(x.why_cn||x.summary_cn||x.summary)}}</p></article>`).join('');const topicCount={{}};latest.forEach(x=>(x.tags||[]).forEach(t=>topicCount[t]=(topicCount[t]||0)+1));document.querySelector('#trends').innerHTML=Object.entries(topicCount).sort((a,b)=>b[1]-a[1]).slice(0,5).map(([t,n])=>`<span class="trend">${{esc(LABELS[t]||t)}} · ${{n}}</span>`).join('')}}
-  function draw(){{const q=document.querySelector('#search').value.trim().toLowerCase(),topic=document.querySelector('#topic').value,scope=document.querySelector('#scope').value,date=document.querySelector('#date').value,sort=document.querySelector('#sort').value;let list=DATA.filter(x=>(scope==='all'||LATEST_IDS.has(x.item_id))&&(date==='all'||x.first_seen_at===date)&&(kind==='all'||x.kind===kind)&&(topic==='all'||x.tags.includes(topic))&&(!savedOnly||SAVED.has(x.item_id))&&(!q||([x.title,x.title_cn,x.summary,x.summary_cn,x.source,x.product_name_cn,x.company_cn,x.what_is_it_cn,x.resource_type_cn,...(x.authors||[]),...(x.keywords_cn||[])].join(' ')).toLowerCase().includes(q)));const sorters={{score:(a,b)=>(b.score||0)-(a.score||0),newest:(a,b)=>String(b.published_at).localeCompare(String(a.published_at)),stars:(a,b)=>Number(b.metrics?.stars||0)-Number(a.metrics?.stars||0),first_seen:(a,b)=>String(b.first_seen_at).localeCompare(String(a.first_seen_at))}};list=list.slice().sort(sorters[sort]);document.querySelector('#result-count').textContent=`显示 ${{list.length}} / ${{DATA.length}} 条`;document.querySelector('#grid').innerHTML=list.length?list.map(x=>`<article class="card ${{x.kind}}"><div class="topline"><span class="type-group"><span class="type">${{typeName(x)}}</span><span class="subtype">${{esc(x.resource_type_cn||'待分类')}}</span></span><span class="date">发布 ${{esc(x.published_at.slice(0,10))}} · 首次收录 ${{esc(x.first_seen_at||'—')}}</span></div><div class="title-row"><span class="icon" aria-hidden="true">${{esc(x.icon||'✨')}}</span><div><h2><a href="${{esc(x.url)}}" target="_blank" rel="noopener">${{esc(x.title_cn||x.title)}}</a></h2>${{x.title_cn?`<p class="original">${{esc(x.title)}}</p>`:''}}<p class="owner">${{esc(owner(x))}}</p></div><button class="save ${{SAVED.has(x.item_id)?'saved':''}}" type="button" data-save="${{esc(x.item_id)}}" aria-label="收藏">${{SAVED.has(x.item_id)?'★':'☆'}}</button></div>${{x.kind==='product'?`<div class="identity"><div><b>产品 / 功能</b>${{esc(x.product_name_cn||x.title)}}</div><div><b>公司 / 来源</b>${{esc(x.company_cn||x.source)}}</div><div class="what"><b>它是什么</b>${{esc(x.what_is_it_cn||'等待进一步识别')}}</div></div>`:''}}<p class="summary">${{esc((x.summary_cn||x.summary).slice(0,360))}}${{(x.summary_cn||x.summary).length>360?'…':''}}</p><div class="why">${{esc(x.why_cn)}}</div><div class="why creative"><b>💡 创意玩法：</b>${{esc(x.creative_cn||'等待进一步拆解')}}</div><div class="tags">${{x.tags.map(t=>`<span class="tag">${{esc(LABELS[t])}}</span>`).join('')}}${{(x.keywords_cn||[]).map(t=>`<span class="tag keyword">${{esc(t)}}</span>`).join('')}}</div><div class="card-foot"><div class="metric">${{x.kind==='github'?`⭐ ${{Number(x.metrics.stars||0).toLocaleString()}} · ${{esc(x.metrics.language||'未标注语言')}}`:esc(x.source)}}</div><div class="resource-links"><a class="resource" href="${{esc(x.url)}}" target="_blank" rel="noopener">${{resourceName(x)}}</a></div></div></article>`).join(''):'<div class="empty">没有符合当前筛选条件的条目</div>';document.querySelectorAll('[data-save]').forEach(b=>b.onclick=()=>{{const id=b.dataset.save;SAVED.has(id)?SAVED.delete(id):SAVED.add(id);try{{localStorage.setItem('av-radar-saved',JSON.stringify([...SAVED]))}}catch(e){{}}draw()}})}}
-  document.querySelectorAll('button[data-kind]').forEach(b=>b.onclick=()=>{{kind=b.dataset.kind;document.querySelectorAll('button[data-kind]').forEach(x=>x.classList.remove('active'));b.classList.add('active');draw()}});document.querySelector('#search').oninput=draw;document.querySelector('#topic').onchange=draw;document.querySelector('#scope').onchange=draw;document.querySelector('#sort').onchange=draw;document.querySelector('#date').onchange=e=>{{if(e.target.value!=='all')document.querySelector('#scope').value='all';draw()}};document.querySelector('#saved-only').onclick=e=>{{savedOnly=!savedOnly;e.currentTarget.classList.toggle('active',savedOnly);e.currentTarget.textContent=savedOnly?'★ 已收藏':'☆ 只看收藏';draw()}};renderFeatured();draw();</script>
+  const hasDemo=x=>Boolean(x.resource_links?.demo);
+  const RESOURCE_LABELS={{demo:'▶ Demo',code:'Code ↗',paper:'Paper ↗',pdf:'PDF ↗',hf_paper:'HF Paper ↗',model:'Model ↗',project:'Project ↗',discussion:'讨论 ↗',source:'原文 ↗'}};
+  const resourceLinks=x=>{{let links=Object.entries(x.resource_links||{{}}).filter(([,url])=>/^https?:[/][/]/i.test(url||''));if(!links.length)links=[[x.kind==='paper'?'paper':x.kind==='github'?'code':'source',x.url]];return links.map(([key,url])=>`<a class="resource ${{key==='demo'?'demo-badge':''}}" href="${{esc(url)}}" target="_blank" rel="noopener">${{esc(RESOURCE_LABELS[key]||(key+' ↗'))}}</a>`).join('')}};
+  function renderFeatured(){{const latest=DATA.filter(x=>LATEST_IDS.has(x.item_id)).sort((a,b)=>((hasDemo(b)?15:0)+(b.score||0))-((hasDemo(a)?15:0)+(a.score||0)));const chosen=[],used=new Set();for(const x of latest){{if(!used.has(x.kind)){{chosen.push(x);used.add(x.kind)}}if(chosen.length===3)break}}for(const x of latest){{if(chosen.length===3)break;if(!chosen.some(y=>y.item_id===x.item_id))chosen.push(x)}}document.querySelector('#featured').innerHTML=chosen.map(x=>`<article class="feature"><div class="feature-top"><span class="feature-type">${{esc(x.icon||'✨')}} ${{esc(x.resource_type_cn||typeName(x))}}</span>${{hasDemo(x)?`<a class="demo-badge" href="${{esc(x.resource_links.demo)}}" target="_blank" rel="noopener">▶ Demo</a>`:`<span class="feature-score">推荐度 ${{Math.round(x.score||0)}}</span>`}}</div><h3><a href="${{esc(x.url)}}" target="_blank" rel="noopener">${{esc(x.title_cn||x.title)}}</a></h3><p class="feature-owner">${{esc(owner(x))}}</p><p class="feature-summary">${{esc(x.why_cn||x.summary_cn||x.summary)}}</p></article>`).join('');const topicCount={{}};latest.forEach(x=>(x.tags||[]).forEach(t=>topicCount[t]=(topicCount[t]||0)+1));document.querySelector('#trends').innerHTML=Object.entries(topicCount).sort((a,b)=>b[1]-a[1]).slice(0,5).map(([t,n])=>`<span class="trend">${{esc(LABELS[t]||t)}} · ${{n}}</span>`).join('')}}
+  function draw(){{const q=document.querySelector('#search').value.trim().toLowerCase(),topic=document.querySelector('#topic').value,scope=document.querySelector('#scope').value,date=document.querySelector('#date').value,availability=document.querySelector('#availability').value,sort=document.querySelector('#sort').value;let list=DATA.filter(x=>(scope==='all'||LATEST_IDS.has(x.item_id))&&(date==='all'||x.first_seen_at===date)&&(kind==='all'||x.kind===kind)&&(topic==='all'||x.tags.includes(topic))&&(availability==='all'||hasDemo(x))&&(!savedOnly||SAVED.has(x.item_id))&&(!q||([x.title,x.title_cn,x.summary,x.summary_cn,x.source,x.product_name_cn,x.company_cn,x.what_is_it_cn,x.resource_type_cn,...(x.authors||[]),...(x.keywords_cn||[])].join(' ')).toLowerCase().includes(q)));const sorters={{score:(a,b)=>(b.score||0)-(a.score||0),newest:(a,b)=>String(b.published_at).localeCompare(String(a.published_at)),stars:(a,b)=>Number(b.metrics?.stars||0)-Number(a.metrics?.stars||0),first_seen:(a,b)=>String(b.first_seen_at).localeCompare(String(a.first_seen_at))}};list=list.slice().sort(sorters[sort]);document.querySelector('#result-count').textContent=`显示 ${{list.length}} / ${{DATA.length}} 条`;document.querySelector('#grid').innerHTML=list.length?list.map(x=>`<article class="card ${{x.kind}}"><div class="topline"><span class="type-group"><span class="type">${{typeName(x)}}</span><span class="subtype">${{esc(x.resource_type_cn||'待分类')}}</span>${{hasDemo(x)?`<a class="demo-badge" href="${{esc(x.resource_links.demo)}}" target="_blank" rel="noopener">▶ Demo</a>`:''}}</span><span class="date">发布 ${{esc(x.published_at.slice(0,10))}} · 首次收录 ${{esc(x.first_seen_at||'—')}}</span></div><div class="title-row"><span class="icon" aria-hidden="true">${{esc(x.icon||'✨')}}</span><div><h2><a href="${{esc(x.url)}}" target="_blank" rel="noopener">${{esc(x.title_cn||x.title)}}</a></h2>${{x.title_cn?`<p class="original">${{esc(x.title)}}</p>`:''}}<p class="owner">${{esc(owner(x))}}</p></div><button class="save ${{SAVED.has(x.item_id)?'saved':''}}" type="button" data-save="${{esc(x.item_id)}}" aria-label="收藏">${{SAVED.has(x.item_id)?'★':'☆'}}</button></div>${{x.kind==='product'?`<div class="identity"><div><b>产品 / 功能</b>${{esc(x.product_name_cn||x.title)}}</div><div><b>公司 / 来源</b>${{esc(x.company_cn||x.source)}}</div><div class="what"><b>它是什么</b>${{esc(x.what_is_it_cn||'等待进一步识别')}}</div></div>`:''}}<p class="summary">${{esc((x.summary_cn||x.summary).slice(0,360))}}${{(x.summary_cn||x.summary).length>360?'…':''}}</p><div class="why">${{esc(x.why_cn)}}</div><div class="why creative"><b>💡 创意玩法：</b>${{esc(x.creative_cn||'等待进一步拆解')}}</div><div class="tags">${{x.tags.map(t=>`<span class="tag">${{esc(LABELS[t])}}</span>`).join('')}}${{(x.keywords_cn||[]).map(t=>`<span class="tag keyword">${{esc(t)}}</span>`).join('')}}</div><div class="card-foot"><div class="metric">${{x.kind==='github'?`⭐ ${{Number(x.metrics.stars||0).toLocaleString()}} · ${{esc(x.metrics.language||'未标注语言')}}`:esc(x.source)}}</div><div class="resource-links">${{resourceLinks(x)}}</div></div></article>`).join(''):'<div class="empty">没有符合当前筛选条件的条目</div>';document.querySelectorAll('[data-save]').forEach(b=>b.onclick=()=>{{const id=b.dataset.save;SAVED.has(id)?SAVED.delete(id):SAVED.add(id);try{{localStorage.setItem('av-radar-saved',JSON.stringify([...SAVED]))}}catch(e){{}}draw()}})}}
+  document.querySelectorAll('button[data-kind]').forEach(b=>b.onclick=()=>{{kind=b.dataset.kind;document.querySelectorAll('button[data-kind]').forEach(x=>x.classList.remove('active'));b.classList.add('active');draw()}});document.querySelector('#search').oninput=draw;document.querySelector('#topic').onchange=draw;document.querySelector('#scope').onchange=draw;document.querySelector('#availability').onchange=draw;document.querySelector('#sort').onchange=draw;document.querySelector('#date').onchange=e=>{{if(e.target.value!=='all')document.querySelector('#scope').value='all';draw()}};document.querySelector('#saved-only').onclick=e=>{{savedOnly=!savedOnly;e.currentTarget.classList.toggle('active',savedOnly);e.currentTarget.textContent=savedOnly?'★ 已收藏':'☆ 只看收藏';draw()}};renderFeatured();draw();</script>
 </body></html>'''
 
 
@@ -817,7 +1026,9 @@ def run(root: Path, config_path: Path, demo: bool = False, now: datetime | None 
         cutoff = now - timedelta(hours=int(config["project"]["lookback_hours"]))
         collectors = [
             ("arXiv", lambda: fetch_arxiv(config, session)),
+            ("Semantic Scholar", lambda: fetch_semantic_scholar(config, session)),
             ("GitHub", lambda: fetch_github(config, session, cutoff)),
+            ("Hugging Face Spaces", lambda: fetch_huggingface_spaces(config, session)),
             ("产品源", lambda: fetch_products(config, session)),
         ]
         for name, collector in collectors:
