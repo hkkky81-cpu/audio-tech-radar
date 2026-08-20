@@ -25,6 +25,10 @@ class PipelineTest(unittest.TestCase):
             page = (root / "docs" / "index.html").read_text(encoding="utf-8")
             self.assertIn("全部历史", page)
             self.assertIn("首次收录", page)
+            self.assertIn("本期精选", page)
+            self.assertIn("综合推荐", page)
+            self.assertIn("只看收藏", page)
+            self.assertIn("历史数据", page)
 
     def test_items_are_tagged_and_scored(self):
         config = load_config(ROOT / "config" / "topics.yml")
@@ -36,6 +40,7 @@ class PipelineTest(unittest.TestCase):
         self.assertTrue(all(item.keywords_cn for item in items))
         self.assertTrue(all(item.creative_cn for item in items))
         self.assertTrue(all(item.icon for item in items))
+        self.assertTrue(all(item.resource_type_cn for item in items))
         products = [item for item in items if item.kind == "product"]
         self.assertTrue(all(item.product_name_cn for item in products))
         self.assertTrue(all(item.company_cn for item in products))
