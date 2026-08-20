@@ -55,6 +55,7 @@ class Item:
     product_name_cn: str = ""
     company_cn: str = ""
     what_is_it_cn: str = ""
+    resource_type_cn: str = ""
     first_seen_at: str = ""
     last_seen_at: str = ""
 
@@ -355,6 +356,32 @@ def fallback_product_identity(item: Item, labels: dict[str, str]) -> None:
         item.what_is_it_cn = f"一项围绕{topic_text}的产品、功能更新或创意工具，具体开放范围以原文为准。"
 
 
+def infer_resource_type(item: Item) -> str:
+    """Add a conservative research/resource label without inventing capabilities."""
+    text = f"{item.title} {item.summary}".lower()
+    if item.kind == "product":
+        return "产品 / 功能"
+    if item.kind == "github":
+        if any(word in text for word in ("benchmark", "evaluation", "eval toolkit")):
+            return "评测工具"
+        if any(word in text for word in ("dataset", "corpus", "data collection")):
+            return "数据资源"
+        if any(word in text for word in (" sdk", "api ", "cli ", "developer tool")):
+            return "开发工具"
+        if any(word in text for word in ("framework", "toolkit", "platform", "pipeline")):
+            return "工具 / 框架"
+        return "开源项目"
+    if any(word in text for word in ("benchmark", "evaluation benchmark", "evaluating")):
+        return "基准 / 评测"
+    if any(word in text for word in ("dataset", "corpus", "data set")):
+        return "数据集"
+    if any(word in text for word in ("survey", "review", "overview")):
+        return "综述"
+    if any(word in text for word in ("study", "analysis of", "investigating", "assessment")):
+        return "研究 / 分析"
+    return "模型 / 方法"
+
+
 def enrichment_fingerprint(item: Item) -> str:
     value = f"v2\n{item.title}\n{item.summary}"
     return hashlib.sha1(value.encode("utf-8")).hexdigest()[:16]
@@ -375,6 +402,7 @@ def apply_fallback_enrichment(items: list[Item], config: dict[str, Any], labels:
     for item in items:
         item.enrichment_fingerprint = enrichment_fingerprint(item)
         item.icon = item_icon(item)
+        item.resource_type_cn = item.resource_type_cn or infer_resource_type(item)
         if not item.keywords_cn:
             item.keywords_cn = fallback_keywords(item, config, labels)
         if not item.creative_cn:
@@ -562,7 +590,9 @@ def item_from_dict(payload: dict[str, Any]) -> Item | None:
         return None
     allowed = set(Item.__dataclass_fields__)
     values = {key: value for key, value in payload.items() if key in allowed}
-    return Item(**values).finalize()
+    item = Item(**values).finalize()
+    item.resource_type_cn = item.resource_type_cn or infer_resource_type(item)
+    return item
 
 
 def load_history(root: Path) -> list[Item]:
@@ -669,6 +699,7 @@ def render_markdown(items: list[Item], date_text: str, labels: dict[str, str], e
                     else []
                 ),
                 f"- **方向**：{tags}",
+                f"- **资源类型**：{item.resource_type_cn}",
                 f"- **定位关键词**：{' / '.join(item.keywords_cn)}",
                 f"- **关注理由**：{item.why_cn}",
                 f"- **创意玩法**：{item.creative_cn}",
@@ -698,35 +729,44 @@ def render_html(items: list[Item], latest_ids: set[str], date_text: str, config:
   <meta name="description" content="每日追踪音视频 AI 最新论文、GitHub 项目、产品与创意玩法">
   <title>{html.escape(config['project']['title'])}</title>
   <style>
-    :root{{--ink:#132238;--muted:#64748b;--line:#dbe4ee;--paper:#f5f7fb;--brand:#1769e0;--teal:#0d9488;--violet:#7c3aed;--card:#fff}}
+    :root{{--ink:#132238;--muted:#64748b;--line:#dbe4ee;--paper:#f5f7fb;--brand:#1769e0;--teal:#0d9488;--violet:#7c3aed;--card:#fff;--amber:#d97706}}
     *{{box-sizing:border-box}} body{{margin:0;background:var(--paper);color:var(--ink);font:15px/1.65 Inter,"PingFang SC","Microsoft YaHei",sans-serif}}
-    a{{color:inherit}} .hero{{background:radial-gradient(circle at 75% 15%,#2dd4bf33,transparent 30%),linear-gradient(135deg,#071a35,#123b76 68%,#0f766e);color:#fff;padding:54px 22px 68px}}
-    .wrap{{width:min(1160px,calc(100% - 36px));margin:auto}} .eyebrow{{letter-spacing:.14em;text-transform:uppercase;color:#93c5fd;font-weight:700;font-size:12px}}
+    a{{color:inherit}} .hero{{background:radial-gradient(circle at 78% 12%,#2dd4bf40,transparent 28%),radial-gradient(circle at 15% 0,#3b82f638,transparent 25%),linear-gradient(135deg,#071a35,#123b76 65%,#0f766e);color:#fff;padding:28px 22px 74px}}
+    .wrap{{width:min(1180px,calc(100% - 36px));margin:auto}} .hero-nav{{display:flex;justify-content:space-between;gap:18px;align-items:center;margin-bottom:36px}} .brand{{display:flex;align-items:center;gap:10px;font-weight:800}} .brand-mark{{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:#ffffff16;border:1px solid #ffffff30;color:#a7f3d0}} .hero-links{{display:flex;gap:9px;flex-wrap:wrap}} .hero-link{{text-decoration:none;border:1px solid #ffffff30;background:#ffffff10;border-radius:999px;padding:7px 12px;color:#e0f2fe;font-size:13px;font-weight:700}} .hero-link:hover{{background:#ffffff20}}
+    .eyebrow{{letter-spacing:.14em;text-transform:uppercase;color:#93c5fd;font-weight:700;font-size:12px}}
     h1{{font-size:clamp(32px,6vw,58px);line-height:1.05;margin:10px 0 14px;letter-spacing:-.035em}} .lead{{font-size:18px;color:#dbeafe;max-width:660px;margin:0}}
     .stats{{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}} .stat{{min-width:134px;background:#ffffff12;border:1px solid #ffffff25;border-radius:16px;padding:12px 16px}}
     .stat b{{display:block;font-size:25px}} .stat span{{color:#bfdbfe;font-size:13px}}
-    main{{margin-top:-28px;padding-bottom:64px}} .toolbar{{display:grid;grid-template-columns:minmax(240px,1fr) repeat(3,170px);gap:12px;padding:16px;background:#fff;border:1px solid var(--line);box-shadow:0 12px 35px #14213d12;border-radius:18px}}
+    main{{margin-top:-34px;padding-bottom:64px}} .featured-shell{{background:#fff;border:1px solid var(--line);box-shadow:0 14px 40px #14213d14;border-radius:22px;padding:20px;margin-bottom:18px}} .section-head{{display:flex;justify-content:space-between;gap:18px;align-items:end;margin-bottom:14px}} .section-head h2{{margin:0;font-size:20px}} .section-head p{{margin:2px 0 0;color:var(--muted);font-size:13px}} .trend-list{{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}} .trend{{font-size:12px;color:#0f766e;background:#ecfdf5;border:1px solid #a7f3d0;padding:4px 8px;border-radius:999px;font-weight:700}}
+    .featured-grid{{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}} .feature{{position:relative;min-height:166px;border:1px solid #dbe7f3;border-radius:16px;padding:16px;background:linear-gradient(145deg,#fff,#f8fbff);overflow:hidden}} .feature:after{{content:'';position:absolute;width:88px;height:88px;border-radius:50%;right:-28px;bottom:-36px;background:#dbeafe80}} .feature-top{{display:flex;justify-content:space-between;gap:10px;align-items:center}} .feature-type{{font-size:11px;font-weight:800;color:#1d4ed8;background:#dbeafe;padding:3px 8px;border-radius:999px}} .feature-score{{font-size:11px;color:var(--muted)}} .feature h3{{font-size:16px;line-height:1.4;margin:12px 0 5px;position:relative;z-index:1}} .feature h3 a{{text-decoration:none}} .feature h3 a:hover{{color:var(--brand)}} .feature-owner{{color:var(--muted);font-size:12px;margin:0 0 8px}} .feature-summary{{color:#475569;font-size:13px;line-height:1.55;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}}
+    .toolbar{{display:grid;grid-template-columns:minmax(230px,1fr) repeat(4,150px);gap:10px;padding:16px;background:#fff;border:1px solid var(--line);box-shadow:0 8px 26px #14213d0d;border-radius:18px}}
     input,select{{width:100%;border:1px solid var(--line);border-radius:11px;padding:12px 14px;background:#fff;color:var(--ink);font:inherit;outline:none}} input:focus,select:focus{{border-color:#60a5fa;box-shadow:0 0 0 3px #dbeafe}}
-    .tabs{{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 14px}} button{{border:1px solid var(--line);background:#fff;padding:9px 15px;border-radius:999px;cursor:pointer;color:#475569;font-weight:700}}
+    .list-head{{display:flex;justify-content:space-between;gap:14px;align-items:center;margin:20px 0 14px}} .tabs{{display:flex;gap:8px;flex-wrap:wrap}} button{{border:1px solid var(--line);background:#fff;padding:9px 15px;border-radius:999px;cursor:pointer;color:#475569;font-weight:700}}
+    .list-tools{{display:flex;gap:9px;align-items:center;color:var(--muted);font-size:13px}} .save-filter.active{{color:#92400e;background:#fffbeb;border-color:#fcd34d}}
     button.active{{background:var(--ink);border-color:var(--ink);color:#fff}} .grid{{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}}
     .card{{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:20px;box-shadow:0 4px 14px #13223808;transition:.18s ease}} .card:hover{{transform:translateY(-2px);box-shadow:0 12px 28px #13223812}}
-    .title-row{{display:grid;grid-template-columns:46px 1fr;gap:12px;align-items:start;margin-top:13px}} .icon{{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,#eff6ff,#ecfeff);display:grid;place-items:center;font-size:24px;border:1px solid #dbeafe}} .title-row h2{{margin:0 0 8px}}
-    .topline{{display:flex;justify-content:space-between;gap:12px;align-items:center}} .type{{font-size:12px;font-weight:800;border-radius:999px;padding:4px 9px;background:#dbeafe;color:#1d4ed8}} .github .type{{background:#ede9fe;color:#6d28d9}} .product .type{{background:#ccfbf1;color:#0f766e}}
+    .title-row{{display:grid;grid-template-columns:46px 1fr auto;gap:12px;align-items:start;margin-top:13px}} .icon{{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,#eff6ff,#ecfeff);display:grid;place-items:center;font-size:24px;border:1px solid #dbeafe}} .title-row h2{{margin:0 0 4px}} .owner{{font-size:12px;color:var(--muted);margin:0}} .save{{width:34px;height:34px;padding:0;border-radius:10px;font-size:17px}} .save.saved{{color:#b45309;background:#fffbeb;border-color:#fcd34d}}
+    .topline{{display:flex;justify-content:space-between;gap:12px;align-items:center}} .type-group{{display:flex;gap:6px;flex-wrap:wrap}} .type,.subtype{{font-size:12px;font-weight:800;border-radius:999px;padding:4px 9px;background:#dbeafe;color:#1d4ed8}} .subtype{{background:#f1f5f9;color:#475569}} .github .type{{background:#ede9fe;color:#6d28d9}} .product .type{{background:#ccfbf1;color:#0f766e}}
     .date{{font-size:12px;color:var(--muted)}} h2{{font-size:18px;line-height:1.4;margin:13px 0 8px}} h2 a{{text-decoration:none}} h2 a:hover{{color:var(--brand)}}
     .original{{font-size:12px;color:var(--muted);margin:-3px 0 10px}} .summary{{color:#475569;margin:0 0 12px}} .why{{background:#f8fafc;border-left:3px solid #60a5fa;padding:9px 11px;color:#334155;border-radius:5px;margin:12px 0}} .creative{{background:#f0fdfa;border-left-color:#14b8a6}} .identity{{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}} .identity div{{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:8px 10px;color:#334155}} .identity .what{{grid-column:1/-1}} .identity b{{display:block;color:#64748b;font-size:11px;letter-spacing:.04em;margin-bottom:2px}}
-    .tags{{display:flex;gap:6px;flex-wrap:wrap}} .tag{{font-size:12px;background:#eef2f7;color:#475569;border-radius:7px;padding:3px 7px}} .keyword{{background:#fff7ed;color:#9a3412}} .metric{{color:var(--muted);font-size:12px;margin-top:11px}}
+    .tags{{display:flex;gap:6px;flex-wrap:wrap}} .tag{{font-size:12px;background:#eef2f7;color:#475569;border-radius:7px;padding:3px 7px}} .keyword{{background:#fff7ed;color:#9a3412}} .card-foot{{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-top:12px}} .metric{{color:var(--muted);font-size:12px}} .resource-links{{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}} .resource{{text-decoration:none;font-size:12px;font-weight:800;color:#1d4ed8;background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:4px 8px}} .resource:hover{{background:#dbeafe}}
     .empty{{grid-column:1/-1;text-align:center;color:var(--muted);padding:46px}} footer{{color:var(--muted);border-top:1px solid var(--line);padding:24px 0 38px;font-size:13px}}
-    @media(max-width:760px){{.grid{{grid-template-columns:1fr}}.toolbar{{grid-template-columns:1fr}}.hero{{padding-top:40px}}.identity{{grid-template-columns:1fr}}.identity .what{{grid-column:auto}}}}
+    @media(max-width:900px){{.featured-grid{{grid-template-columns:1fr}}.toolbar{{grid-template-columns:1fr 1fr}}.toolbar input{{grid-column:1/-1}}}}
+    @media(max-width:760px){{.grid{{grid-template-columns:1fr}}.toolbar{{grid-template-columns:1fr}}.toolbar input{{grid-column:auto}}.hero{{padding-top:22px}}.hero-nav,.section-head,.list-head{{align-items:flex-start;flex-direction:column}}.trend-list{{justify-content:flex-start}}.identity{{grid-template-columns:1fr}}.identity .what{{grid-column:auto}}.title-row{{grid-template-columns:42px 1fr auto}}.icon{{width:42px;height:42px}}.card-foot{{align-items:flex-start;flex-direction:column}}.resource-links{{justify-content:flex-start}}}}
   </style>
 </head>
 <body>
-  <header class="hero"><div class="wrap"><div class="eyebrow">DAILY CREATIVE INTELLIGENCE · {date_text}</div><h1>Audio × Video AI Radar</h1><p class="lead">{html.escape(config['project']['subtitle'])}</p><div class="stats"><div class="stat"><b>📄 {counts['paper']}</b><span>本期论文</span></div><div class="stat"><b>🧩 {counts['github']}</b><span>本期 GitHub</span></div><div class="stat"><b>🚀 {counts['product']}</b><span>本期产品/玩法</span></div><div class="stat"><b>🗂️ {len(items)}</b><span>历史去重总数</span></div></div></div></header>
-  <main class="wrap"><section class="toolbar"><input id="search" placeholder="搜索中英文标题、摘要、产品、公司、关键词…"><select id="scope"><option value="latest">仅看本期</option><option value="all">全部历史</option></select><select id="date"><option value="all">全部收录日期</option>{date_options}</select><select id="topic"><option value="all">全部方向</option>{topic_options}</select></section><nav class="tabs"><button class="active" data-kind="all">✨ 全部</button><button data-kind="paper">📄 论文</button><button data-kind="github">🧩 GitHub</button><button data-kind="product">🚀 产品/玩法</button></nav><section id="grid" class="grid"></section></main>
-  <footer><div class="wrap">每日自动更新 · 综合时效、相关性与开源热度排序 · 请以原始链接为准</div></footer>
-  <script>const DATA={payload};const LATEST_IDS=new Set({latest_payload});const LABELS={json.dumps(labels, ensure_ascii=False)};let kind='all';
+  <header class="hero"><div class="wrap"><div class="hero-nav"><div class="brand"><span class="brand-mark">A/V</span><span>Creative Intelligence Radar</span></div><div class="hero-links"><a class="hero-link" href="https://github.com/hkkky81-cpu/audio-tech-radar" target="_blank" rel="noopener">GitHub ↗</a><a class="hero-link" href="data/history.json" target="_blank" rel="noopener">历史数据 ↗</a></div></div><div class="eyebrow">DAILY CREATIVE INTELLIGENCE · {date_text}</div><h1>Audio × Video AI Radar</h1><p class="lead">{html.escape(config['project']['subtitle'])}</p><div class="stats"><div class="stat"><b>📄 {counts['paper']}</b><span>本期论文</span></div><div class="stat"><b>🧩 {counts['github']}</b><span>本期 GitHub</span></div><div class="stat"><b>🚀 {counts['product']}</b><span>本期产品/玩法</span></div><div class="stat"><b>🗂️ {len(items)}</b><span>历史去重总数</span></div></div></div></header>
+  <main class="wrap"><section class="featured-shell"><div class="section-head"><div><h2>⭐ 本期精选</h2><p>从论文、开源项目和产品玩法中综合筛选，适合优先阅读与验证</p></div><div id="trends" class="trend-list"></div></div><div id="featured" class="featured-grid"></div></section><section class="toolbar"><input id="search" placeholder="搜索标题、摘要、作者、项目方、公司或关键词…"><select id="scope"><option value="latest">仅看本期</option><option value="all">全部历史</option></select><select id="date"><option value="all">全部收录日期</option>{date_options}</select><select id="topic"><option value="all">全部方向</option>{topic_options}</select><select id="sort"><option value="score">综合推荐</option><option value="newest">最新发布</option><option value="stars">GitHub Stars</option><option value="first_seen">最近收录</option></select></section><div class="list-head"><nav class="tabs"><button class="active" data-kind="all">✨ 全部</button><button data-kind="paper">📄 论文</button><button data-kind="github">🧩 GitHub</button><button data-kind="product">🚀 产品/玩法</button></nav><div class="list-tools"><span id="result-count"></span><button id="saved-only" class="save-filter" type="button">☆ 只看收藏</button></div></div><section id="grid" class="grid"></section></main>
+  <footer><div class="wrap">每日自动更新 · 支持本期精选、历史检索与本地收藏 · 条目信息请以原始链接为准</div></footer>
+  <script>const DATA={payload};const LATEST_IDS=new Set({latest_payload});const LABELS={json.dumps(labels, ensure_ascii=False)};let kind='all',savedOnly=false;let SAVED=new Set();try{{SAVED=new Set(JSON.parse(localStorage.getItem('av-radar-saved')||'[]'))}}catch(e){{SAVED=new Set()}}
   const esc=s=>String(s??'').replace(/[&<>\"]/g,c=>({{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}}[c]));
-  function draw(){{const q=document.querySelector('#search').value.trim().toLowerCase(),topic=document.querySelector('#topic').value,scope=document.querySelector('#scope').value,date=document.querySelector('#date').value;const list=DATA.filter(x=>(scope==='all'||LATEST_IDS.has(x.item_id))&&(date==='all'||x.first_seen_at===date)&&(kind==='all'||x.kind===kind)&&(topic==='all'||x.tags.includes(topic))&&(!q||([x.title,x.title_cn,x.summary,x.summary_cn,x.source,x.product_name_cn,x.company_cn,x.what_is_it_cn,...(x.keywords_cn||[])].join(' ')).toLowerCase().includes(q)));document.querySelector('#grid').innerHTML=list.length?list.map(x=>`<article class="card ${{x.kind}}"><div class="topline"><span class="type">${{{{paper:'论文',github:'GitHub',product:'产品/玩法'}}[x.kind]}}</span><span class="date">发布 ${{esc(x.published_at.slice(0,10))}} · 首次收录 ${{esc(x.first_seen_at||'—')}}</span></div><div class="title-row"><span class="icon" aria-hidden="true">${{esc(x.icon||'✨')}}</span><div><h2><a href="${{esc(x.url)}}" target="_blank" rel="noopener">${{esc(x.title_cn||x.title)}}</a></h2>${{x.title_cn?`<p class="original">${{esc(x.title)}}</p>`:''}}</div></div>${{x.kind==='product'?`<div class="identity"><div><b>产品 / 功能</b>${{esc(x.product_name_cn||x.title)}}</div><div><b>公司 / 来源</b>${{esc(x.company_cn||x.source)}}</div><div class="what"><b>它是什么</b>${{esc(x.what_is_it_cn||'等待进一步识别')}}</div></div>`:''}}<p class="summary">${{esc((x.summary_cn||x.summary).slice(0,360))}}${{(x.summary_cn||x.summary).length>360?'…':''}}</p><div class="why">${{esc(x.why_cn)}}</div><div class="why creative"><b>💡 创意玩法：</b>${{esc(x.creative_cn||'等待进一步拆解')}}</div><div class="tags">${{x.tags.map(t=>`<span class="tag">${{esc(LABELS[t])}}</span>`).join('')}}${{(x.keywords_cn||[]).map(t=>`<span class="tag keyword">${{esc(t)}}</span>`).join('')}}</div>${{x.kind==='github'?`<div class="metric">⭐ ${{Number(x.metrics.stars||0).toLocaleString()}} · ${{esc(x.metrics.language||'未标注语言')}}</div>`:`<div class="metric">${{esc(x.source)}}</div>`}}</article>`).join(''):'<div class="empty">没有符合当前筛选条件的条目</div>'}}
-  document.querySelectorAll('button[data-kind]').forEach(b=>b.onclick=()=>{{kind=b.dataset.kind;document.querySelectorAll('button[data-kind]').forEach(x=>x.classList.remove('active'));b.classList.add('active');draw()}});document.querySelector('#search').oninput=draw;document.querySelector('#topic').onchange=draw;document.querySelector('#scope').onchange=draw;document.querySelector('#date').onchange=e=>{{if(e.target.value!=='all')document.querySelector('#scope').value='all';draw()}};draw();</script>
+  const typeName=x=>({{paper:'论文',github:'GitHub',product:'产品/玩法'}}[x.kind]||'条目');
+  const owner=x=>x.kind==='paper'?((x.authors||[]).slice(0,3).join(' · ')||x.source):x.kind==='github'?(x.title.split('/')[0]||'开源社区'):(x.company_cn||x.source);
+  const resourceName=x=>x.kind==='paper'?'Paper ↗':x.kind==='github'?'Code ↗':'原文 ↗';
+  function renderFeatured(){{const latest=DATA.filter(x=>LATEST_IDS.has(x.item_id)).sort((a,b)=>(b.score||0)-(a.score||0));const chosen=[],used=new Set();for(const x of latest){{if(!used.has(x.kind)){{chosen.push(x);used.add(x.kind)}}if(chosen.length===3)break}}for(const x of latest){{if(chosen.length===3)break;if(!chosen.some(y=>y.item_id===x.item_id))chosen.push(x)}}document.querySelector('#featured').innerHTML=chosen.map(x=>`<article class="feature"><div class="feature-top"><span class="feature-type">${{esc(x.icon||'✨')}} ${{esc(x.resource_type_cn||typeName(x))}}</span><span class="feature-score">推荐度 ${{Math.round(x.score||0)}}</span></div><h3><a href="${{esc(x.url)}}" target="_blank" rel="noopener">${{esc(x.title_cn||x.title)}}</a></h3><p class="feature-owner">${{esc(owner(x))}}</p><p class="feature-summary">${{esc(x.why_cn||x.summary_cn||x.summary)}}</p></article>`).join('');const topicCount={{}};latest.forEach(x=>(x.tags||[]).forEach(t=>topicCount[t]=(topicCount[t]||0)+1));document.querySelector('#trends').innerHTML=Object.entries(topicCount).sort((a,b)=>b[1]-a[1]).slice(0,5).map(([t,n])=>`<span class="trend">${{esc(LABELS[t]||t)}} · ${{n}}</span>`).join('')}}
+  function draw(){{const q=document.querySelector('#search').value.trim().toLowerCase(),topic=document.querySelector('#topic').value,scope=document.querySelector('#scope').value,date=document.querySelector('#date').value,sort=document.querySelector('#sort').value;let list=DATA.filter(x=>(scope==='all'||LATEST_IDS.has(x.item_id))&&(date==='all'||x.first_seen_at===date)&&(kind==='all'||x.kind===kind)&&(topic==='all'||x.tags.includes(topic))&&(!savedOnly||SAVED.has(x.item_id))&&(!q||([x.title,x.title_cn,x.summary,x.summary_cn,x.source,x.product_name_cn,x.company_cn,x.what_is_it_cn,x.resource_type_cn,...(x.authors||[]),...(x.keywords_cn||[])].join(' ')).toLowerCase().includes(q)));const sorters={{score:(a,b)=>(b.score||0)-(a.score||0),newest:(a,b)=>String(b.published_at).localeCompare(String(a.published_at)),stars:(a,b)=>Number(b.metrics?.stars||0)-Number(a.metrics?.stars||0),first_seen:(a,b)=>String(b.first_seen_at).localeCompare(String(a.first_seen_at))}};list=list.slice().sort(sorters[sort]);document.querySelector('#result-count').textContent=`显示 ${{list.length}} / ${{DATA.length}} 条`;document.querySelector('#grid').innerHTML=list.length?list.map(x=>`<article class="card ${{x.kind}}"><div class="topline"><span class="type-group"><span class="type">${{typeName(x)}}</span><span class="subtype">${{esc(x.resource_type_cn||'待分类')}}</span></span><span class="date">发布 ${{esc(x.published_at.slice(0,10))}} · 首次收录 ${{esc(x.first_seen_at||'—')}}</span></div><div class="title-row"><span class="icon" aria-hidden="true">${{esc(x.icon||'✨')}}</span><div><h2><a href="${{esc(x.url)}}" target="_blank" rel="noopener">${{esc(x.title_cn||x.title)}}</a></h2>${{x.title_cn?`<p class="original">${{esc(x.title)}}</p>`:''}}<p class="owner">${{esc(owner(x))}}</p></div><button class="save ${{SAVED.has(x.item_id)?'saved':''}}" type="button" data-save="${{esc(x.item_id)}}" aria-label="收藏">${{SAVED.has(x.item_id)?'★':'☆'}}</button></div>${{x.kind==='product'?`<div class="identity"><div><b>产品 / 功能</b>${{esc(x.product_name_cn||x.title)}}</div><div><b>公司 / 来源</b>${{esc(x.company_cn||x.source)}}</div><div class="what"><b>它是什么</b>${{esc(x.what_is_it_cn||'等待进一步识别')}}</div></div>`:''}}<p class="summary">${{esc((x.summary_cn||x.summary).slice(0,360))}}${{(x.summary_cn||x.summary).length>360?'…':''}}</p><div class="why">${{esc(x.why_cn)}}</div><div class="why creative"><b>💡 创意玩法：</b>${{esc(x.creative_cn||'等待进一步拆解')}}</div><div class="tags">${{x.tags.map(t=>`<span class="tag">${{esc(LABELS[t])}}</span>`).join('')}}${{(x.keywords_cn||[]).map(t=>`<span class="tag keyword">${{esc(t)}}</span>`).join('')}}</div><div class="card-foot"><div class="metric">${{x.kind==='github'?`⭐ ${{Number(x.metrics.stars||0).toLocaleString()}} · ${{esc(x.metrics.language||'未标注语言')}}`:esc(x.source)}}</div><div class="resource-links"><a class="resource" href="${{esc(x.url)}}" target="_blank" rel="noopener">${{resourceName(x)}}</a></div></div></article>`).join(''):'<div class="empty">没有符合当前筛选条件的条目</div>';document.querySelectorAll('[data-save]').forEach(b=>b.onclick=()=>{{const id=b.dataset.save;SAVED.has(id)?SAVED.delete(id):SAVED.add(id);try{{localStorage.setItem('av-radar-saved',JSON.stringify([...SAVED]))}}catch(e){{}}draw()}})}}
+  document.querySelectorAll('button[data-kind]').forEach(b=>b.onclick=()=>{{kind=b.dataset.kind;document.querySelectorAll('button[data-kind]').forEach(x=>x.classList.remove('active'));b.classList.add('active');draw()}});document.querySelector('#search').oninput=draw;document.querySelector('#topic').onchange=draw;document.querySelector('#scope').onchange=draw;document.querySelector('#sort').onchange=draw;document.querySelector('#date').onchange=e=>{{if(e.target.value!=='all')document.querySelector('#scope').value='all';draw()}};document.querySelector('#saved-only').onclick=e=>{{savedOnly=!savedOnly;e.currentTarget.classList.toggle('active',savedOnly);e.currentTarget.textContent=savedOnly?'★ 已收藏':'☆ 只看收藏';draw()}};renderFeatured();draw();</script>
 </body></html>'''
 
 
