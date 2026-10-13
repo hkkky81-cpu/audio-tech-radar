@@ -1,8 +1,407 @@
 {
-  "generated_at": "2026-10-12T02:31:59Z",
-  "date": "2026-10-12",
-  "total": 1495,
+  "generated_at": "2026-10-13T03:41:29Z",
+  "date": "2026-10-13",
+  "total": 1506,
   "items": [
+    {
+      "kind": "github",
+      "title": "hwdsl2/self-hosted-ai-stack",
+      "url": "https://github.com/hwdsl2/self-hosted-ai-stack",
+      "summary": "Deploy a self-hosted AI stack with Docker Compose: local LLMs, chat, document parsing, embeddings, transcription, text-to-speech and MCP tools. Powered by Ollama, LiteLLM, AnythingLLM and more. Local-first with auto-configured authentication, lightweight stacks, optional HTTPS and NVIDIA GPU support. MIT licensed. Multi-arch: amd64, arm64. Topics: ai, ai-stack, cuda, docker, docker-compose, docling, embeddings, linux, litellm, llm, local-ai, mcp, ollama, openai-compatible, private-ai, rag, self-hosted, speech-to-text, text-to-speech, whisper.",
+      "source": "GitHub",
+      "published_at": "2026-10-13T03:30:11Z",
+      "authors": [],
+      "tags": [
+        "speech_generation",
+        "speech_understanding"
+      ],
+      "metrics": {
+        "stars": 165,
+        "forks": 33,
+        "language": "Shell",
+        "created_at": "2026-05-05T03:44:12Z",
+        "homepage": "https://selfhostedaistack.com"
+      },
+      "score": 78.0,
+      "why_cn": "开源方向：语音生成、语音理解；当前约 165 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "4d03c0c505d0",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "text-to-speech",
+        "speech-to-text"
+      ],
+      "creative_cn": "可快速复刻一个「语音生成 + 语音理解」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "b3a98ca55c5cb4e4",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开源项目",
+      "resource_links": {
+        "code": "https://github.com/hwdsl2/self-hosted-ai-stack",
+        "project": "https://selfhostedaistack.com"
+      },
+      "first_seen_at": "2026-10-13",
+      "last_seen_at": "2026-10-13"
+    },
+    {
+      "kind": "github",
+      "title": "TalAter/annyang",
+      "url": "https://github.com/TalAter/annyang",
+      "summary": "💬 Speech recognition for your site Topics: speech, speech-recognition, speech-to-text, voice.",
+      "source": "GitHub",
+      "published_at": "2026-10-13T02:01:59Z",
+      "authors": [],
+      "tags": [
+        "speech_understanding"
+      ],
+      "metrics": {
+        "stars": 6818,
+        "forks": 1045,
+        "language": "TypeScript",
+        "created_at": "2013-08-23T10:59:34Z",
+        "homepage": "https://www.talater.com/annyang/"
+      },
+      "score": 77.0,
+      "why_cn": "开源方向：语音理解；当前约 6,818 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "dc67f12e8495",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "speech recognition",
+        "speech-to-text"
+      ],
+      "creative_cn": "可快速复刻一个「语音理解」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "1a6c5e5e065d618c",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开源项目",
+      "resource_links": {
+        "code": "https://github.com/TalAter/annyang",
+        "project": "https://www.talater.com/annyang/"
+      },
+      "first_seen_at": "2026-10-13",
+      "last_seen_at": "2026-10-13"
+    },
+    {
+      "kind": "github",
+      "title": "ejsyk3xdp3t2o/wan3.0video-wan-3.0-video-api",
+      "url": "https://github.com/ejsyk3xdp3t2o/wan3.0video-wan-3.0-video-api",
+      "summary": "wan-3.0-video API (wan3.0video / wan 3.0 video): 480P $0.0329; 720P $0.0658; default $0.1315. Model id, api settings, curl and Python examples over an OpenAI-compatible gateway, $1 Topics: api, api-docs, apimart, openai-compatible, pay-as-you-go, per-second-pricing, text-to-video, wan-3-0-video, wan-3-0-video-api, wan3-0video, wan3-0video-api.",
+      "source": "GitHub",
+      "published_at": "2026-10-13T02:59:42Z",
+      "authors": [],
+      "tags": [
+        "video_generation"
+      ],
+      "metrics": {
+        "stars": 93,
+        "forks": 0,
+        "language": "Python",
+        "created_at": "2026-09-24T18:03:45Z",
+        "homepage": "https://go.apimart.ai/k-0831f3"
+      },
+      "score": 76.8,
+      "why_cn": "开源方向：视频生成；当前约 93 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "cea3a1245860",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "text-to-video"
+      ],
+      "creative_cn": "可快速复刻一个「视频生成」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "f92d9e778a51bc10",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开发工具",
+      "resource_links": {
+        "code": "https://github.com/ejsyk3xdp3t2o/wan3.0video-wan-3.0-video-api",
+        "project": "https://go.apimart.ai/k-0831f3"
+      },
+      "first_seen_at": "2026-10-13",
+      "last_seen_at": "2026-10-13"
+    },
+    {
+      "kind": "github",
+      "title": "iyqhcef3ffn/hailuo2.3-hailuo-2.3-gateway",
+      "url": "https://github.com/iyqhcef3ffn/hailuo2.3-hailuo-2.3-gateway",
+      "summary": "hailuo-2.3 API (hailuo2.3 / hailuo 2.3): default $0.0248; 1080P $0.0424. Model id, gateway settings, curl and Python examples over an OpenAI-compatible gateway, $1 minimum top-up. Topics: api-docs, apimart, gateway, hailuo-2-3, hailuo-2-3-api, hailuo-2-3-gateway, hailuo2-3, hailuo2-3-api, openai-compatible, pay-as-you-go, per-second-pricing, text-to-video.",
+      "source": "GitHub",
+      "published_at": "2026-10-13T02:51:30Z",
+      "authors": [],
+      "tags": [
+        "video_generation"
+      ],
+      "metrics": {
+        "stars": 91,
+        "forks": 0,
+        "language": "Python",
+        "created_at": "2026-09-24T18:06:02Z",
+        "homepage": "https://go.apimart.ai/k-97ac6d"
+      },
+      "score": 76.7,
+      "why_cn": "开源方向：视频生成；当前约 91 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "6fcb47feafae",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "text-to-video"
+      ],
+      "creative_cn": "可快速复刻一个「视频生成」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "1a82bb1d819780b7",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开发工具",
+      "resource_links": {
+        "code": "https://github.com/iyqhcef3ffn/hailuo2.3-hailuo-2.3-gateway",
+        "project": "https://go.apimart.ai/k-97ac6d"
+      },
+      "first_seen_at": "2026-10-13",
+      "last_seen_at": "2026-10-13"
+    },
+    {
+      "kind": "product",
+      "title": "Show HN: Mastershot – a free web-based video editor (WASM AI)",
+      "url": "https://mastershot.app/video-editor/",
+      "summary": "Independent product or creative prototype shared on Hacker News.",
+      "source": "Hacker News",
+      "published_at": "2026-10-12T14:05:40Z",
+      "authors": [],
+      "tags": [
+        "video_editing"
+      ],
+      "metrics": {
+        "points": 2,
+        "comments": 0
+      },
+      "score": 64.3,
+      "why_cn": "产品方向：视频编辑/理解。已有可直接体验的 Demo；建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
+      "item_id": "0cc58486c8d6",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "video editor"
+      ],
+      "creative_cn": "可拆解其「视频编辑/理解」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
+      "enrichment_fingerprint": "4e094dd1d12d09a5",
+      "icon": "✂️",
+      "product_name_cn": "Show HN: Mastershot – a free web-based video editor (WASM AI)",
+      "company_cn": "Hacker News",
+      "what_is_it_cn": "一项围绕视频编辑/理解的产品、功能更新或创意工具，具体开放范围以原文为准。",
+      "resource_type_cn": "产品 / 功能",
+      "resource_links": {
+        "demo": "https://mastershot.app/video-editor/",
+        "discussion": "https://news.ycombinator.com/item?id=50056670"
+      },
+      "first_seen_at": "2026-10-13",
+      "last_seen_at": "2026-10-13"
+    },
+    {
+      "kind": "product",
+      "title": "How AI Photo Animation Actually Works: A Hands-On Look at Image-to-Video Models",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQNE5oSXZmM2J4ZWdCTGFybjBnVTEyN0tDWDhZaC1hWWdqTDZwWFVWam5Mb2d6c0xEY19vSmlJMFYwMDVqVzNobVVlTlM1ZGNIQnItMEVhd2JmX2UtY1ppWDdSSFVsMWQtWlI4bWVIRHd6ekRkZm91OWR1bjI5dlpKZVNFd0pvLXNySDdvbFlnYmZXZjM2ZzAyRVJ5WHVoWkJGRlZKaFRR?oc=5",
+      "summary": "How AI Photo Animation Actually Works: A Hands-On Look at Image-to-Video Models TechBullion",
+      "source": "TechBullion",
+      "published_at": "2026-10-12T20:04:29Z",
+      "authors": [],
+      "tags": [
+        "video_generation"
+      ],
+      "metrics": {},
+      "score": 59.0,
+      "why_cn": "产品方向：视频生成。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
+      "item_id": "c1eba2033516",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "image-to-video"
+      ],
+      "creative_cn": "可拆解其「视频生成」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
+      "enrichment_fingerprint": "f497979d39c81250",
+      "icon": "🎬",
+      "product_name_cn": "How AI Photo Animation Actually Works: A Hands-On Look at Image-to-Video Models",
+      "company_cn": "TechBullion",
+      "what_is_it_cn": "一项围绕视频生成的产品、功能更新或创意工具，具体开放范围以原文为准。",
+      "resource_type_cn": "产品 / 功能",
+      "resource_links": {
+        "source": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQNE5oSXZmM2J4ZWdCTGFybjBnVTEyN0tDWDhZaC1hWWdqTDZwWFVWam5Mb2d6c0xEY19vSmlJMFYwMDVqVzNobVVlTlM1ZGNIQnItMEVhd2JmX2UtY1ppWDdSSFVsMWQtWlI4bWVIRHd6ekRkZm91OWR1bjI5dlpKZVNFd0pvLXNySDdvbFlnYmZXZjM2ZzAyRVJ5WHVoWkJGRlZKaFRR?oc=5"
+      },
+      "first_seen_at": "2026-10-13",
+      "last_seen_at": "2026-10-13"
+    },
+    {
+      "kind": "product",
+      "title": "10 Best AI Video Platforms for Business Content Creation",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPcnFZWUFEYVdNS1FnZGxyZjFCOFRlbkRiblNtU1pCMGpkVGEzVnBrRmpFRnNwZDNrTHdkclVvT3JsbnRaZlNzd0RnVXRZY243QlFSRHd4ZDBnaE1QSWtLOXdNaGtEM0N2QUZqbFVldlJkWkVSd3BVbjdfd3pReENxNDBsQUs3WGpS?oc=5",
+      "summary": "10 Best AI Video Platforms for Business Content Creation Techloy",
+      "source": "Techloy",
+      "published_at": "2026-10-12T19:48:44Z",
+      "authors": [],
+      "tags": [
+        "creator_tools"
+      ],
+      "metrics": {},
+      "score": 59.0,
+      "why_cn": "产品方向：创作者工具。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
+      "item_id": "95c6528c19fa",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "content creation"
+      ],
+      "creative_cn": "可拆解其「创作者工具」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
+      "enrichment_fingerprint": "198285d2bc9bbd32",
+      "icon": "🛠️",
+      "product_name_cn": "10 Best AI Video Platforms for Business Content Creation",
+      "company_cn": "Techloy",
+      "what_is_it_cn": "一项围绕创作者工具的产品、功能更新或创意工具，具体开放范围以原文为准。",
+      "resource_type_cn": "产品 / 功能",
+      "resource_links": {
+        "source": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPcnFZWUFEYVdNS1FnZGxyZjFCOFRlbkRiblNtU1pCMGpkVGEzVnBrRmpFRnNwZDNrTHdkclVvT3JsbnRaZlNzd0RnVXRZY243QlFSRHd4ZDBnaE1QSWtLOXdNaGtEM0N2QUZqbFVldlJkWkVSd3BVbjdfd3pReENxNDBsQUs3WGpS?oc=5"
+      },
+      "first_seen_at": "2026-10-13",
+      "last_seen_at": "2026-10-13"
+    },
+    {
+      "kind": "product",
+      "title": "JavaScript speech recognition tutorial: Build voice UX",
+      "url": "https://elevenlabs.io/blog/javascript-speech-recognition-tutorial",
+      "summary": "Build live transcription and voice commands with this JavaScript speech recognition tutorial. Learn the Web Speech API and when to switch to ElevenAPI.",
+      "source": "ElevenLabs",
+      "published_at": "2026-10-12T12:00:00Z",
+      "authors": [],
+      "tags": [
+        "speech_understanding"
+      ],
+      "metrics": {},
+      "score": 58.0,
+      "why_cn": "产品方向：语音理解。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
+      "item_id": "40edabb2b8d8",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "speech recognition"
+      ],
+      "creative_cn": "可拆解其「语音理解」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
+      "enrichment_fingerprint": "456cd1f087d3f405",
+      "icon": "🗣️",
+      "product_name_cn": "JavaScript speech recognition tutorial: Build voice UX",
+      "company_cn": "ElevenLabs",
+      "what_is_it_cn": "一项围绕语音理解的产品、功能更新或创意工具，具体开放范围以原文为准。",
+      "resource_type_cn": "产品 / 功能",
+      "resource_links": {
+        "source": "https://elevenlabs.io/blog/javascript-speech-recognition-tutorial"
+      },
+      "first_seen_at": "2026-10-13",
+      "last_seen_at": "2026-10-13"
+    },
+    {
+      "kind": "product",
+      "title": "Galleri5 launches AI filmmaking platform, targets global VFX and animation market",
+      "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQdlpxclBFVkprTEZIMGVnNVNYdTFLVmVXZFotbG4zNHh4cjFPemFNQ0oxWlc3RllKejJaRllsOVRyT0tSdjRFdzRwbElKQWY1cXJ1MTQ0bnNQUEFnWndTWDM1MjRsSGIzY0ZfX0l0bEpnU0lfUkxRYS1idjQzVm5MamFVSm1mVFo4TktYSFFLTUx3RkFaNmNzT05iQkZNYnFsU1ZidkJwbTF5UDJlYlFhbk5DMHV3UDZPRGNyRXE2dDJfaTJBLTRzaDVhVmt0UWRWWU4taWdoNmw0dEsySGtEY0t3Z3VmdVRDQjJRNHlRcHBwa0FVUlHSAfsBQVVfeXFMTl9HN09qVWx5Nm41UGNtUE9fb2dPSkFXc3IxbTFSWVg2WGVSTXNHNUFMbzZyd1YweUlMVGJrZlp6V2tYV1JlMkZVS3FTZXpTV1FwUmxCTkhlbFhBOHpBSDM0RlhIalE3VTVaZUpHMzRrTVB3QTVtOWNmY3Z3ckJFTkgyZzM5TlpNN2JXSkppRlVaLWVQdXRhcE52NFVFT2NpSFVMRGhUTnBWSDVVZUNRSTdQcTBBY1YzNU05N20zMkpfcml6eW1VOVlpc3BxSDNIVlFNbXBiSEdvcnRBSmtQOEc0b3ZxLUw1UGk4ZHdfMWdRMHJ1Wmsyd0I5N2M?oc=5",
+      "summary": "Galleri5 launches AI filmmaking platform, targets global VFX and animation market The Economic Times",
+      "source": "The Economic Times",
+      "published_at": "2026-10-12T11:38:55Z",
+      "authors": [],
+      "tags": [
+        "creator_tools"
+      ],
+      "metrics": {},
+      "score": 58.0,
+      "why_cn": "产品方向：创作者工具。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
+      "item_id": "9cddab4b2ac0",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "ai filmmaking",
+        "ai film"
+      ],
+      "creative_cn": "可拆解其「创作者工具」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
+      "enrichment_fingerprint": "53942d8ce435f850",
+      "icon": "🛠️",
+      "product_name_cn": "Galleri5 launches AI filmmaking platform, targets global VFX and animation market",
+      "company_cn": "The Economic Times",
+      "what_is_it_cn": "一项围绕创作者工具的产品、功能更新或创意工具，具体开放范围以原文为准。",
+      "resource_type_cn": "产品 / 功能",
+      "resource_links": {
+        "source": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQdlpxclBFVkprTEZIMGVnNVNYdTFLVmVXZFotbG4zNHh4cjFPemFNQ0oxWlc3RllKejJaRllsOVRyT0tSdjRFdzRwbElKQWY1cXJ1MTQ0bnNQUEFnWndTWDM1MjRsSGIzY0ZfX0l0bEpnU0lfUkxRYS1idjQzVm5MamFVSm1mVFo4TktYSFFLTUx3RkFaNmNzT05iQkZNYnFsU1ZidkJwbTF5UDJlYlFhbk5DMHV3UDZPRGNyRXE2dDJfaTJBLTRzaDVhVmt0UWRWWU4taWdoNmw0dEsySGtEY0t3Z3VmdVRDQjJRNHlRcHBwa0FVUlHSAfsBQVVfeXFMTl9HN09qVWx5Nm41UGNtUE9fb2dPSkFXc3IxbTFSWVg2WGVSTXNHNUFMbzZyd1YweUlMVGJrZlp6V2tYV1JlMkZVS3FTZXpTV1FwUmxCTkhlbFhBOHpBSDM0RlhIalE3VTVaZUpHMzRrTVB3QTVtOWNmY3Z3ckJFTkgyZzM5TlpNN2JXSkppRlVaLWVQdXRhcE52NFVFT2NpSFVMRGhUTnBWSDVVZUNRSTdQcTBBY1YzNU05N20zMkpfcml6eW1VOVlpc3BxSDNIVlFNbXBiSEdvcnRBSmtQOEc0b3ZxLUw1UGk4ZHdfMWdRMHJ1Wmsyd0I5N2M?oc=5"
+      },
+      "first_seen_at": "2026-10-13",
+      "last_seen_at": "2026-10-13"
+    },
+    {
+      "kind": "product",
+      "title": "Voice Cloning Market to Reach USD 29.8 Billion by 2036, South",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPWDQtRHMxVzltQjBpR2JuSDRDR3pUY3R5RnVCeHdZS2d5MGhMOWt1eUl1WnpaSkw1dHBmOVBxRlk3RHdmdVFfYk5wVXVFWVdKZVhPTEgyWkdCb3ozU1hDOF9oSDlUTG1NVUV4UmJEVTI5YUt5eUxYTDNQSGh4YmlKTnY3NjJncS1ZRHFlRlRTVl81dXl3N1B1MU4tYnA?oc=5",
+      "summary": "Voice Cloning Market to Reach USD 29.8 Billion by 2036, South openPR.com",
+      "source": "openPR.com",
+      "published_at": "2026-10-12T06:58:57Z",
+      "authors": [],
+      "tags": [
+        "speech_generation"
+      ],
+      "metrics": {},
+      "score": 57.4,
+      "why_cn": "产品方向：语音生成。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
+      "item_id": "2330834635ca",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "voice cloning"
+      ],
+      "creative_cn": "可拆解其「语音生成」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
+      "enrichment_fingerprint": "d702bffa62866409",
+      "icon": "🎙️",
+      "product_name_cn": "Voice Cloning Market to Reach USD 29.8 Billion by 2036, South",
+      "company_cn": "openPR.com",
+      "what_is_it_cn": "一项围绕语音生成的产品、功能更新或创意工具，具体开放范围以原文为准。",
+      "resource_type_cn": "产品 / 功能",
+      "resource_links": {
+        "source": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPWDQtRHMxVzltQjBpR2JuSDRDR3pUY3R5RnVCeHdZS2d5MGhMOWt1eUl1WnpaSkw1dHBmOVBxRlk3RHdmdVFfYk5wVXVFWVdKZVhPTEgyWkdCb3ozU1hDOF9oSDlUTG1NVUV4UmJEVTI5YUt5eUxYTDNQSGh4YmlKTnY3NjJncS1ZRHFlRlRTVl81dXl3N1B1MU4tYnA?oc=5"
+      },
+      "first_seen_at": "2026-10-13",
+      "last_seen_at": "2026-10-13"
+    },
+    {
+      "kind": "product",
+      "title": "Best AI Music Video Generators for Independent Musicians in 2026: A Practical Comparison",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6acda898c46f40f09ca7e50b61bae1fc&url=https%3a%2f%2fourculturemag.com%2fbest-ai-music-video-generators-for-independent-musicians-in-2026-a-practical-comparison%2f&c=17456823394211821638&mkt=en-us",
+      "summary": "BeatViz is the best fit in this comparison for independent musicians who want to turn a finished song into a complete AI music video with structured scene planning and timeline editing. Seedance 2.5 ...",
+      "source": "Bing News",
+      "published_at": "2026-10-12T06:27:00Z",
+      "authors": [],
+      "tags": [
+        "multimodal_creation"
+      ],
+      "metrics": {},
+      "score": 57.3,
+      "why_cn": "产品方向：跨模态创作。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
+      "item_id": "0735e7b354d4",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "music video"
+      ],
+      "creative_cn": "可拆解其「跨模态创作」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
+      "enrichment_fingerprint": "f7507fd309e23cdf",
+      "icon": "✨",
+      "product_name_cn": "Best AI Music Video Generators for Independent Musicians in 2026: A Practical Comparison",
+      "company_cn": "Bing News",
+      "what_is_it_cn": "一项围绕跨模态创作的产品、功能更新或创意工具，具体开放范围以原文为准。",
+      "resource_type_cn": "产品 / 功能",
+      "resource_links": {
+        "source": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6acda898c46f40f09ca7e50b61bae1fc&url=https%3a%2f%2fourculturemag.com%2fbest-ai-music-video-generators-for-independent-musicians-in-2026-a-practical-comparison%2f&c=17456823394211821638&mkt=en-us"
+      },
+      "first_seen_at": "2026-10-13",
+      "last_seen_at": "2026-10-13"
+    },
     {
       "kind": "github",
       "title": "storytold/filmcraft",
@@ -45,6 +444,47 @@
     },
     {
       "kind": "github",
+      "title": "drowzeys/keys-Wasserman-Slate-AI-Studio-powered-by-TensorFold-Mac-DGXSpark",
+      "url": "https://github.com/drowzeys/keys-Wasserman-Slate-AI-Studio-powered-by-TensorFold-Mac-DGXSpark",
+      "summary": "keys-Wasserman Slate AI Studio powered by TensorFold: an AI film studio for Mac and NVIDIA DGX Spark. Plan a film like a crew (Slate workflow by Sam Wasserman), render Qwen-Image-2.1 images Turbo and MiniMax H3 / FastH3 video with sound on TensorFold. Topics: ai-filmmaking, apple-silicon, dgx-spark, fasth3, lora, minimax-h3, mlx, qwen-image, slate, tensorfold, text-to-video.",
+      "source": "GitHub",
+      "published_at": "2026-10-13T03:37:41Z",
+      "authors": [],
+      "tags": [
+        "creator_tools",
+        "video_generation"
+      ],
+      "metrics": {
+        "stars": 95,
+        "forks": 9,
+        "language": "Python",
+        "created_at": "2026-10-04T17:40:44Z",
+        "homepage": ""
+      },
+      "score": 84.9,
+      "why_cn": "开源方向：创作者工具、视频生成；当前约 95 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "46d39f1c3c08",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "ai film",
+        "text-to-video"
+      ],
+      "creative_cn": "可快速复刻一个「创作者工具 + 视频生成」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "7e4df0cb9fb5dccf",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开源项目",
+      "resource_links": {
+        "code": "https://github.com/drowzeys/keys-Wasserman-Slate-AI-Studio-powered-by-TensorFold-Mac-DGXSpark"
+      },
+      "first_seen_at": "2026-10-12",
+      "last_seen_at": "2026-10-13"
+    },
+    {
+      "kind": "github",
       "title": "nyosegawa/speech.cpp",
       "url": "https://github.com/nyosegawa/speech.cpp",
       "summary": "Speech synthesis, speech recognition and voice activity detection for voice conversation, in C++ on ggml: Qwen3-TTS, Irodori-TTS, Qwen3-ASR, ReazonSpeech, parakeet and Silero VAD on Metal, Vulkan and the CPU, with an OpenAI-compatible server and live transcription. Topics: asr, cpp, ggml, gguf, irodori-tts, metal, parakeet, qwen3-asr, qwen3-tts, reazonspeech, silero-vad, speech-recognition, speech-synthesis, text-to-speech, tts, voice-activity-detection, vulkan.",
@@ -81,47 +521,6 @@
       "resource_type_cn": "开源项目",
       "resource_links": {
         "code": "https://github.com/nyosegawa/speech.cpp"
-      },
-      "first_seen_at": "2026-10-12",
-      "last_seen_at": "2026-10-12"
-    },
-    {
-      "kind": "github",
-      "title": "drowzeys/keys-Wasserman-Slate-AI-Studio-powered-by-TensorFold-Mac-DGXSpark",
-      "url": "https://github.com/drowzeys/keys-Wasserman-Slate-AI-Studio-powered-by-TensorFold-Mac-DGXSpark",
-      "summary": "keys-Wasserman Slate AI Studio powered by TensorFold: an AI film studio for Mac and NVIDIA DGX Spark. Plan a film like a crew (Slate workflow by Sam Wasserman), render Qwen-Image-2.1 images Turbo and MiniMax H3 / FastH3 video with sound on TensorFold. Topics: ai-filmmaking, apple-silicon, dgx-spark, fasth3, lora, minimax-h3, mlx, qwen-image, slate, tensorfold, text-to-video.",
-      "source": "GitHub",
-      "published_at": "2026-10-11T22:06:57Z",
-      "authors": [],
-      "tags": [
-        "creator_tools",
-        "video_generation"
-      ],
-      "metrics": {
-        "stars": 87,
-        "forks": 7,
-        "language": "Python",
-        "created_at": "2026-10-04T17:40:44Z",
-        "homepage": ""
-      },
-      "score": 84.2,
-      "why_cn": "开源方向：创作者工具、视频生成；当前约 87 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
-      "item_id": "46d39f1c3c08",
-      "title_cn": "",
-      "summary_cn": "",
-      "keywords_cn": [
-        "ai film",
-        "text-to-video"
-      ],
-      "creative_cn": "可快速复刻一个「创作者工具 + 视频生成」最小工作流，并记录部署成本、速度与可控参数。",
-      "enrichment_fingerprint": "7e4df0cb9fb5dccf",
-      "icon": "🧩",
-      "product_name_cn": "",
-      "company_cn": "",
-      "what_is_it_cn": "",
-      "resource_type_cn": "开源项目",
-      "resource_links": {
-        "code": "https://github.com/drowzeys/keys-Wasserman-Slate-AI-Studio-powered-by-TensorFold-Mac-DGXSpark"
       },
       "first_seen_at": "2026-10-12",
       "last_seen_at": "2026-10-12"
@@ -424,172 +823,6 @@
     },
     {
       "kind": "product",
-      "title": "Text to Video AI for Tech Reviews and Digital Stories",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPanpRdk1xbnpCWFR1YVV0Y1BPcXFleUtyZnoyWHBNa3QyWlB6aS13Yi02OGFxQi1vUE1rWEYzaHpUQm9BWTNld1VocWxPRlNnSnR6X3BoSFNVZFU5bl9obW9xRW9jdVdjWWFFZERqbUlEOHhkcDFrd05tZmd2MkRNT1FJUm8?oc=5",
-      "summary": "Text to Video AI for Tech Reviews and Digital Stories TechPorn",
-      "source": "TechPorn",
-      "published_at": "2026-10-11T19:57:07Z",
-      "authors": [],
-      "tags": [
-        "video_generation"
-      ],
-      "metrics": {},
-      "score": 59.2,
-      "why_cn": "产品方向：视频生成。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
-      "item_id": "7909e186792b",
-      "title_cn": "",
-      "summary_cn": "",
-      "keywords_cn": [
-        "text to video"
-      ],
-      "creative_cn": "可拆解其「视频生成」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
-      "enrichment_fingerprint": "b7fb11a76eff0e0c",
-      "icon": "🎬",
-      "product_name_cn": "Text to Video AI for Tech Reviews and Digital Stories",
-      "company_cn": "TechPorn",
-      "what_is_it_cn": "一项围绕视频生成的产品、功能更新或创意工具，具体开放范围以原文为准。",
-      "resource_type_cn": "产品 / 功能",
-      "resource_links": {
-        "source": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPanpRdk1xbnpCWFR1YVV0Y1BPcXFleUtyZnoyWHBNa3QyWlB6aS13Yi02OGFxQi1vUE1rWEYzaHpUQm9BWTNld1VocWxPRlNnSnR6X3BoSFNVZFU5bl9obW9xRW9jdVdjWWFFZERqbUlEOHhkcDFrd05tZmd2MkRNT1FJUm8?oc=5"
-      },
-      "first_seen_at": "2026-10-12",
-      "last_seen_at": "2026-10-12"
-    },
-    {
-      "kind": "product",
-      "title": "The inference platform for generative media and world models",
-      "url": "https://news.google.com/rss/articles/CBMiPEFVX3lxTE0yeWhPckRVWTctRExnMUlwQXVoZk1nUmtCalc1RVlvNzgyMzk4RDVZc0lodDk3Z2JOZmhvUA?oc=5",
-      "summary": "The inference platform for generative media and world models Fal.ai",
-      "source": "Fal.ai",
-      "published_at": "2026-10-11T19:42:03Z",
-      "authors": [],
-      "tags": [
-        "video_generation"
-      ],
-      "metrics": {},
-      "score": 59.1,
-      "why_cn": "产品方向：视频生成。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
-      "item_id": "7234e08596a6",
-      "title_cn": "",
-      "summary_cn": "",
-      "keywords_cn": [
-        "world model"
-      ],
-      "creative_cn": "可拆解其「视频生成」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
-      "enrichment_fingerprint": "b7dc3294baef9b38",
-      "icon": "🎬",
-      "product_name_cn": "The inference platform for generative media and world models",
-      "company_cn": "Fal.ai",
-      "what_is_it_cn": "一项围绕视频生成的产品、功能更新或创意工具，具体开放范围以原文为准。",
-      "resource_type_cn": "产品 / 功能",
-      "resource_links": {
-        "source": "https://news.google.com/rss/articles/CBMiPEFVX3lxTE0yeWhPckRVWTctRExnMUlwQXVoZk1nUmtCalc1RVlvNzgyMzk4RDVZc0lodDk3Z2JOZmhvUA?oc=5"
-      },
-      "first_seen_at": "2026-10-12",
-      "last_seen_at": "2026-10-12"
-    },
-    {
-      "kind": "product",
-      "title": "Voice Cloning, Phishing Cost Trader ₹50 Lakh",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNLWtud3dWMzZ2bGJaV29wTURrTkl4VE53VXFOMW5WZk93QS1TNXdORFR5Rk5xMU5NZGRsbTJqUHJiNFRZM29VQU9menVNdldNbFlNNXJOaElFcXg3SjZqS1NKbGhtakQtczcxUFk3UFVVSW1VX2pjUndjcFQ0cjNKUnk4Nzk3c0Y3M0Q0VERKQjN5a1VHSW80M2Rzd3ktSV95ZWN1d1gwdjFoRVU4bEY4Tkpod25pQ3PSAbwBQVVfeXFMT2llbUJMc3l2SHpCczEtenhPMk1XemQxc1RiZkI4T2hMT3BueHJSMEdhWHlKd3BNb045TVRwSU1tZ1AxVlZVSlVkU1NvOFBWUlIwWUxjS1FnSC1NSTZic3hiV3YwQ0tSQmpBeW5XRkZpT2Zvd2VmczdqSm9TMHFMamRWQ0lfNjh4WHFEWHJNSy1CakNyeHVzT18xYW91ZHJvTlF2NlJubVoxdk85VjY0ZTdMM1NYUHJ5czh3SEU?oc=5",
-      "summary": "Voice Cloning, Phishing Cost Trader ₹50 Lakh The Times of India",
-      "source": "The Times of India",
-      "published_at": "2026-10-11T19:22:00Z",
-      "authors": [],
-      "tags": [
-        "speech_generation"
-      ],
-      "metrics": {},
-      "score": 59.1,
-      "why_cn": "产品方向：语音生成。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
-      "item_id": "9bc15702ab22",
-      "title_cn": "",
-      "summary_cn": "",
-      "keywords_cn": [
-        "voice cloning"
-      ],
-      "creative_cn": "可拆解其「语音生成」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
-      "enrichment_fingerprint": "a106e3ca23965ce3",
-      "icon": "🎙️",
-      "product_name_cn": "Voice Cloning, Phishing Cost Trader ₹50 Lakh",
-      "company_cn": "The Times of India",
-      "what_is_it_cn": "一项围绕语音生成的产品、功能更新或创意工具，具体开放范围以原文为准。",
-      "resource_type_cn": "产品 / 功能",
-      "resource_links": {
-        "source": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNLWtud3dWMzZ2bGJaV29wTURrTkl4VE53VXFOMW5WZk93QS1TNXdORFR5Rk5xMU5NZGRsbTJqUHJiNFRZM29VQU9menVNdldNbFlNNXJOaElFcXg3SjZqS1NKbGhtakQtczcxUFk3UFVVSW1VX2pjUndjcFQ0cjNKUnk4Nzk3c0Y3M0Q0VERKQjN5a1VHSW80M2Rzd3ktSV95ZWN1d1gwdjFoRVU4bEY4Tkpod25pQ3PSAbwBQVVfeXFMT2llbUJMc3l2SHpCczEtenhPMk1XemQxc1RiZkI4T2hMT3BueHJSMEdhWHlKd3BNb045TVRwSU1tZ1AxVlZVSlVkU1NvOFBWUlIwWUxjS1FnSC1NSTZic3hiV3YwQ0tSQmpBeW5XRkZpT2Zvd2VmczdqSm9TMHFMamRWQ0lfNjh4WHFEWHJNSy1CakNyeHVzT18xYW91ZHJvTlF2NlJubVoxdk85VjY0ZTdMM1NYUHJ5czh3SEU?oc=5"
-      },
-      "first_seen_at": "2026-10-12",
-      "last_seen_at": "2026-10-12"
-    },
-    {
-      "kind": "product",
-      "title": "AI Avatar Blueprint",
-      "url": "https://news.google.com/rss/articles/CBMiO0FVX3lxTFBrTHRDbkZObVdIM3Jlc3duWXB0RGJiYm9iNVpLWjI4NEJ1QThlbHgybkVwS3VBM1h5VDBr?oc=5",
-      "summary": "AI Avatar Blueprint Howl.link",
-      "source": "Howl.link",
-      "published_at": "2026-10-11T17:28:37Z",
-      "authors": [],
-      "tags": [
-        "avatar_lipsync"
-      ],
-      "metrics": {},
-      "score": 58.9,
-      "why_cn": "产品方向：数字人/口型。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
-      "item_id": "4aa93093c446",
-      "title_cn": "",
-      "summary_cn": "",
-      "keywords_cn": [
-        "ai avatar"
-      ],
-      "creative_cn": "可拆解其「数字人/口型」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
-      "enrichment_fingerprint": "e65b359ad46bcba7",
-      "icon": "🧑‍🎤",
-      "product_name_cn": "AI Avatar Blueprint",
-      "company_cn": "Howl.link",
-      "what_is_it_cn": "一项围绕数字人/口型的产品、功能更新或创意工具，具体开放范围以原文为准。",
-      "resource_type_cn": "产品 / 功能",
-      "resource_links": {
-        "source": "https://news.google.com/rss/articles/CBMiO0FVX3lxTFBrTHRDbkZObVdIM3Jlc3duWXB0RGJiYm9iNVpLWjI4NEJ1QThlbHgybkVwS3VBM1h5VDBr?oc=5"
-      },
-      "first_seen_at": "2026-10-12",
-      "last_seen_at": "2026-10-12"
-    },
-    {
-      "kind": "product",
-      "title": "Session Report: AI Filmmaking & Career Webinar",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBHMlRBUDNmSGplb2FnYTNPUXV0S2wyZ0ZFWjZHMUw4VmFrRkdvUjhZTDZFbXZlaTJDSzZWVUNzbEpORXNBTWsyVnJKQ2MwNVVPQXFxN3d5X0dxQWxhWVBrWkQzV2Z6MjJ6SVJHUTJQYW9DaDFITk1Mb3d1ZTRVT3c?oc=5",
-      "summary": "Session Report: AI Filmmaking & Career Webinar MarkHub24",
-      "source": "MarkHub24",
-      "published_at": "2026-10-11T07:44:52Z",
-      "authors": [],
-      "tags": [
-        "creator_tools"
-      ],
-      "metrics": {},
-      "score": 57.7,
-      "why_cn": "产品方向：创作者工具。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
-      "item_id": "694d7523433c",
-      "title_cn": "",
-      "summary_cn": "",
-      "keywords_cn": [
-        "ai filmmaking",
-        "ai film"
-      ],
-      "creative_cn": "可拆解其「创作者工具」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
-      "enrichment_fingerprint": "ed229f814b7fbf64",
-      "icon": "🛠️",
-      "product_name_cn": "Session Report: AI Filmmaking & Career Webinar",
-      "company_cn": "MarkHub24",
-      "what_is_it_cn": "一项围绕创作者工具的产品、功能更新或创意工具，具体开放范围以原文为准。",
-      "resource_type_cn": "产品 / 功能",
-      "resource_links": {
-        "source": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBHMlRBUDNmSGplb2FnYTNPUXV0S2wyZ0ZFWjZHMUw4VmFrRkdvUjhZTDZFbXZlaTJDSzZWVUNzbEpORXNBTWsyVnJKQ2MwNVVPQXFxN3d5X0dxQWxhWVBrWkQzV2Z6MjJ6SVJHUTJQYW9DaDFITk1Mb3d1ZTRVT3c?oc=5"
-      },
-      "first_seen_at": "2026-10-12",
-      "last_seen_at": "2026-10-12"
-    },
-    {
-      "kind": "product",
       "title": "Apple Acqui-Hires Huxe, Licensing AI Podcast Technology From Raiza Martin: how 16 outlets framed it",
       "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQckkwMW9rTXBzNUZBbVE3V3RUWENPQmpsMENySkpVRjVBcEtsNy0yMW1Qd25UTmlCTGtpYlhNeDJBczY0TE5CSkJfMnhDRWFkNDlOLVd6NVFkTkFfM0xlLUpnXzkxWlhEUDBLc3RYQVl5WVJrTlctTjhBRC15ODNNTWhLOEZ5dTl6QmRYNWpPT2prdGlZeGcxRmJFMlFacWRsR1dLVENyUkhXRFJ2Q28xYzRkN3VpNGJZOHg2eEhMYVRvSTJJVWUtVXNLNTNWbHJFV29ScVIyTmd5M2RGNy1z?oc=5",
       "summary": "Apple Acqui-Hires Huxe, Licensing AI Podcast Technology From Raiza Martin: how 16 outlets framed it NewsCord",
@@ -620,6 +853,105 @@
       },
       "first_seen_at": "2026-10-12",
       "last_seen_at": "2026-10-12"
+    },
+    {
+      "kind": "product",
+      "title": "Text to Video AI for Tech Reviews and Digital Stories",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPanpRdk1xbnpCWFR1YVV0Y1BPcXFleUtyZnoyWHBNa3QyWlB6aS13Yi02OGFxQi1vUE1rWEYzaHpUQm9BWTNld1VocWxPRlNnSnR6X3BoSFNVZFU5bl9obW9xRW9jdVdjWWFFZERqbUlEOHhkcDFrd05tZmd2MkRNT1FJUm8?oc=5",
+      "summary": "Text to Video AI for Tech Reviews and Digital Stories TechPorn",
+      "source": "TechPorn",
+      "published_at": "2026-10-11T19:57:07Z",
+      "authors": [],
+      "tags": [
+        "video_generation"
+      ],
+      "metrics": {},
+      "score": 56.0,
+      "why_cn": "产品方向：视频生成。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
+      "item_id": "7909e186792b",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "text to video"
+      ],
+      "creative_cn": "可拆解其「视频生成」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
+      "enrichment_fingerprint": "b7fb11a76eff0e0c",
+      "icon": "🎬",
+      "product_name_cn": "Text to Video AI for Tech Reviews and Digital Stories",
+      "company_cn": "TechPorn",
+      "what_is_it_cn": "一项围绕视频生成的产品、功能更新或创意工具，具体开放范围以原文为准。",
+      "resource_type_cn": "产品 / 功能",
+      "resource_links": {
+        "source": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPanpRdk1xbnpCWFR1YVV0Y1BPcXFleUtyZnoyWHBNa3QyWlB6aS13Yi02OGFxQi1vUE1rWEYzaHpUQm9BWTNld1VocWxPRlNnSnR6X3BoSFNVZFU5bl9obW9xRW9jdVdjWWFFZERqbUlEOHhkcDFrd05tZmd2MkRNT1FJUm8?oc=5"
+      },
+      "first_seen_at": "2026-10-12",
+      "last_seen_at": "2026-10-13"
+    },
+    {
+      "kind": "product",
+      "title": "The inference platform for generative media and world models",
+      "url": "https://news.google.com/rss/articles/CBMiPEFVX3lxTE0yeWhPckRVWTctRExnMUlwQXVoZk1nUmtCalc1RVlvNzgyMzk4RDVZc0lodDk3Z2JOZmhvUA?oc=5",
+      "summary": "The inference platform for generative media and world models Fal.ai",
+      "source": "Fal.ai",
+      "published_at": "2026-10-11T19:42:03Z",
+      "authors": [],
+      "tags": [
+        "video_generation"
+      ],
+      "metrics": {},
+      "score": 56.0,
+      "why_cn": "产品方向：视频生成。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
+      "item_id": "7234e08596a6",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "world model"
+      ],
+      "creative_cn": "可拆解其「视频生成」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
+      "enrichment_fingerprint": "b7dc3294baef9b38",
+      "icon": "🎬",
+      "product_name_cn": "The inference platform for generative media and world models",
+      "company_cn": "Fal.ai",
+      "what_is_it_cn": "一项围绕视频生成的产品、功能更新或创意工具，具体开放范围以原文为准。",
+      "resource_type_cn": "产品 / 功能",
+      "resource_links": {
+        "source": "https://news.google.com/rss/articles/CBMiPEFVX3lxTE0yeWhPckRVWTctRExnMUlwQXVoZk1nUmtCalc1RVlvNzgyMzk4RDVZc0lodDk3Z2JOZmhvUA?oc=5"
+      },
+      "first_seen_at": "2026-10-12",
+      "last_seen_at": "2026-10-13"
+    },
+    {
+      "kind": "product",
+      "title": "Voice Cloning, Phishing Cost Trader ₹50 Lakh",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNLWtud3dWMzZ2bGJaV29wTURrTkl4VE53VXFOMW5WZk93QS1TNXdORFR5Rk5xMU5NZGRsbTJqUHJiNFRZM29VQU9menVNdldNbFlNNXJOaElFcXg3SjZqS1NKbGhtakQtczcxUFk3UFVVSW1VX2pjUndjcFQ0cjNKUnk4Nzk3c0Y3M0Q0VERKQjN5a1VHSW80M2Rzd3ktSV95ZWN1d1gwdjFoRVU4bEY4Tkpod25pQ3PSAbwBQVVfeXFMT2llbUJMc3l2SHpCczEtenhPMk1XemQxc1RiZkI4T2hMT3BueHJSMEdhWHlKd3BNb045TVRwSU1tZ1AxVlZVSlVkU1NvOFBWUlIwWUxjS1FnSC1NSTZic3hiV3YwQ0tSQmpBeW5XRkZpT2Zvd2VmczdqSm9TMHFMamRWQ0lfNjh4WHFEWHJNSy1CakNyeHVzT18xYW91ZHJvTlF2NlJubVoxdk85VjY0ZTdMM1NYUHJ5czh3SEU?oc=5",
+      "summary": "Voice Cloning, Phishing Cost Trader ₹50 Lakh The Times of India",
+      "source": "The Times of India",
+      "published_at": "2026-10-11T19:22:00Z",
+      "authors": [],
+      "tags": [
+        "speech_generation"
+      ],
+      "metrics": {},
+      "score": 56.0,
+      "why_cn": "产品方向：语音生成。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
+      "item_id": "9bc15702ab22",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "voice cloning"
+      ],
+      "creative_cn": "可拆解其「语音生成」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
+      "enrichment_fingerprint": "a106e3ca23965ce3",
+      "icon": "🎙️",
+      "product_name_cn": "Voice Cloning, Phishing Cost Trader ₹50 Lakh",
+      "company_cn": "The Times of India",
+      "what_is_it_cn": "一项围绕语音生成的产品、功能更新或创意工具，具体开放范围以原文为准。",
+      "resource_type_cn": "产品 / 功能",
+      "resource_links": {
+        "source": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNLWtud3dWMzZ2bGJaV29wTURrTkl4VE53VXFOMW5WZk93QS1TNXdORFR5Rk5xMU5NZGRsbTJqUHJiNFRZM29VQU9menVNdldNbFlNNXJOaElFcXg3SjZqS1NKbGhtakQtczcxUFk3UFVVSW1VX2pjUndjcFQ0cjNKUnk4Nzk3c0Y3M0Q0VERKQjN5a1VHSW80M2Rzd3ktSV95ZWN1d1gwdjFoRVU4bEY4Tkpod25pQ3PSAbwBQVVfeXFMT2llbUJMc3l2SHpCczEtenhPMk1XemQxc1RiZkI4T2hMT3BueHJSMEdhWHlKd3BNb045TVRwSU1tZ1AxVlZVSlVkU1NvOFBWUlIwWUxjS1FnSC1NSTZic3hiV3YwQ0tSQmpBeW5XRkZpT2Zvd2VmczdqSm9TMHFMamRWQ0lfNjh4WHFEWHJNSy1CakNyeHVzT18xYW91ZHJvTlF2NlJubVoxdk85VjY0ZTdMM1NYUHJ5czh3SEU?oc=5"
+      },
+      "first_seen_at": "2026-10-12",
+      "last_seen_at": "2026-10-13"
     },
     {
       "kind": "paper",
@@ -708,6 +1040,39 @@
       },
       "first_seen_at": "2026-10-12",
       "last_seen_at": "2026-10-12"
+    },
+    {
+      "kind": "product",
+      "title": "AI Avatar Blueprint",
+      "url": "https://news.google.com/rss/articles/CBMiO0FVX3lxTFBrTHRDbkZObVdIM3Jlc3duWXB0RGJiYm9iNVpLWjI4NEJ1QThlbHgybkVwS3VBM1h5VDBr?oc=5",
+      "summary": "AI Avatar Blueprint Howl.link",
+      "source": "Howl.link",
+      "published_at": "2026-10-11T17:28:37Z",
+      "authors": [],
+      "tags": [
+        "avatar_lipsync"
+      ],
+      "metrics": {},
+      "score": 55.7,
+      "why_cn": "产品方向：数字人/口型。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
+      "item_id": "4aa93093c446",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "ai avatar"
+      ],
+      "creative_cn": "可拆解其「数字人/口型」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
+      "enrichment_fingerprint": "e65b359ad46bcba7",
+      "icon": "🧑‍🎤",
+      "product_name_cn": "AI Avatar Blueprint",
+      "company_cn": "Howl.link",
+      "what_is_it_cn": "一项围绕数字人/口型的产品、功能更新或创意工具，具体开放范围以原文为准。",
+      "resource_type_cn": "产品 / 功能",
+      "resource_links": {
+        "source": "https://news.google.com/rss/articles/CBMiO0FVX3lxTFBrTHRDbkZObVdIM3Jlc3duWXB0RGJiYm9iNVpLWjI4NEJ1QThlbHgybkVwS3VBM1h5VDBr?oc=5"
+      },
+      "first_seen_at": "2026-10-12",
+      "last_seen_at": "2026-10-13"
     },
     {
       "kind": "paper",
@@ -1520,6 +1885,40 @@
       "last_seen_at": "2026-10-12"
     },
     {
+      "kind": "product",
+      "title": "Session Report: AI Filmmaking & Career Webinar",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBHMlRBUDNmSGplb2FnYTNPUXV0S2wyZ0ZFWjZHMUw4VmFrRkdvUjhZTDZFbXZlaTJDSzZWVUNzbEpORXNBTWsyVnJKQ2MwNVVPQXFxN3d5X0dxQWxhWVBrWkQzV2Z6MjJ6SVJHUTJQYW9DaDFITk1Mb3d1ZTRVT3c?oc=5",
+      "summary": "Session Report: AI Filmmaking & Career Webinar MarkHub24",
+      "source": "MarkHub24",
+      "published_at": "2026-10-11T07:44:52Z",
+      "authors": [],
+      "tags": [
+        "creator_tools"
+      ],
+      "metrics": {},
+      "score": 54.5,
+      "why_cn": "产品方向：创作者工具。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
+      "item_id": "694d7523433c",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "ai filmmaking",
+        "ai film"
+      ],
+      "creative_cn": "可拆解其「创作者工具」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
+      "enrichment_fingerprint": "ed229f814b7fbf64",
+      "icon": "🛠️",
+      "product_name_cn": "Session Report: AI Filmmaking & Career Webinar",
+      "company_cn": "MarkHub24",
+      "what_is_it_cn": "一项围绕创作者工具的产品、功能更新或创意工具，具体开放范围以原文为准。",
+      "resource_type_cn": "产品 / 功能",
+      "resource_links": {
+        "source": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBHMlRBUDNmSGplb2FnYTNPUXV0S2wyZ0ZFWjZHMUw4VmFrRkdvUjhZTDZFbXZlaTJDSzZWVUNzbEpORXNBTWsyVnJKQ2MwNVVPQXFxN3d5X0dxQWxhWVBrWkQzV2Z6MjJ6SVJHUTJQYW9DaDFITk1Mb3d1ZTRVT3c?oc=5"
+      },
+      "first_seen_at": "2026-10-12",
+      "last_seen_at": "2026-10-13"
+    },
+    {
       "kind": "paper",
       "title": "What Visual Representations Do World Action Models Need?",
       "url": "https://arxiv.org/abs/2610.13024v1",
@@ -1741,7 +2140,7 @@
         "video_editing"
       ],
       "metrics": {},
-      "score": 64.3,
+      "score": 61.1,
       "why_cn": "产品方向：语音生成、视频编辑/理解。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
       "item_id": "aaff1ca1f62f",
       "title_cn": "",
@@ -1761,7 +2160,7 @@
         "source": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPR2lfUkFvSUQzVDVianF5SzZSSFViNUlSRUhRSHRkU050OFJoSjVjX2VFaUk3c0FvVEhpdHNtUVpLRlh5a1JMVEEyZWo1REp4dFpCWXZfNlR2OGFwdW1ha3R1cVZaZ0tpUG1iUkNZV0FJemhmNmlibVYwU2twTm9heWh2WVR6QW1vRGtB?oc=5"
       },
       "first_seen_at": "2026-10-11",
-      "last_seen_at": "2026-10-12"
+      "last_seen_at": "2026-10-13"
     },
     {
       "kind": "product",
@@ -1845,7 +2244,7 @@
         "avatar_lipsync"
       ],
       "metrics": {},
-      "score": 56.2,
+      "score": 53.1,
       "why_cn": "产品方向：数字人/口型。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
       "item_id": "edd3f3d52491",
       "title_cn": "",
@@ -1864,41 +2263,7 @@
         "source": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQVTE4WEowZ296OWVQVHM3aUhKM3RMQXAwb3lEOGwzVFNveXZmNVE4OHQxVVluWDdObm9PVG91TTRJMksyLXdsdzlXc3AzZlIzb3pNWVMtNXR3aHR4UGRRRUFQNHdhYUlFdmx2LTlnek5nVkxqamdkZEJEWHdJUUFqSHVvYzlIdktaQVpMNEJ0WmI3djRrcnRIYzdxV1N6REF6SkxEYkZrdDExb3VwWWNlc2xsUS1kbndKUTc5Q0hMYXM3TVpjOXVHSUtnZTVud05fNG5DdU5pR1JfMWwtOVJJajF0eUwtQWdr?oc=5"
       },
       "first_seen_at": "2026-10-11",
-      "last_seen_at": "2026-10-12"
-    },
-    {
-      "kind": "product",
-      "title": "Galleri5 takes AI filmmaking from television to the big screen",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWllDRVUxSFVKbzZuVkV0NHdaYmpNMUpWNG1ZQmtJNVpwUHA4UWg2VEdTYWtsNml2QTZHTlFrcElyWjFGaUlFV0pMRlhWcDNucUE4RmdFc04tQW1XeVhPMVlaNDBlYUR3STd2aXJITFZqdEUtYlVVb3hPcE1fTW9SVDNiX2pYbkk4UmRNbkFwV2pSNmoyNFJ2VlJ6aXVSSVJM?oc=5",
-      "summary": "Galleri5 takes AI filmmaking from television to the big screen Indian Television Dot Com",
-      "source": "Indian Television Dot Com",
-      "published_at": "2026-10-10T11:29:48Z",
-      "authors": [],
-      "tags": [
-        "creator_tools"
-      ],
-      "metrics": {},
-      "score": 55.1,
-      "why_cn": "产品方向：创作者工具。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
-      "item_id": "19e3bc609365",
-      "title_cn": "",
-      "summary_cn": "",
-      "keywords_cn": [
-        "ai filmmaking",
-        "ai film"
-      ],
-      "creative_cn": "可拆解其「创作者工具」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
-      "enrichment_fingerprint": "ba53dabb831a81bf",
-      "icon": "🛠️",
-      "product_name_cn": "Galleri5 takes AI filmmaking from television to the big screen",
-      "company_cn": "Indian Television Dot Com",
-      "what_is_it_cn": "一项围绕创作者工具的产品、功能更新或创意工具，具体开放范围以原文为准。",
-      "resource_type_cn": "产品 / 功能",
-      "resource_links": {
-        "source": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWllDRVUxSFVKbzZuVkV0NHdaYmpNMUpWNG1ZQmtJNVpwUHA4UWg2VEdTYWtsNml2QTZHTlFrcElyWjFGaUlFV0pMRlhWcDNucUE4RmdFc04tQW1XeVhPMVlaNDBlYUR3STd2aXJITFZqdEUtYlVVb3hPcE1fTW9SVDNiX2pYbkk4UmRNbkFwV2pSNmoyNFJ2VlJ6aXVSSVJM?oc=5"
-      },
-      "first_seen_at": "2026-10-11",
-      "last_seen_at": "2026-10-12"
+      "last_seen_at": "2026-10-13"
     },
     {
       "kind": "product",
@@ -1932,6 +2297,40 @@
       },
       "first_seen_at": "2026-10-11",
       "last_seen_at": "2026-10-12"
+    },
+    {
+      "kind": "product",
+      "title": "Galleri5 takes AI filmmaking from television to the big screen",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWllDRVUxSFVKbzZuVkV0NHdaYmpNMUpWNG1ZQmtJNVpwUHA4UWg2VEdTYWtsNml2QTZHTlFrcElyWjFGaUlFV0pMRlhWcDNucUE4RmdFc04tQW1XeVhPMVlaNDBlYUR3STd2aXJITFZqdEUtYlVVb3hPcE1fTW9SVDNiX2pYbkk4UmRNbkFwV2pSNmoyNFJ2VlJ6aXVSSVJM?oc=5",
+      "summary": "Galleri5 takes AI filmmaking from television to the big screen Indian Television Dot Com",
+      "source": "Indian Television Dot Com",
+      "published_at": "2026-10-10T11:29:48Z",
+      "authors": [],
+      "tags": [
+        "creator_tools"
+      ],
+      "metrics": {},
+      "score": 52.0,
+      "why_cn": "产品方向：创作者工具。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
+      "item_id": "19e3bc609365",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "ai filmmaking",
+        "ai film"
+      ],
+      "creative_cn": "可拆解其「创作者工具」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
+      "enrichment_fingerprint": "ba53dabb831a81bf",
+      "icon": "🛠️",
+      "product_name_cn": "Galleri5 takes AI filmmaking from television to the big screen",
+      "company_cn": "Indian Television Dot Com",
+      "what_is_it_cn": "一项围绕创作者工具的产品、功能更新或创意工具，具体开放范围以原文为准。",
+      "resource_type_cn": "产品 / 功能",
+      "resource_links": {
+        "source": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWllDRVUxSFVKbzZuVkV0NHdaYmpNMUpWNG1ZQmtJNVpwUHA4UWg2VEdTYWtsNml2QTZHTlFrcElyWjFGaUlFV0pMRlhWcDNucUE4RmdFc04tQW1XeVhPMVlaNDBlYUR3STd2aXJITFZqdEUtYlVVb3hPcE1fTW9SVDNiX2pYbkk4UmRNbkFwV2pSNmoyNFJ2VlJ6aXVSSVJM?oc=5"
+      },
+      "first_seen_at": "2026-10-11",
+      "last_seen_at": "2026-10-13"
     },
     {
       "kind": "product",
@@ -2051,7 +2450,7 @@
       "url": "https://github.com/guaardvark/guaardvark",
       "summary": "Self-hosted AI studio on your own GPU: chat with your files (RAG), screen and browser agents, coding swarms, LoRA training, an MCP server for Claude Code and Cursor, and local video, image, music and voice generation. No telemetry. Topics: ai-agents, claude-code, claude-code-plugin, comfyui, computer-use, image-generation, local-ai, local-first, lora-training, mcp, mcp-server, multi-agent, music-generation, ollama, rag, self-hosted, text-to-speech, text-to-video, video-generation, voice-cloning.",
       "source": "GitHub",
-      "published_at": "2026-10-12T01:11:54Z",
+      "published_at": "2026-10-12T22:02:09Z",
       "authors": [],
       "tags": [
         "speech_generation",
@@ -2064,7 +2463,7 @@
         "created_at": "2026-03-11T04:47:45Z",
         "homepage": "https://guaardvark.com"
       },
-      "score": 78.7,
+      "score": 78.2,
       "why_cn": "开源方向：语音生成、视频生成；当前约 260 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
       "item_id": "b3703a742647",
       "title_cn": "",
@@ -2085,7 +2484,7 @@
         "project": "https://guaardvark.com"
       },
       "first_seen_at": "2026-10-10",
-      "last_seen_at": "2026-10-12"
+      "last_seen_at": "2026-10-13"
     },
     {
       "kind": "github",
@@ -3884,7 +4283,7 @@
       "url": "https://github.com/Alndaly/Mosael",
       "summary": "Local-first desktop AI video studio for macOS & Windows: generate with your own API keys (Seedance, Kling, Veo, Wan) or ComfyUI, edit on a timeline, clone voices, dub & lip-sync, make talking-photo videos, automate product promos and shorts. 本地优先的 AI 视频创作软件。 Topics: ai-dubbing, ai-video, ai-video-editor, ai-video-generator, comfyui, comfyui-frontend, desktop-app, digital-human, electron, infinite-canvas, kling, lip-sync, local-first, seedance, talking-head, text-to-video, tts, video-editor, video-translation, voice-cloning.",
       "source": "GitHub",
-      "published_at": "2026-10-12T02:30:40Z",
+      "published_at": "2026-10-12T17:12:59Z",
       "authors": [],
       "tags": [
         "avatar_lipsync",
@@ -3897,7 +4296,7 @@
         "created_at": "2026-07-16T12:52:55Z",
         "homepage": "https://mosael.com"
       },
-      "score": 81.4,
+      "score": 80.1,
       "why_cn": "开源方向：数字人/口型、视频生成；当前约 15 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
       "item_id": "3e0469131153",
       "title_cn": "",
@@ -3918,7 +4317,7 @@
         "project": "https://mosael.com"
       },
       "first_seen_at": "2026-10-08",
-      "last_seen_at": "2026-10-12"
+      "last_seen_at": "2026-10-13"
     },
     {
       "kind": "github",
@@ -9547,20 +9946,20 @@
       "url": "https://github.com/yuxino/Mimi",
       "summary": "把电脑或麦克风声音转成实时翻译字幕。Live translated subtitles from computer or microphone audio. Topics: android, audio-capture, desktop-app, linux, live-captions, live-translation, macos, pipewire, pulseaudio, real-time-translation, realtime-translator, speech-recognition, speech-to-text, subtitle-overlay, subtitles, system-audio, tauri, ubuntu, windows.",
       "source": "GitHub",
-      "published_at": "2026-10-12T01:51:52Z",
+      "published_at": "2026-10-13T02:03:12Z",
       "authors": [],
       "tags": [
         "speech_understanding"
       ],
       "metrics": {
-        "stars": 654,
-        "forks": 33,
+        "stars": 663,
+        "forks": 37,
         "language": "Rust",
         "created_at": "2026-07-22T13:06:57Z",
         "homepage": "https://mimi.yuxino.cn"
       },
-      "score": 80.6,
-      "why_cn": "开源方向：语音理解；当前约 654 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "score": 80.5,
+      "why_cn": "开源方向：语音理解；当前约 663 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
       "item_id": "66f0a8d6dae3",
       "title_cn": "",
       "summary_cn": "",
@@ -9579,7 +9978,7 @@
         "project": "https://mimi.yuxino.cn"
       },
       "first_seen_at": "2026-10-05",
-      "last_seen_at": "2026-10-12"
+      "last_seen_at": "2026-10-13"
     },
     {
       "kind": "github",
@@ -13320,22 +13719,22 @@
       "kind": "github",
       "title": "leemysw/yovoice",
       "url": "https://github.com/leemysw/yovoice",
-      "summary": "Open-source voice creation for macOS and Windows. Local TTS, voice cloning, and emotion control — no cloud APIs or per-character fees. Topics: audio, desktop-app, macos, text-to-speech, tts, voice, voice-cloning, windows.",
+      "summary": "Open-source local AI audio & music studio for macOS & Windows. Voice cloning, songs with lyrics, and multi-track scores — 100% offline, zero API fees. Topics: ai-music, audio, desktop-app, local-ai, macos, mcp, midi, music-generation, offline-ai, skill, text-to-speech, tts, voice, voice-cloning, voice-cloning-app, windows.",
       "source": "GitHub",
-      "published_at": "2026-10-11T01:39:03Z",
+      "published_at": "2026-10-13T03:14:58Z",
       "authors": [],
       "tags": [
         "speech_generation"
       ],
       "metrics": {
-        "stars": 800,
-        "forks": 62,
+        "stars": 1121,
+        "forks": 81,
         "language": "TypeScript",
         "created_at": "2026-09-15T15:18:35Z",
         "homepage": "https://yovoice.leemysw.com"
       },
-      "score": 81.0,
-      "why_cn": "开源方向：语音生成；当前约 800 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "score": 81.7,
+      "why_cn": "开源方向：语音生成；当前约 1,121 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
       "item_id": "43679f8bfebe",
       "title_cn": "",
       "summary_cn": "",
@@ -13344,18 +13743,18 @@
         "voice cloning"
       ],
       "creative_cn": "可快速复刻一个「语音生成」最小工作流，并记录部署成本、速度与可控参数。",
-      "enrichment_fingerprint": "b003fb5ee03d825d",
+      "enrichment_fingerprint": "93860090c58b83dd",
       "icon": "🧩",
       "product_name_cn": "",
       "company_cn": "",
       "what_is_it_cn": "",
-      "resource_type_cn": "开源项目",
+      "resource_type_cn": "开发工具",
       "resource_links": {
         "code": "https://github.com/leemysw/yovoice",
         "project": "https://yovoice.leemysw.com"
       },
       "first_seen_at": "2026-10-01",
-      "last_seen_at": "2026-10-11"
+      "last_seen_at": "2026-10-13"
     },
     {
       "kind": "github",
@@ -18833,6 +19232,47 @@
     },
     {
       "kind": "github",
+      "title": "animede/Realtime_Narration_Video",
+      "url": "https://github.com/animede/Realtime_Narration_Video",
+      "summary": "Real-time talking character on a single RTX 5090 — LTX-2.5 22B + local LLM + TTS, fully local. First video ~2.6s after Enter. Topics: diffusers, lip-sync, local-ai, ltx-video, pytorch, real-time, talking-head, text-to-video, tts, video-generation.",
+      "source": "GitHub",
+      "published_at": "2026-10-13T02:16:32Z",
+      "authors": [],
+      "tags": [
+        "avatar_lipsync",
+        "video_generation"
+      ],
+      "metrics": {
+        "stars": 39,
+        "forks": 9,
+        "language": "Python",
+        "created_at": "2026-09-03T12:28:06Z",
+        "homepage": ""
+      },
+      "score": 83.0,
+      "why_cn": "开源方向：数字人/口型、视频生成；当前约 39 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "e0e1030e7701",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "lip-sync",
+        "text-to-video"
+      ],
+      "creative_cn": "可快速复刻一个「数字人/口型 + 视频生成」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "0203c04401ba48fb",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开源项目",
+      "resource_links": {
+        "code": "https://github.com/animede/Realtime_Narration_Video"
+      },
+      "first_seen_at": "2026-09-28",
+      "last_seen_at": "2026-10-13"
+    },
+    {
+      "kind": "github",
       "title": "HoppouAI/Breeze-TTS-2.cpp",
       "url": "https://github.com/HoppouAI/Breeze-TTS-2.cpp",
       "summary": "Bilingual English and Mandarin text to speech in C++ and GGUF. Voice design, cloning, direction and experimental voice conversion. Vulkan backend, streaming HTTP and WebSocket server, web UI and a C API. Topics: breeze-tts, cpp, ggml, gguf, inference, qwen3, speech-synthesis, streaming, text-to-speech, tts, voice-cloning, voice-conversion, vulkan, websocket.",
@@ -18913,47 +19353,6 @@
       },
       "first_seen_at": "2026-09-28",
       "last_seen_at": "2026-10-03"
-    },
-    {
-      "kind": "github",
-      "title": "animede/Realtime_Narration_Video",
-      "url": "https://github.com/animede/Realtime_Narration_Video",
-      "summary": "Real-time talking character on a single RTX 5090 — LTX-2.5 22B + local LLM + TTS, fully local. First video ~2.6s after Enter. Topics: diffusers, lip-sync, local-ai, ltx-video, pytorch, real-time, talking-head, text-to-video, tts, video-generation.",
-      "source": "GitHub",
-      "published_at": "2026-10-08T10:42:28Z",
-      "authors": [],
-      "tags": [
-        "avatar_lipsync",
-        "video_generation"
-      ],
-      "metrics": {
-        "stars": 39,
-        "forks": 9,
-        "language": "Python",
-        "created_at": "2026-09-03T12:28:06Z",
-        "homepage": ""
-      },
-      "score": 75.3,
-      "why_cn": "开源方向：数字人/口型、视频生成；当前约 39 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
-      "item_id": "e0e1030e7701",
-      "title_cn": "",
-      "summary_cn": "",
-      "keywords_cn": [
-        "lip-sync",
-        "text-to-video"
-      ],
-      "creative_cn": "可快速复刻一个「数字人/口型 + 视频生成」最小工作流，并记录部署成本、速度与可控参数。",
-      "enrichment_fingerprint": "0203c04401ba48fb",
-      "icon": "🧩",
-      "product_name_cn": "",
-      "company_cn": "",
-      "what_is_it_cn": "",
-      "resource_type_cn": "开源项目",
-      "resource_links": {
-        "code": "https://github.com/animede/Realtime_Narration_Video"
-      },
-      "first_seen_at": "2026-09-28",
-      "last_seen_at": "2026-10-11"
     },
     {
       "kind": "github",
@@ -19885,22 +20284,22 @@
       "kind": "github",
       "title": "krillinai/OpenCreator",
       "url": "https://github.com/krillinai/OpenCreator",
-      "summary": "Formerly KrillinAI. Open-source AI workspace for creators, powered by Codex. Video translation, create videos, images, voice, avatars, and edits with Agents in one place. Suitable for your Social Media like YouTube, TikTok, Instagram, etc. Topics: agent-skills, codex-cli, deskop-app, dubbing, image-generation, localization, skills, tts, video-editing, video-generation, video-transcription, video-translation.",
+      "summary": "Formerly KrillinAI, VideoTranslation and Dubbing Tool. Open-source AI workspace for creators, powered by Codex. Video translation, create videos, images, voice, avatars, and edits with Agents in one place. Suitable for your Social Media like YouTube, TikTok, Instagram, etc. Topics: agent-skills, codex-cli, deskop-app, dubbing, image-generation, localization, skills, tts, video-editing, video-generation, video-transcription, video-translation.",
       "source": "GitHub",
-      "published_at": "2026-10-10T02:13:00Z",
+      "published_at": "2026-10-13T03:32:25Z",
       "authors": [],
       "tags": [
         "video_editing"
       ],
       "metrics": {
-        "stars": 12670,
-        "forks": 1306,
+        "stars": 12832,
+        "forks": 1349,
         "language": "TypeScript",
         "created_at": "2024-12-17T01:59:22Z",
-        "homepage": "https://www.open-creator.ai/"
+        "homepage": "https://www.open-creator.ai"
       },
-      "score": 78.4,
-      "why_cn": "开源方向：视频编辑/理解；当前约 12,670 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "score": 78.5,
+      "why_cn": "开源方向：视频编辑/理解；当前约 12,832 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
       "item_id": "b391bd4a868c",
       "title_cn": "",
       "summary_cn": "",
@@ -19908,7 +20307,7 @@
         "video translation"
       ],
       "creative_cn": "可快速复刻一个「视频编辑/理解」最小工作流，并记录部署成本、速度与可控参数。",
-      "enrichment_fingerprint": "8b7534d57d9a5f8f",
+      "enrichment_fingerprint": "33c862be19f3ec9c",
       "icon": "🧩",
       "product_name_cn": "",
       "company_cn": "",
@@ -19916,10 +20315,10 @@
       "resource_type_cn": "开源项目",
       "resource_links": {
         "code": "https://github.com/krillinai/OpenCreator",
-        "project": "https://www.open-creator.ai/"
+        "project": "https://www.open-creator.ai"
       },
       "first_seen_at": "2026-09-27",
-      "last_seen_at": "2026-10-10"
+      "last_seen_at": "2026-10-13"
     },
     {
       "kind": "github",
@@ -20371,48 +20770,6 @@
     },
     {
       "kind": "github",
-      "title": "met4citizen/TalkingHead",
-      "url": "https://github.com/met4citizen/TalkingHead",
-      "summary": "Talking Head (3D): A JavaScript class for real-time lip-sync using full-body 3D avatars. Topics: 3d-avatar, lip-sync, talking-avatar, talking-head, text-to-speech.",
-      "source": "GitHub",
-      "published_at": "2026-10-11T05:25:06Z",
-      "authors": [],
-      "tags": [
-        "avatar_lipsync",
-        "speech_generation"
-      ],
-      "metrics": {
-        "stars": 1602,
-        "forks": 356,
-        "language": "JavaScript",
-        "created_at": "2023-08-14T10:59:50Z",
-        "homepage": ""
-      },
-      "score": 79.8,
-      "why_cn": "开源方向：数字人/口型、语音生成；当前约 1,602 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
-      "item_id": "a72a60b0384b",
-      "title_cn": "",
-      "summary_cn": "",
-      "keywords_cn": [
-        "talking head",
-        "lip-sync",
-        "text-to-speech"
-      ],
-      "creative_cn": "可快速复刻一个「数字人/口型 + 语音生成」最小工作流，并记录部署成本、速度与可控参数。",
-      "enrichment_fingerprint": "2c225092d200384b",
-      "icon": "🧩",
-      "product_name_cn": "",
-      "company_cn": "",
-      "what_is_it_cn": "",
-      "resource_type_cn": "开源项目",
-      "resource_links": {
-        "code": "https://github.com/met4citizen/TalkingHead"
-      },
-      "first_seen_at": "2026-09-26",
-      "last_seen_at": "2026-10-12"
-    },
-    {
-      "kind": "github",
       "title": "rtk-ai/vox",
       "url": "https://github.com/rtk-ai/vox",
       "summary": "A universal AI toolkit for high-performance Speech-to-Text (STT) and Text-to-Speech (TTS) processing, designed for low-latency and easy model integration. Topics: ai, audio-processing, deep-learning, experimental, real-time, speech-to-text, text-to-speech.",
@@ -20451,6 +20808,48 @@
       },
       "first_seen_at": "2026-09-26",
       "last_seen_at": "2026-10-06"
+    },
+    {
+      "kind": "github",
+      "title": "met4citizen/TalkingHead",
+      "url": "https://github.com/met4citizen/TalkingHead",
+      "summary": "Talking Head (3D): A JavaScript class for real-time lip-sync using full-body 3D avatars. Topics: 3d-avatar, lip-sync, talking-avatar, talking-head, text-to-speech.",
+      "source": "GitHub",
+      "published_at": "2026-10-11T05:25:06Z",
+      "authors": [],
+      "tags": [
+        "avatar_lipsync",
+        "speech_generation"
+      ],
+      "metrics": {
+        "stars": 1604,
+        "forks": 356,
+        "language": "JavaScript",
+        "created_at": "2023-08-14T10:59:50Z",
+        "homepage": ""
+      },
+      "score": 76.6,
+      "why_cn": "开源方向：数字人/口型、语音生成；当前约 1,604 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "a72a60b0384b",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "talking head",
+        "lip-sync",
+        "text-to-speech"
+      ],
+      "creative_cn": "可快速复刻一个「数字人/口型 + 语音生成」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "2c225092d200384b",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开源项目",
+      "resource_links": {
+        "code": "https://github.com/met4citizen/TalkingHead"
+      },
+      "first_seen_at": "2026-09-26",
+      "last_seen_at": "2026-10-13"
     },
     {
       "kind": "github",
@@ -28758,21 +29157,21 @@
       "url": "https://github.com/slng-ai/unmute",
       "summary": "Voice agents in YAML, compiled to Pipecat or LiveKit. Production code you own, deployed anywhere. Topics: ai-agents, ai-voice-agent, cli, compiler, conversational-ai, livekit, llm, mcp, pipecat, speech-to-text, stt, telephony, text-to-speech, tts, voice-agent, voice-agent-framework, voice-agents, voice-ai, voice-ai-agents, yaml.",
       "source": "GitHub",
-      "published_at": "2026-10-07T14:53:52Z",
+      "published_at": "2026-10-12T20:24:05Z",
       "authors": [],
       "tags": [
         "speech_generation",
         "speech_understanding"
       ],
       "metrics": {
-        "stars": 23,
+        "stars": 27,
         "forks": 1,
         "language": "Go",
         "created_at": "2026-07-15T14:04:01Z",
         "homepage": "https://unmute.ai"
       },
-      "score": 80.7,
-      "why_cn": "开源方向：语音生成、语音理解；当前约 23 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "score": 81.6,
+      "why_cn": "开源方向：语音生成、语音理解；当前约 27 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
       "item_id": "3db9d74b83ca",
       "title_cn": "",
       "summary_cn": "",
@@ -28792,7 +29191,7 @@
         "project": "https://unmute.ai"
       },
       "first_seen_at": "2026-09-19",
-      "last_seen_at": "2026-10-08"
+      "last_seen_at": "2026-10-13"
     },
     {
       "kind": "github",
@@ -37504,39 +37903,6 @@
       "last_seen_at": "2026-09-10"
     },
     {
-      "kind": "product",
-      "title": "Best AI Avatar Generators of 2026: Top 10 Tools Tested",
-      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5XWjF3MUtvSXFHclhtVzVyMU1heXhaSGg4eWN6eUxiYnVkay1pcUlTa0x2Y21KeDMxNk1Kck1GZ0RoWGR5YXFZc0tGY3FvczVueG0tRTExTEYtcDJSWE5veFhiUQ?oc=5",
-      "summary": "Best AI Avatar Generators of 2026: Top 10 Tools Tested HeyGen",
-      "source": "HeyGen",
-      "published_at": "2026-10-11T19:36:25Z",
-      "authors": [],
-      "tags": [
-        "avatar_lipsync"
-      ],
-      "metrics": {},
-      "score": 59.1,
-      "why_cn": "产品方向：数字人/口型。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
-      "item_id": "add8833be863",
-      "title_cn": "",
-      "summary_cn": "",
-      "keywords_cn": [
-        "ai avatar"
-      ],
-      "creative_cn": "可拆解其「数字人/口型」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
-      "enrichment_fingerprint": "923638fe5c77b208",
-      "icon": "🧑‍🎤",
-      "product_name_cn": "Best AI Avatar Generators of 2026: Top 10 Tools Tested",
-      "company_cn": "HeyGen",
-      "what_is_it_cn": "一项围绕数字人/口型的产品、功能更新或创意工具，具体开放范围以原文为准。",
-      "resource_type_cn": "产品 / 功能",
-      "resource_links": {
-        "source": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5XWjF3MUtvSXFHclhtVzVyMU1heXhaSGg4eWN6eUxiYnVkay1pcUlTa0x2Y21KeDMxNk1Kck1GZ0RoWGR5YXFZc0tGY3FvczVueG0tRTExTEYtcDJSWE5veFhiUQ?oc=5"
-      },
-      "first_seen_at": "2026-09-10",
-      "last_seen_at": "2026-10-12"
-    },
-    {
       "kind": "paper",
       "title": "TASTE2: Text-Aligned Speech Modeling and Deployment toward Full-Duplex Voice Interaction",
       "url": "https://arxiv.org/abs/2609.08956v1",
@@ -37775,6 +38141,39 @@
       },
       "first_seen_at": "2026-09-10",
       "last_seen_at": "2026-09-10"
+    },
+    {
+      "kind": "product",
+      "title": "Best AI Avatar Generators of 2026: Top 10 Tools Tested",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5XWjF3MUtvSXFHclhtVzVyMU1heXhaSGg4eWN6eUxiYnVkay1pcUlTa0x2Y21KeDMxNk1Kck1GZ0RoWGR5YXFZc0tGY3FvczVueG0tRTExTEYtcDJSWE5veFhiUQ?oc=5",
+      "summary": "Best AI Avatar Generators of 2026: Top 10 Tools Tested HeyGen",
+      "source": "HeyGen",
+      "published_at": "2026-10-12T16:45:13Z",
+      "authors": [],
+      "tags": [
+        "avatar_lipsync"
+      ],
+      "metrics": {},
+      "score": 58.6,
+      "why_cn": "产品方向：数字人/口型。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
+      "item_id": "add8833be863",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "ai avatar"
+      ],
+      "creative_cn": "可拆解其「数字人/口型」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
+      "enrichment_fingerprint": "923638fe5c77b208",
+      "icon": "🧑‍🎤",
+      "product_name_cn": "Best AI Avatar Generators of 2026: Top 10 Tools Tested",
+      "company_cn": "HeyGen",
+      "what_is_it_cn": "一项围绕数字人/口型的产品、功能更新或创意工具，具体开放范围以原文为准。",
+      "resource_type_cn": "产品 / 功能",
+      "resource_links": {
+        "source": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5XWjF3MUtvSXFHclhtVzVyMU1heXhaSGg4eWN6eUxiYnVkay1pcUlTa0x2Y21KeDMxNk1Kck1GZ0RoWGR5YXFZc0tGY3FvczVueG0tRTExTEYtcDJSWE5veFhiUQ?oc=5"
+      },
+      "first_seen_at": "2026-09-10",
+      "last_seen_at": "2026-10-13"
     },
     {
       "kind": "paper",
@@ -46639,20 +47038,20 @@
       "url": "https://github.com/modelscope/FunASR",
       "summary": "Open-source speech recognition toolkit for training, inference, streaming ASR, VAD, punctuation, speaker diarization pipelines, and OpenAI-compatible/MCP serving. Topics: asr, audio, chinese, emotion-recognition, funasr, mcp-server, multilingual-asr, openai-compatible-api, paraformer, punctuation, pytorch, real-time-asr, speaker-diarization, speech-recognition, speech-to-text, streaming-asr, transcription, vllm, voice-activity-detection, whisper-alternative.",
       "source": "GitHub",
-      "published_at": "2026-10-02T01:29:24Z",
+      "published_at": "2026-10-13T03:41:32Z",
       "authors": [],
       "tags": [
         "speech_understanding"
       ],
       "metrics": {
-        "stars": 20568,
-        "forks": 2055,
+        "stars": 20671,
+        "forks": 2077,
         "language": "Python",
         "created_at": "2022-11-24T02:28:11Z",
         "homepage": ""
       },
-      "score": 79.3,
-      "why_cn": "开源方向：语音理解；当前约 20,568 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "score": 79.4,
+      "why_cn": "开源方向：语音理解；当前约 20,671 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
       "item_id": "cfc63700b750",
       "title_cn": "",
       "summary_cn": "",
@@ -46672,7 +47071,7 @@
         "code": "https://github.com/modelscope/FunASR"
       },
       "first_seen_at": "2026-08-28",
-      "last_seen_at": "2026-10-02"
+      "last_seen_at": "2026-10-13"
     },
     {
       "kind": "github",
@@ -49590,6 +49989,49 @@
     },
     {
       "kind": "github",
+      "title": "GML-MMGroup/Blabber",
+      "url": "https://github.com/GML-MMGroup/Blabber",
+      "summary": "Blabber — 首个 Agentic 播客视频生成平台。一句提示词，生成一整期动画播客节目：AI 编写对白 · 双主持配音 · 逐帧口型同步 · 自动运镜剪辑，从想法到成片一站直达。Blabber — The first agentic podcast video generation platform. One prompt, a full animated podcast show: AI-written dialogue · dual-host voices · frame-accurate lip sync · automated camera direction & editing, from idea to final cut. Topics: agent, agentic-ai, animation, lip-sync, open-source, podcast, text-to-video, tts, video-generation.",
+      "source": "GitHub",
+      "published_at": "2026-10-12T03:29:13Z",
+      "authors": [],
+      "tags": [
+        "avatar_lipsync",
+        "video_generation"
+      ],
+      "metrics": {
+        "stars": 20,
+        "forks": 3,
+        "language": "Python",
+        "created_at": "2026-07-21T12:20:24Z",
+        "homepage": ""
+      },
+      "score": 78.9,
+      "why_cn": "开源方向：数字人/口型、视频生成；当前约 20 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "4682bb8dcc81",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "lip sync",
+        "lip-sync",
+        "video generation",
+        "text-to-video"
+      ],
+      "creative_cn": "可快速复刻一个「数字人/口型 + 视频生成」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "6df11b593d0a7419",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "工具 / 框架",
+      "resource_links": {
+        "code": "https://github.com/GML-MMGroup/Blabber"
+      },
+      "first_seen_at": "2026-08-25",
+      "last_seen_at": "2026-10-13"
+    },
+    {
+      "kind": "github",
       "title": "speechbrain/speechbrain",
       "url": "https://github.com/speechbrain/speechbrain",
       "summary": "A PyTorch-based Speech Toolkit Topics: asr, audio, audio-processing, deep-learning, huggingface, language-model, pytorch, speaker-diarization, speaker-recognition, speaker-verification, speech-enhancement, speech-processing, speech-recognition, speech-separation, speech-to-text, speech-toolkit, speechrecognition, spoken-language-understanding, transformers, voice-recognition.",
@@ -49679,21 +50121,21 @@
       "url": "https://github.com/timoncool/dub-studio",
       "summary": "Free offline AI video dubbing studio for Windows — voice cloning, translation, subtitles & on-screen-text localization. 100% local, one native .exe, zero Python. Topics: ai, ai-dubbing, ai-video, asr, dubbing, llama-cpp, local-ai, offline, portable, rust, speaker-diarization, speech-recognition, subtitles, tauri, text-to-speech, tts, video-dubbing, video-translation, voice-cloning, windows.",
       "source": "GitHub",
-      "published_at": "2026-10-11T20:09:09Z",
+      "published_at": "2026-10-13T00:38:13Z",
       "authors": [],
       "tags": [
         "speech_generation",
         "video_editing"
       ],
       "metrics": {
-        "stars": 154,
-        "forks": 25,
+        "stars": 158,
+        "forks": 27,
         "language": "Rust",
         "created_at": "2026-06-21T19:50:59Z",
         "homepage": "https://timoncool.github.io/dub-studio/"
       },
-      "score": 77.1,
-      "why_cn": "开源方向：语音生成、视频编辑/理解；当前约 154 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "score": 77.5,
+      "why_cn": "开源方向：语音生成、视频编辑/理解；当前约 158 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
       "item_id": "ea21a4dd4964",
       "title_cn": "",
       "summary_cn": "",
@@ -49714,7 +50156,7 @@
         "project": "https://timoncool.github.io/dub-studio/"
       },
       "first_seen_at": "2026-08-25",
-      "last_seen_at": "2026-10-12"
+      "last_seen_at": "2026-10-13"
     },
     {
       "kind": "github",
@@ -49756,49 +50198,6 @@
       },
       "first_seen_at": "2026-08-25",
       "last_seen_at": "2026-09-25"
-    },
-    {
-      "kind": "github",
-      "title": "GML-MMGroup/Blabber",
-      "url": "https://github.com/GML-MMGroup/Blabber",
-      "summary": "Blabber — 首个 Agentic 播客视频生成平台。一句提示词，生成一整期动画播客节目：AI 编写对白 · 双主持配音 · 逐帧口型同步 · 自动运镜剪辑，从想法到成片一站直达。Blabber — The first agentic podcast video generation platform. One prompt, a full animated podcast show: AI-written dialogue · dual-host voices · frame-accurate lip sync · automated camera direction & editing, from idea to final cut. Topics: agent, agentic-ai, animation, lip-sync, open-source, podcast, text-to-video, tts, video-generation.",
-      "source": "GitHub",
-      "published_at": "2026-09-08T03:39:36Z",
-      "authors": [],
-      "tags": [
-        "avatar_lipsync",
-        "video_generation"
-      ],
-      "metrics": {
-        "stars": 17,
-        "forks": 3,
-        "language": "Python",
-        "created_at": "2026-07-21T12:20:24Z",
-        "homepage": ""
-      },
-      "score": 76.2,
-      "why_cn": "开源方向：数字人/口型、视频生成；当前约 17 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
-      "item_id": "4682bb8dcc81",
-      "title_cn": "",
-      "summary_cn": "",
-      "keywords_cn": [
-        "lip sync",
-        "lip-sync",
-        "video generation",
-        "text-to-video"
-      ],
-      "creative_cn": "可快速复刻一个「数字人/口型 + 视频生成」最小工作流，并记录部署成本、速度与可控参数。",
-      "enrichment_fingerprint": "6df11b593d0a7419",
-      "icon": "🧩",
-      "product_name_cn": "",
-      "company_cn": "",
-      "what_is_it_cn": "",
-      "resource_type_cn": "工具 / 框架",
-      "resource_links": {
-        "code": "https://github.com/GML-MMGroup/Blabber"
-      },
-      "first_seen_at": "2026-08-25",
-      "last_seen_at": "2026-09-10"
     },
     {
       "kind": "github",
@@ -50350,21 +50749,21 @@
       "url": "https://github.com/IAHispano/Applio",
       "summary": "A simple, high-quality voice conversion tool focused on ease of use and performance. Topics: ai, applio, pytorch, rvc, speech, speech-to-speech, text-to-speech, tts, vc, vits, voice, voice-clone, voice-cloning, voice-conversion.",
       "source": "GitHub",
-      "published_at": "2026-10-11T22:00:27Z",
+      "published_at": "2026-10-12T21:50:09Z",
       "authors": [],
       "tags": [
         "speech_editing",
         "speech_generation"
       ],
       "metrics": {
-        "stars": 3823,
-        "forks": 608,
+        "stars": 3829,
+        "forks": 610,
         "language": "Python",
         "created_at": "2023-08-07T22:42:16Z",
         "homepage": "https://applio.org"
       },
-      "score": 83.6,
-      "why_cn": "开源方向：语音编辑/转换、语音生成；当前约 3,823 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "score": 83.4,
+      "why_cn": "开源方向：语音编辑/转换、语音生成；当前约 3,829 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
       "item_id": "8b75a7b3aaed",
       "title_cn": "",
       "summary_cn": "",
@@ -50384,7 +50783,7 @@
         "project": "https://applio.org"
       },
       "first_seen_at": "2026-08-24",
-      "last_seen_at": "2026-10-12"
+      "last_seen_at": "2026-10-13"
     },
     {
       "kind": "github",
@@ -50392,20 +50791,20 @@
       "url": "https://github.com/HBAI-Ltd/Toonflow-app",
       "summary": "短剧、漫剧制作工具 Toonflow：开源 AI 视频创作平台，集成剧本创作、智能分镜、角色与场景资产管理、图像生成和视频生成。融合无限画布、AI Agent 与可视化工作流，支持本地部署、自选模型、跨平台客户端、MCP 与插件扩展。Open-source AI short drama and motion comic creation tool with an infinite canvas, AI agents, storyboarding, image and video generation. Self-hosted and extensible, with a canvas-based approach similar to LibTV and TapNow. Topics: ai-agents, ai-comic, ai-content-creation, ai-filmmaking, ai-short-drama, generative-ai, image-generation, image-to-video, infinite-canvas, libtv, motion-comics, node-based-editor, open-source, short-drama, storyboarding, tapnow, text-to-image, text-to-video, video-generation, workflow-automation.",
       "source": "GitHub",
-      "published_at": "2026-10-10T07:42:23Z",
+      "published_at": "2026-10-12T10:00:25Z",
       "authors": [],
       "tags": [
         "video_generation"
       ],
       "metrics": {
-        "stars": 17121,
-        "forks": 3041,
+        "stars": 17408,
+        "forks": 3085,
         "language": "TypeScript",
         "created_at": "2026-01-29T10:25:45Z",
         "homepage": "https://toonflow.net"
       },
-      "score": 76.8,
-      "why_cn": "开源方向：视频生成；当前约 17,121 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "score": 76.9,
+      "why_cn": "开源方向：视频生成；当前约 17,408 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
       "item_id": "4a492f517c58",
       "title_cn": "",
       "summary_cn": "",
@@ -50426,7 +50825,7 @@
         "project": "https://toonflow.net"
       },
       "first_seen_at": "2026-08-24",
-      "last_seen_at": "2026-10-11"
+      "last_seen_at": "2026-10-13"
     },
     {
       "kind": "github",
@@ -50690,7 +51089,7 @@
       "url": "https://github.com/0xShug0/audio.cpp",
       "summary": "An all-in-one, pure C++ inference engine for audio models, powered by ggml. Supports TTS, STT, VAD, voice conversion, music generation, and more, with highly optimized performance. No Python dependency. Topics: ai, amd-gpu, apple-silicon, asr, audio, cpp, edge-ai, ggml, minimax-music3, music-generation, speech-analysis, speech-to-speech, speech-to-text, text-to-speech, tts, voice-ai, voice-cloning, voice-conversion, vulkan, yue2.",
       "source": "GitHub",
-      "published_at": "2026-10-11T23:33:36Z",
+      "published_at": "2026-10-13T03:22:47Z",
       "authors": [],
       "tags": [
         "music",
@@ -50699,14 +51098,14 @@
         "speech_understanding"
       ],
       "metrics": {
-        "stars": 3469,
-        "forks": 403,
+        "stars": 3491,
+        "forks": 407,
         "language": "C++",
         "created_at": "2026-06-23T15:40:46Z",
         "homepage": ""
       },
-      "score": 90.6,
-      "why_cn": "开源方向：音乐智能、语音编辑/转换、语音生成；当前约 3,469 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "score": 90.9,
+      "why_cn": "开源方向：音乐智能、语音编辑/转换、语音生成；当前约 3,491 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
       "item_id": "5c5fe1625dc4",
       "title_cn": "",
       "summary_cn": "",
@@ -50727,7 +51126,7 @@
         "code": "https://github.com/0xShug0/audio.cpp"
       },
       "first_seen_at": "2026-08-23",
-      "last_seen_at": "2026-10-12"
+      "last_seen_at": "2026-10-13"
     },
     {
       "kind": "github",
@@ -52511,7 +52910,7 @@
       "url": "https://github.com/debpalash/VoiceStudio",
       "summary": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages. Topics: ai, audiobook, cuda, dubbing, elevenlabs-alternative, huggingface, local-first, mlx, omnivoice-studio, speech-to-text, tauri, text-to-speech, transcription, translate, tts, voice-ai, voice-cloning, voice-generation, voicestudio, workflow.",
       "source": "GitHub",
-      "published_at": "2026-10-12T02:20:44Z",
+      "published_at": "2026-10-13T02:51:01Z",
       "authors": [],
       "tags": [
         "speech_generation",
@@ -52519,14 +52918,14 @@
         "video_editing"
       ],
       "metrics": {
-        "stars": 58874,
-        "forks": 6606,
+        "stars": 60644,
+        "forks": 6803,
         "language": "Python",
         "created_at": "2026-04-09T21:40:26Z",
         "homepage": "https://voicestudio.sh"
       },
-      "score": 95.0,
-      "why_cn": "开源方向：语音生成、语音理解、视频编辑/理解；当前约 58,874 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "score": 94.9,
+      "why_cn": "开源方向：语音生成、语音理解、视频编辑/理解；当前约 60,644 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
       "item_id": "1c9d47a97945",
       "title_cn": "",
       "summary_cn": "",
@@ -52548,7 +52947,7 @@
         "project": "https://voicestudio.sh"
       },
       "first_seen_at": "2026-08-20",
-      "last_seen_at": "2026-10-12"
+      "last_seen_at": "2026-10-13"
     },
     {
       "kind": "github",
@@ -52803,21 +53202,21 @@
       "url": "https://github.com/MartinDelophy/ai-video-editor",
       "summary": "Open-source, local-first video editor where creators and AI agents edit the same real timeline. Topics: agent-skills, ai-music, ai-video-editor, ai-voiceover, automatic-captions, browser-ai, joyvasa, liveportrait, modelscope, onnx, pwa, react, talking-avatar, text-to-speech, video-editor, video-processing, video-restoration, webassembly, webcodecs, webgpu.",
       "source": "GitHub",
-      "published_at": "2026-10-10T10:34:14Z",
+      "published_at": "2026-10-12T12:12:41Z",
       "authors": [],
       "tags": [
         "speech_generation",
         "video_editing"
       ],
       "metrics": {
-        "stars": 909,
-        "forks": 118,
+        "stars": 928,
+        "forks": 119,
         "language": "JavaScript",
         "created_at": "2026-07-09T04:43:11Z",
         "homepage": "https://video-editor.ai-creator.top/"
       },
       "score": 79.4,
-      "why_cn": "开源方向：语音生成、视频编辑/理解；当前约 909 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "why_cn": "开源方向：语音生成、视频编辑/理解；当前约 928 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
       "item_id": "b5c7dd224fd3",
       "title_cn": "",
       "summary_cn": "",
@@ -52837,7 +53236,7 @@
         "project": "https://video-editor.ai-creator.top/"
       },
       "first_seen_at": "2026-08-20",
-      "last_seen_at": "2026-10-11"
+      "last_seen_at": "2026-10-13"
     },
     {
       "kind": "github",
@@ -55205,6 +55604,50 @@
     },
     {
       "kind": "github",
+      "title": "MCERQUA/OpenVoiceUI",
+      "url": "https://github.com/MCERQUA/OpenVoiceUI",
+      "summary": "Voice-powered AI assistant platform — connect any LLM, any TTS, with a live web canvas, music generation, and agent orchestration using openclaw. Install: npx openvoiceui setup Topics: ai-agent, ai-assistant, ai-canvas, ai-voice, docker, flask, llm, music-generation, openclaw, pinokio, self-hosted, speech-to-text, stt, text-to-speech, tts, voice-agent, voice-ai, voice-assistant, voice-interface.",
+      "source": "GitHub",
+      "published_at": "2026-10-13T02:40:20Z",
+      "authors": [],
+      "tags": [
+        "music",
+        "speech_generation",
+        "speech_understanding"
+      ],
+      "metrics": {
+        "stars": 80,
+        "forks": 16,
+        "language": "Python",
+        "created_at": "2026-02-25T07:44:53Z",
+        "homepage": "https://openvoiceui.com"
+      },
+      "score": 83.5,
+      "why_cn": "开源方向：音乐智能、语音生成、语音理解；当前约 80 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "af87b5710e5b",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "music generation",
+        "text-to-speech",
+        "speech-to-text"
+      ],
+      "creative_cn": "可快速复刻一个「音乐智能 + 语音生成」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "7612a49da11ff8c4",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "工具 / 框架",
+      "resource_links": {
+        "code": "https://github.com/MCERQUA/OpenVoiceUI",
+        "project": "https://openvoiceui.com"
+      },
+      "first_seen_at": "2026-08-19",
+      "last_seen_at": "2026-10-13"
+    },
+    {
+      "kind": "github",
       "title": "waybarrios/vllm-mlx",
       "url": "https://github.com/waybarrios/vllm-mlx",
       "summary": "High-performance OpenAI and Anthropic compatible LLM inference server for Apple Silicon. Native MLX, continuous batching, multimodal models, MCP tool calling, and Claude Code support. Topics: anthropic, anthropic-api, apple-silicon, claude-code, continuous-batching, inference-server, llm, local-llm, macos, mcp, mlx, multimodal-ai, openai, openai-api, openai-compatible, speech-to-text, text-to-speech, tool-calling, vision-language-model, vllm.",
@@ -55244,50 +55687,6 @@
       },
       "first_seen_at": "2026-08-19",
       "last_seen_at": "2026-10-12"
-    },
-    {
-      "kind": "github",
-      "title": "MCERQUA/OpenVoiceUI",
-      "url": "https://github.com/MCERQUA/OpenVoiceUI",
-      "summary": "Voice-powered AI assistant platform — connect any LLM, any TTS, with a live web canvas, music generation, and agent orchestration using openclaw. Install: npx openvoiceui setup Topics: ai-agent, ai-assistant, ai-canvas, ai-voice, docker, flask, llm, music-generation, openclaw, pinokio, self-hosted, speech-to-text, stt, text-to-speech, tts, voice-agent, voice-ai, voice-assistant, voice-interface.",
-      "source": "GitHub",
-      "published_at": "2026-10-07T12:35:08Z",
-      "authors": [],
-      "tags": [
-        "music",
-        "speech_generation",
-        "speech_understanding"
-      ],
-      "metrics": {
-        "stars": 79,
-        "forks": 16,
-        "language": "Python",
-        "created_at": "2026-02-25T07:44:53Z",
-        "homepage": "https://openvoiceui.com"
-      },
-      "score": 81.8,
-      "why_cn": "开源方向：音乐智能、语音生成、语音理解；当前约 79 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
-      "item_id": "af87b5710e5b",
-      "title_cn": "",
-      "summary_cn": "",
-      "keywords_cn": [
-        "music generation",
-        "text-to-speech",
-        "speech-to-text"
-      ],
-      "creative_cn": "可快速复刻一个「音乐智能 + 语音生成」最小工作流，并记录部署成本、速度与可控参数。",
-      "enrichment_fingerprint": "7612a49da11ff8c4",
-      "icon": "🧩",
-      "product_name_cn": "",
-      "company_cn": "",
-      "what_is_it_cn": "",
-      "resource_type_cn": "工具 / 框架",
-      "resource_links": {
-        "code": "https://github.com/MCERQUA/OpenVoiceUI",
-        "project": "https://openvoiceui.com"
-      },
-      "first_seen_at": "2026-08-19",
-      "last_seen_at": "2026-10-08"
     },
     {
       "kind": "github",
@@ -55920,6 +56319,48 @@
     },
     {
       "kind": "github",
+      "title": "Blizaine/Maestro",
+      "url": "https://github.com/Blizaine/Maestro",
+      "summary": "An all-in-one, 100% local AI video, image, and music studio. Director mode plans full music videos and short films from a single prompt. Built on the WanGP pipeline. Install via Pinokio. Topics: ai, ai-video, image-generation, local-ai, ltx-video, music-generation, pinokio, text-to-video, video-generation, wan.",
+      "source": "GitHub",
+      "published_at": "2026-10-13T03:29:57Z",
+      "authors": [],
+      "tags": [
+        "multimodal_creation",
+        "video_generation"
+      ],
+      "metrics": {
+        "stars": 744,
+        "forks": 136,
+        "language": "Python",
+        "created_at": "2026-07-08T12:02:05Z",
+        "homepage": "https://pinokio.computer"
+      },
+      "score": 80.9,
+      "why_cn": "开源方向：跨模态创作、视频生成；当前约 744 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "9331c9688c68",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "music video",
+        "text-to-video"
+      ],
+      "creative_cn": "可快速复刻一个「跨模态创作 + 视频生成」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "c503d1d2df7cd4cf",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "工具 / 框架",
+      "resource_links": {
+        "code": "https://github.com/Blizaine/Maestro",
+        "project": "https://pinokio.computer"
+      },
+      "first_seen_at": "2026-08-18",
+      "last_seen_at": "2026-10-13"
+    },
+    {
+      "kind": "github",
       "title": "denizsafak/abogen",
       "url": "https://github.com/denizsafak/abogen",
       "summary": "Generate audiobooks from EPUBs, PDFs and text with synchronized captions. Topics: audiobook, audiobooks, content-creation, content-creator, ebook, epub, epub-converter, kokoro, kokoro-82m, kokoro-tts, llm, media-generation, narrator, speech-synthesis, subtitles, text-to-audio, text-to-speech, tts, voice-conversion, voice-synthesis.",
@@ -55931,14 +56372,14 @@
         "speech_generation"
       ],
       "metrics": {
-        "stars": 6110,
-        "forks": 476,
+        "stars": 6117,
+        "forks": 479,
         "language": "Python",
         "created_at": "2025-04-24T01:06:05Z",
         "homepage": "https://pypi.org/project/abogen/"
       },
-      "score": 84.1,
-      "why_cn": "开源方向：音频/音效生成、语音生成；当前约 6,110 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "score": 80.9,
+      "why_cn": "开源方向：音频/音效生成、语音生成；当前约 6,117 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
       "item_id": "17f51d394684",
       "title_cn": "",
       "summary_cn": "",
@@ -55958,7 +56399,7 @@
         "project": "https://pypi.org/project/abogen/"
       },
       "first_seen_at": "2026-08-18",
-      "last_seen_at": "2026-10-12"
+      "last_seen_at": "2026-10-13"
     },
     {
       "kind": "github",
@@ -55966,20 +56407,20 @@
       "url": "https://github.com/unslothai/unsloth",
       "summary": "Local UI to run and train LLMs and diffusion models. Supports GGUF, MLX, Qwen3.8, DeepSeek-V4, MiniMax-H3, Gemma 4, FLUX and more. Topics: agent, ai, chatgpt, deepseek, fine-tuning, gemma, image-generation, llama, llm, llms, openai, python, qwen, reinforcement-learning, self-hosted, stable-diffusion, text-to-speech, tts, ui, unsloth.",
       "source": "GitHub",
-      "published_at": "2026-10-12T02:31:09Z",
+      "published_at": "2026-10-13T03:41:46Z",
       "authors": [],
       "tags": [
         "speech_generation"
       ],
       "metrics": {
-        "stars": 77810,
-        "forks": 7189,
+        "stars": 77902,
+        "forks": 7194,
         "language": "Python",
         "created_at": "2023-11-29T16:50:09Z",
         "homepage": "https://unsloth.ai/docs"
       },
       "score": 80.0,
-      "why_cn": "开源方向：语音生成；当前约 77,810 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "why_cn": "开源方向：语音生成；当前约 77,902 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
       "item_id": "b01295803dfe",
       "title_cn": "",
       "summary_cn": "",
@@ -55998,7 +56439,7 @@
         "project": "https://unsloth.ai/docs"
       },
       "first_seen_at": "2026-08-18",
-      "last_seen_at": "2026-10-12"
+      "last_seen_at": "2026-10-13"
     },
     {
       "kind": "github",
@@ -56041,6 +56482,48 @@
     },
     {
       "kind": "github",
+      "title": "BinWang28/audio-ai-hub",
+      "url": "https://github.com/BinWang28/audio-ai-hub",
+      "summary": "The hub for audio AI research: papers, open models, benchmarks & datasets across audio LLMs, speech recognition, TTS, music & audio generation. Topics: audio-ai, audio-generation, audio-llm, music-generation, paper-list, speech-recognition, tts.",
+      "source": "GitHub",
+      "published_at": "2026-10-12T12:09:56Z",
+      "authors": [],
+      "tags": [
+        "audio_generation",
+        "speech_understanding"
+      ],
+      "metrics": {
+        "stars": 960,
+        "forks": 56,
+        "language": "Python",
+        "created_at": "2024-06-15T06:26:43Z",
+        "homepage": "https://binwang28.github.io/audio-ai-hub/"
+      },
+      "score": 79.5,
+      "why_cn": "开源方向：音频/音效生成、语音理解；当前约 960 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "6f2de8593c40",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "audio generation",
+        "speech recognition"
+      ],
+      "creative_cn": "可快速复刻一个「音频/音效生成 + 语音理解」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "5798eceef6022b55",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "评测工具",
+      "resource_links": {
+        "code": "https://github.com/BinWang28/audio-ai-hub",
+        "project": "https://binwang28.github.io/audio-ai-hub/"
+      },
+      "first_seen_at": "2026-08-18",
+      "last_seen_at": "2026-10-13"
+    },
+    {
+      "kind": "github",
       "title": "RVC-Boss/GPT-SoVITS",
       "url": "https://github.com/RVC-Boss/GPT-SoVITS",
       "summary": "1 min voice data can also be used to train a good TTS model! (few shot voice cloning) Topics: text-to-speech, tts, vits, voice-clone, voice-cloneai, voice-cloning.",
@@ -56078,53 +56561,11 @@
     },
     {
       "kind": "github",
-      "title": "Blizaine/Maestro",
-      "url": "https://github.com/Blizaine/Maestro",
-      "summary": "An all-in-one, 100% local AI video, image, and music studio. Director mode plans full music videos and short films from a single prompt. Built on the WanGP pipeline. Install via Pinokio. Topics: ai, ai-video, image-generation, local-ai, ltx-video, music-generation, pinokio, text-to-video, video-generation, wan.",
-      "source": "GitHub",
-      "published_at": "2026-10-09T14:47:17Z",
-      "authors": [],
-      "tags": [
-        "multimodal_creation",
-        "video_generation"
-      ],
-      "metrics": {
-        "stars": 723,
-        "forks": 130,
-        "language": "Python",
-        "created_at": "2026-07-08T12:02:05Z",
-        "homepage": "https://pinokio.computer"
-      },
-      "score": 79.4,
-      "why_cn": "开源方向：跨模态创作、视频生成；当前约 723 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
-      "item_id": "9331c9688c68",
-      "title_cn": "",
-      "summary_cn": "",
-      "keywords_cn": [
-        "music video",
-        "text-to-video"
-      ],
-      "creative_cn": "可快速复刻一个「跨模态创作 + 视频生成」最小工作流，并记录部署成本、速度与可控参数。",
-      "enrichment_fingerprint": "c503d1d2df7cd4cf",
-      "icon": "🧩",
-      "product_name_cn": "",
-      "company_cn": "",
-      "what_is_it_cn": "",
-      "resource_type_cn": "工具 / 框架",
-      "resource_links": {
-        "code": "https://github.com/Blizaine/Maestro",
-        "project": "https://pinokio.computer"
-      },
-      "first_seen_at": "2026-08-18",
-      "last_seen_at": "2026-10-10"
-    },
-    {
-      "kind": "github",
       "title": "schmitech/orbit",
       "url": "https://github.com/schmitech/orbit",
       "summary": "Self-hosted AI gateway for private RAG, natural-language data access, and tool-calling agents. Topics: ai-assistant, ai-gateway, ai-safety, anthropic, chatbot, developer-tools, elasticsearch, llm, mongodb, natural-language-to-sql, ollama-client, openai, python, rag, retrieval-augmented-generation, self-hosted, speech-to-text, text-to-speech, vector-database.",
       "source": "GitHub",
-      "published_at": "2026-10-11T00:51:10Z",
+      "published_at": "2026-10-13T02:49:56Z",
       "authors": [],
       "tags": [
         "speech_generation",
@@ -56137,7 +56578,7 @@
         "created_at": "2025-03-10T02:30:21Z",
         "homepage": "https://schmitech.ai"
       },
-      "score": 79.3,
+      "score": 79.4,
       "why_cn": "开源方向：语音生成、语音理解；当前约 354 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
       "item_id": "1f559dc25c5b",
       "title_cn": "",
@@ -56158,7 +56599,7 @@
         "project": "https://schmitech.ai"
       },
       "first_seen_at": "2026-08-18",
-      "last_seen_at": "2026-10-11"
+      "last_seen_at": "2026-10-13"
     },
     {
       "kind": "github",
@@ -56198,6 +56639,48 @@
       },
       "first_seen_at": "2026-08-18",
       "last_seen_at": "2026-09-15"
+    },
+    {
+      "kind": "github",
+      "title": "Anil-matcha/Open-Generative-AI",
+      "url": "https://github.com/Anil-matcha/Open-Generative-AI",
+      "summary": "Unrestricted Open-source alternative to AI video platforms — Free AI image & video generation studio with 600+ models (Flux, Midjourney, Kling, Sora, Veo). No content filters. Self-hosted, MIT licensed. Topics: ai-art-generator, ai-image-generation, ai-video-generation, creative-tools, fal-ai-alternative, generative-ai, image-to-video, invideo-alternative, javascript, kling-ai, lipsync, midjourney-alternative, muapi, open-source, seedance2, sora-alternative, text-to-image, text-to-video, uncensored, wan-video.",
+      "source": "GitHub",
+      "published_at": "2026-10-12T18:55:03Z",
+      "authors": [],
+      "tags": [
+        "video_generation"
+      ],
+      "metrics": {
+        "stars": 30161,
+        "forks": 5550,
+        "language": "JavaScript",
+        "created_at": "2023-05-09T14:12:37Z",
+        "homepage": "https://muapi.ai/open-generative-ai?utm_source=github&utm_medium=about&utm_campaign=open-generative-ai"
+      },
+      "score": 78.9,
+      "why_cn": "开源方向：视频生成；当前约 30,161 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "1647e421b056",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "video generation",
+        "text-to-video",
+        "image-to-video"
+      ],
+      "creative_cn": "可快速复刻一个「视频生成」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "bd3bcf36e8e105cf",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "工具 / 框架",
+      "resource_links": {
+        "code": "https://github.com/Anil-matcha/Open-Generative-AI",
+        "project": "https://muapi.ai/open-generative-ai?utm_source=github&utm_medium=about&utm_campaign=open-generative-ai"
+      },
+      "first_seen_at": "2026-08-18",
+      "last_seen_at": "2026-10-13"
     },
     {
       "kind": "github",
@@ -56273,66 +56756,24 @@
     },
     {
       "kind": "github",
-      "title": "Anil-matcha/Open-Generative-AI",
-      "url": "https://github.com/Anil-matcha/Open-Generative-AI",
-      "summary": "Unrestricted Open-source alternative to AI video platforms — Free AI image & video generation studio with 600+ models (Flux, Midjourney, Kling, Sora, Veo). No content filters. Self-hosted, MIT licensed. Topics: ai-art-generator, ai-image-generation, ai-video-generation, creative-tools, fal-ai-alternative, generative-ai, image-to-video, invideo-alternative, javascript, kling-ai, lipsync, midjourney-alternative, muapi, open-source, seedance2, sora-alternative, text-to-image, text-to-video, uncensored, wan-video.",
-      "source": "GitHub",
-      "published_at": "2026-10-11T11:18:40Z",
-      "authors": [],
-      "tags": [
-        "video_generation"
-      ],
-      "metrics": {
-        "stars": 30095,
-        "forks": 5534,
-        "language": "JavaScript",
-        "created_at": "2023-05-09T14:12:37Z",
-        "homepage": "https://muapi.ai/open-generative-ai?utm_source=github&utm_medium=about&utm_campaign=open-generative-ai"
-      },
-      "score": 78.1,
-      "why_cn": "开源方向：视频生成；当前约 30,095 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
-      "item_id": "1647e421b056",
-      "title_cn": "",
-      "summary_cn": "",
-      "keywords_cn": [
-        "video generation",
-        "text-to-video",
-        "image-to-video"
-      ],
-      "creative_cn": "可快速复刻一个「视频生成」最小工作流，并记录部署成本、速度与可控参数。",
-      "enrichment_fingerprint": "bd3bcf36e8e105cf",
-      "icon": "🧩",
-      "product_name_cn": "",
-      "company_cn": "",
-      "what_is_it_cn": "",
-      "resource_type_cn": "工具 / 框架",
-      "resource_links": {
-        "code": "https://github.com/Anil-matcha/Open-Generative-AI",
-        "project": "https://muapi.ai/open-generative-ai?utm_source=github&utm_medium=about&utm_campaign=open-generative-ai"
-      },
-      "first_seen_at": "2026-08-18",
-      "last_seen_at": "2026-10-12"
-    },
-    {
-      "kind": "github",
       "title": "espnet/espnet",
       "url": "https://github.com/espnet/espnet",
       "summary": "End-to-End Speech Processing Toolkit Topics: chainer, deep-learning, end-to-end, kaldi, machine-translation, pytorch, singing-voice-synthesis, speaker-diarization, speech-enhancement, speech-recognition, speech-separation, speech-synthesis, speech-translation, spoken-language-understanding, text-to-speech, voice-conversion.",
       "source": "GitHub",
-      "published_at": "2026-10-11T23:22:09Z",
+      "published_at": "2026-10-13T02:04:21Z",
       "authors": [],
       "tags": [
         "speech_generation"
       ],
       "metrics": {
-        "stars": 9981,
-        "forks": 2440,
+        "stars": 9983,
+        "forks": 2444,
         "language": "Python",
         "created_at": "2017-12-13T00:45:11Z",
         "homepage": "https://espnet.github.io/espnet/"
       },
-      "score": 77.6,
-      "why_cn": "开源方向：语音生成；当前约 9,981 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "score": 77.8,
+      "why_cn": "开源方向：语音生成；当前约 9,983 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
       "item_id": "c8d87b4fda3e",
       "title_cn": "",
       "summary_cn": "",
@@ -56351,7 +56792,7 @@
         "project": "https://espnet.github.io/espnet/"
       },
       "first_seen_at": "2026-08-18",
-      "last_seen_at": "2026-10-12"
+      "last_seen_at": "2026-10-13"
     },
     {
       "kind": "github",
@@ -56395,6 +56836,47 @@
     },
     {
       "kind": "github",
+      "title": "dramaclaw/dramaclaw",
+      "url": "https://github.com/dramaclaw/dramaclaw",
+      "summary": "A general-purpose AIGC video engine: script to finished film in one pipeline — dramas, ads, product videos, otome games, and more. | 通用 AIGC 视频引擎 —— 从剧本到成片一条流水线，漫剧、广告、电商、乙游皆可 Topics: ai-agent, ai-filmmaking, ai-video, aigc, aigc-pipeline, content-creation, dramaclaw, fastapi, generative-ai, image-to-video, python, react, self-hosted, storyboard, text-to-video, tts, video-engine, video-generation, voice-synthesis.",
+      "source": "GitHub",
+      "published_at": "2026-10-13T03:40:08Z",
+      "authors": [],
+      "tags": [
+        "video_generation"
+      ],
+      "metrics": {
+        "stars": 6863,
+        "forks": 858,
+        "language": "Python",
+        "created_at": "2026-03-27T04:34:30Z",
+        "homepage": "https://dramaclaw.ai"
+      },
+      "score": 77.3,
+      "why_cn": "开源方向：视频生成；当前约 6,863 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "bf564026ec98",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "text-to-video",
+        "image-to-video"
+      ],
+      "creative_cn": "可快速复刻一个「视频生成」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "982ea7073b8da57a",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "工具 / 框架",
+      "resource_links": {
+        "code": "https://github.com/dramaclaw/dramaclaw",
+        "project": "https://dramaclaw.ai"
+      },
+      "first_seen_at": "2026-08-18",
+      "last_seen_at": "2026-10-13"
+    },
+    {
+      "kind": "github",
       "title": "NVIDIA/NeMo-Speech.cpp",
       "url": "https://github.com/NVIDIA/NeMo-Speech.cpp",
       "summary": "NeMo-Speech.cpp is a lightweight C++ inference runtime for Speech models Topics: ggml, inference, server, speech-recognition, text-to-speech.",
@@ -56431,47 +56913,6 @@
       },
       "first_seen_at": "2026-08-18",
       "last_seen_at": "2026-09-29"
-    },
-    {
-      "kind": "github",
-      "title": "dramaclaw/dramaclaw",
-      "url": "https://github.com/dramaclaw/dramaclaw",
-      "summary": "A general-purpose AIGC video engine: script to finished film in one pipeline — dramas, ads, product videos, otome games, and more. | 通用 AIGC 视频引擎 —— 从剧本到成片一条流水线，漫剧、广告、电商、乙游皆可 Topics: ai-agent, ai-filmmaking, ai-video, aigc, aigc-pipeline, content-creation, dramaclaw, fastapi, generative-ai, image-to-video, python, react, self-hosted, storyboard, text-to-video, tts, video-engine, video-generation, voice-synthesis.",
-      "source": "GitHub",
-      "published_at": "2026-10-12T02:11:25Z",
-      "authors": [],
-      "tags": [
-        "video_generation"
-      ],
-      "metrics": {
-        "stars": 6851,
-        "forks": 855,
-        "language": "Python",
-        "created_at": "2026-03-27T04:34:30Z",
-        "homepage": "https://dramaclaw.ai"
-      },
-      "score": 77.2,
-      "why_cn": "开源方向：视频生成；当前约 6,851 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
-      "item_id": "bf564026ec98",
-      "title_cn": "",
-      "summary_cn": "",
-      "keywords_cn": [
-        "text-to-video",
-        "image-to-video"
-      ],
-      "creative_cn": "可快速复刻一个「视频生成」最小工作流，并记录部署成本、速度与可控参数。",
-      "enrichment_fingerprint": "982ea7073b8da57a",
-      "icon": "🧩",
-      "product_name_cn": "",
-      "company_cn": "",
-      "what_is_it_cn": "",
-      "resource_type_cn": "工具 / 框架",
-      "resource_links": {
-        "code": "https://github.com/dramaclaw/dramaclaw",
-        "project": "https://dramaclaw.ai"
-      },
-      "first_seen_at": "2026-08-18",
-      "last_seen_at": "2026-10-12"
     },
     {
       "kind": "github",
@@ -56635,48 +57076,6 @@
       },
       "first_seen_at": "2026-08-18",
       "last_seen_at": "2026-09-09"
-    },
-    {
-      "kind": "github",
-      "title": "BinWang28/audio-ai-hub",
-      "url": "https://github.com/BinWang28/audio-ai-hub",
-      "summary": "The hub for audio AI research: papers, open models, benchmarks & datasets across audio LLMs, speech recognition, TTS, music & audio generation. Topics: audio-ai, audio-generation, audio-llm, music-generation, paper-list, speech-recognition, tts.",
-      "source": "GitHub",
-      "published_at": "2026-10-05T11:37:47Z",
-      "authors": [],
-      "tags": [
-        "audio_generation",
-        "speech_understanding"
-      ],
-      "metrics": {
-        "stars": 960,
-        "forks": 55,
-        "language": "Python",
-        "created_at": "2024-06-15T06:26:43Z",
-        "homepage": "https://binwang28.github.io/audio-ai-hub/"
-      },
-      "score": 76.6,
-      "why_cn": "开源方向：音频/音效生成、语音理解；当前约 960 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
-      "item_id": "6f2de8593c40",
-      "title_cn": "",
-      "summary_cn": "",
-      "keywords_cn": [
-        "audio generation",
-        "speech recognition"
-      ],
-      "creative_cn": "可快速复刻一个「音频/音效生成 + 语音理解」最小工作流，并记录部署成本、速度与可控参数。",
-      "enrichment_fingerprint": "5798eceef6022b55",
-      "icon": "🧩",
-      "product_name_cn": "",
-      "company_cn": "",
-      "what_is_it_cn": "",
-      "resource_type_cn": "评测工具",
-      "resource_links": {
-        "code": "https://github.com/BinWang28/audio-ai-hub",
-        "project": "https://binwang28.github.io/audio-ai-hub/"
-      },
-      "first_seen_at": "2026-08-18",
-      "last_seen_at": "2026-10-07"
     },
     {
       "kind": "github",
