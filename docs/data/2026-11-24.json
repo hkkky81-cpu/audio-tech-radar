@@ -1,0 +1,2910 @@
+{
+  "generated_at": "2026-11-24T06:59:53Z",
+  "date": "2026-11-24",
+  "items": [
+    {
+      "kind": "github",
+      "title": "k2-fsa/sherpa-onnx",
+      "url": "https://github.com/k2-fsa/sherpa-onnx",
+      "summary": "Speech-to-text, text-to-speech, speaker diarization, speech enhancement, source separation, and VAD using next-gen Kaldi with onnxruntime without Internet connection. Support embedded systems, Android, iOS, HarmonyOS, Raspberry Pi, RISC-V, RK NPU, Axera NPU, Ascend NPU, x86_64 servers, websocket server/client, support 12 programming languages Topics: aarch64, android, arm32, asr, cpp, csharp, dotnet, ios, lazarus, linux, macos, mfc, object-pascal, onnx, raspberry-pi, risc-v, speech-to-text, text-to-speech, vits, windows.",
+      "source": "GitHub",
+      "published_at": "2026-11-24T06:31:15Z",
+      "authors": [],
+      "tags": [
+        "speech_editing",
+        "speech_understanding",
+        "speech_generation"
+      ],
+      "metrics": {
+        "stars": 16181,
+        "forks": 1914,
+        "language": "C++",
+        "created_at": "2022-09-01T05:47:33Z",
+        "homepage": "https://k2-fsa.github.io/sherpa/onnx/index.html"
+      },
+      "score": 93.9,
+      "why_cn": "开源方向：语音编辑/转换、语音理解、语音生成；当前约 16,181 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "620bb301deb0",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "speech enhancement",
+        "source separation",
+        "speech-to-text",
+        "speaker diarization",
+        "text-to-speech"
+      ],
+      "creative_cn": "可快速复刻一个「语音编辑/转换 + 语音理解」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "4ae34b151f0e3c77",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开源项目",
+      "resource_links": {
+        "code": "https://github.com/k2-fsa/sherpa-onnx",
+        "project": "https://k2-fsa.github.io/sherpa/onnx/index.html"
+      },
+      "first_seen_at": "2026-09-06",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "github",
+      "title": "0xShug0/audio.cpp",
+      "url": "https://github.com/0xShug0/audio.cpp",
+      "summary": "An all-in-one, pure C++ inference engine for audio models, powered by ggml. Supports TTS, STT, VAD, voice conversion, music generation, and more, with highly optimized performance. No Python dependency. Topics: ai, amd-gpu, apple-silicon, asr, audio, cpp, edge-ai, ggml, minimax-music3, music-generation, speech-analysis, speech-to-speech, speech-to-text, text-to-speech, tts, voice-ai, voice-cloning, voice-conversion, vulkan, yue2.",
+      "source": "GitHub",
+      "published_at": "2026-11-24T04:48:42Z",
+      "authors": [],
+      "tags": [
+        "music",
+        "speech_editing",
+        "speech_generation",
+        "speech_understanding"
+      ],
+      "metrics": {
+        "stars": 4428,
+        "forks": 553,
+        "language": "C++",
+        "created_at": "2026-06-23T15:40:46Z",
+        "homepage": ""
+      },
+      "score": 91.1,
+      "why_cn": "开源方向：音乐智能、语音编辑/转换、语音生成；当前约 4,428 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "5c5fe1625dc4",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "music generation",
+        "voice conversion",
+        "text-to-speech",
+        "speech-to-text"
+      ],
+      "creative_cn": "可快速复刻一个「音乐智能 + 语音编辑/转换」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "4f28f4a56117d835",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开源项目",
+      "resource_links": {
+        "code": "https://github.com/0xShug0/audio.cpp"
+      },
+      "first_seen_at": "2026-08-23",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "github",
+      "title": "jianchang512/pyvideotrans",
+      "url": "https://github.com/jianchang512/pyvideotrans",
+      "summary": "Translate the video from one language to another and embed dubbing & subtitles. Topics: speech-to-text, stt, subtitle-translation, text-to-speech, tts, video-transition.",
+      "source": "GitHub",
+      "published_at": "2026-11-24T06:24:34Z",
+      "authors": [],
+      "tags": [
+        "speech_generation",
+        "speech_understanding"
+      ],
+      "metrics": {
+        "stars": 19821,
+        "forks": 2479,
+        "language": "Python",
+        "created_at": "2023-10-02T16:13:19Z",
+        "homepage": "https://pyvideotrans.com"
+      },
+      "score": 87.3,
+      "why_cn": "开源方向：语音生成、语音理解；当前约 19,821 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "a398c9ad7507",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "text-to-speech",
+        "speech-to-text"
+      ],
+      "creative_cn": "可快速复刻一个「语音生成 + 语音理解」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "2396807bc7d82fa2",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开源项目",
+      "resource_links": {
+        "code": "https://github.com/jianchang512/pyvideotrans",
+        "project": "https://pyvideotrans.com"
+      },
+      "first_seen_at": "2026-09-29",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "github",
+      "title": "storytold/filmcraft",
+      "url": "https://github.com/storytold/filmcraft",
+      "summary": "FilmCraft: An open-source, nonlinear video editor written from scratch in pure Rust Topics: art, rust, video, video-editing, video-editor, video-processing.",
+      "source": "GitHub",
+      "published_at": "2026-11-24T06:35:53Z",
+      "authors": [],
+      "tags": [
+        "video_editing"
+      ],
+      "metrics": {
+        "stars": 18935,
+        "forks": 7609,
+        "language": "Rust",
+        "created_at": "2026-09-30T13:41:20Z",
+        "homepage": "https://getartcraft.com/apps/filmcraft"
+      },
+      "score": 87.2,
+      "why_cn": "开源方向：视频编辑/理解；当前约 18,935 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "3da44e26d495",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "video editor"
+      ],
+      "creative_cn": "可快速复刻一个「视频编辑/理解」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "c7ada7ad168fd7a6",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开源项目",
+      "resource_links": {
+        "code": "https://github.com/storytold/filmcraft",
+        "project": "https://getartcraft.com/apps/filmcraft"
+      },
+      "first_seen_at": "2026-10-12",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "github",
+      "title": "leon-ai/leon",
+      "url": "https://github.com/leon-ai/leon",
+      "summary": "🧠 Leon is your open-source personal assistant. Topics: ai, ai-agent, ai-assistant, artificial-intelligence, assistant, automation, bot, chatbot, leon, nodejs, offline, personal-assistant, privacy, python, speech-recognition, speech-synthesis, speech-to-text, text-to-speech, virtual-assistant, voice-assistant.",
+      "source": "GitHub",
+      "published_at": "2026-11-24T05:45:50Z",
+      "authors": [],
+      "tags": [
+        "speech_generation",
+        "speech_understanding"
+      ],
+      "metrics": {
+        "stars": 17712,
+        "forks": 1488,
+        "language": "TypeScript",
+        "created_at": "2019-02-10T12:25:12Z",
+        "homepage": "https://getleon.ai"
+      },
+      "score": 87.0,
+      "why_cn": "开源方向：语音生成、语音理解；当前约 17,712 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "5c8cabb6433b",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "text-to-speech",
+        "speech-to-text"
+      ],
+      "creative_cn": "可快速复刻一个「语音生成 + 语音理解」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "e443c70b6c47cd99",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开源项目",
+      "resource_links": {
+        "code": "https://github.com/leon-ai/leon",
+        "project": "https://getleon.ai"
+      },
+      "first_seen_at": "2026-09-06",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "github",
+      "title": "HamSanders/soundbox",
+      "url": "https://github.com/HamSanders/soundbox",
+      "summary": "Free, open-source, local alternative to ElevenLabs and Suno. AI sound effects, music with lyrics, text-to-speech and voice cloning on your own GPU (Stable Audio, ACE-Step and more). No account, no credits, offline. Windows/macOS app, HTTP API and a 24-tool MCP server for Claude Code and Cursor. Topics: ai-music, ai-sound-effects, ai-voice, audio-generation, claude-code, elevenlabs-alternative, game-audio, local-ai, local-tts, mcp, mcp-server, music-generation, sfx, sound-effects, stable-audio, suno-alternative, text-to-audio, text-to-speech, tts, voice-cloning.",
+      "source": "GitHub",
+      "published_at": "2026-11-24T06:51:11Z",
+      "authors": [],
+      "tags": [
+        "speech_generation",
+        "audio_generation"
+      ],
+      "metrics": {
+        "stars": 244,
+        "forks": 24,
+        "language": "TypeScript",
+        "created_at": "2026-10-13T20:54:04Z",
+        "homepage": "https://mirli.app"
+      },
+      "score": 86.7,
+      "why_cn": "开源方向：语音生成、音频/音效生成；当前约 244 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "8ab8b7be9176",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "text-to-speech",
+        "voice cloning",
+        "text-to-audio"
+      ],
+      "creative_cn": "可快速复刻一个「语音生成 + 音频/音效生成」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "08c88911f45c2968",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开发工具",
+      "resource_links": {
+        "code": "https://github.com/HamSanders/soundbox",
+        "project": "https://mirli.app"
+      },
+      "first_seen_at": "2026-10-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "github",
+      "title": "hollisorg/iv-studio",
+      "url": "https://github.com/hollisorg/iv-studio",
+      "summary": "Free, open-source AI film studio that runs on your own PC. Recurring characters, MiniMax H3 shots, voices, music and a real editor, on your ComfyUI or your own cloud GPU. Windows, Mac and Linux. 247 MCP tools so Claude Code, Codex or Hermes can drive it. Topics: ai-filmmaking, ai-video, character-consistency, claude-code, comfyui, desktop-app, electron, image-to-video, local-ai, lora, mcp, mcp-server, minimax-h3, music-generation, open-source, seedance, text-to-video, video-editor, video-generation, voice-cloning.",
+      "source": "GitHub",
+      "published_at": "2026-11-24T04:53:36Z",
+      "authors": [],
+      "tags": [
+        "video_generation",
+        "creator_tools"
+      ],
+      "metrics": {
+        "stars": 121,
+        "forks": 22,
+        "language": "JavaScript",
+        "created_at": "2026-10-28T17:21:47Z",
+        "homepage": "https://infinitevariance.ai/studio"
+      },
+      "score": 85.1,
+      "why_cn": "开源方向：视频生成、创作者工具；当前约 121 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "3241d309d7c3",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "text-to-video",
+        "image-to-video",
+        "ai film"
+      ],
+      "creative_cn": "可快速复刻一个「视频生成 + 创作者工具」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "e30850f326aa4874",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开源项目",
+      "resource_links": {
+        "code": "https://github.com/hollisorg/iv-studio",
+        "project": "https://infinitevariance.ai/studio"
+      },
+      "first_seen_at": "2026-11-13",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "github",
+      "title": "MachHongHai/HaizFlow",
+      "url": "https://github.com/MachHongHai/HaizFlow",
+      "summary": "Free Windows desktop app for AI video translation, subtitles and dubbing, with local CPU/GPU models, voice cloning, batch processing and video downloads. Topics: batch-processing, ffmpeg, gemini, local-ai, pyside6, python, speaker-diarization, speech-to-text, subtitle-editor, subtitles, text-to-speech, video-downloader, video-dubbing, video-translation, vietnamese, voice-cloning, whisper, windows.",
+      "source": "GitHub",
+      "published_at": "2026-11-23T16:35:52Z",
+      "authors": [],
+      "tags": [
+        "speech_generation",
+        "speech_understanding",
+        "video_editing"
+      ],
+      "metrics": {
+        "stars": 235,
+        "forks": 99,
+        "language": "Python",
+        "created_at": "2026-07-06T20:01:11Z",
+        "homepage": "https://haizflow.pages.dev/"
+      },
+      "score": 83.9,
+      "why_cn": "开源方向：语音生成、语音理解、视频编辑/理解；当前约 235 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "8ef44bcdd58b",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "text-to-speech",
+        "voice cloning",
+        "speech-to-text",
+        "video translation"
+      ],
+      "creative_cn": "可快速复刻一个「语音生成 + 语音理解」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "9fbf2055c2093f60",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开源项目",
+      "resource_links": {
+        "code": "https://github.com/MachHongHai/HaizFlow",
+        "project": "https://haizflow.pages.dev/"
+      },
+      "first_seen_at": "2026-10-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "github",
+      "title": "NeuroBrix/neurobrix",
+      "url": "https://github.com/NeuroBrix/neurobrix",
+      "summary": "Run real AI models on the GPU you already own: language, speech, image and video models from one engine and one container format, with or without PyTorch. NVIDIA GPUs, Mac GPUs through Metal, CPU; other GPUs experimental. Apache 2.0. Topics: ai, cuda, deep-learning, diffusion-models, gpu, image-to-video, inference-engine, llm, local-inference, metal, mixture-of-experts, multimodal, pytorch, speech-to-text, super-resolution, text-to-image, text-to-speech, text-to-video, triton, triton-kernels.",
+      "source": "GitHub",
+      "published_at": "2026-11-24T06:35:48Z",
+      "authors": [],
+      "tags": [
+        "video_generation",
+        "speech_generation",
+        "speech_understanding"
+      ],
+      "metrics": {
+        "stars": 71,
+        "forks": 0,
+        "language": "Python",
+        "created_at": "2026-02-04T15:18:38Z",
+        "homepage": "https://neurobrix.org"
+      },
+      "score": 83.3,
+      "why_cn": "开源方向：视频生成、语音生成、语音理解；当前约 71 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "04179d2f2c8b",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "text-to-video",
+        "image-to-video",
+        "text-to-speech",
+        "speech-to-text"
+      ],
+      "creative_cn": "可快速复刻一个「视频生成 + 语音生成」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "9c3b9225ace62bf9",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开源项目",
+      "resource_links": {
+        "code": "https://github.com/NeuroBrix/neurobrix",
+        "project": "https://neurobrix.org"
+      },
+      "first_seen_at": "2026-10-12",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "github",
+      "title": "MCERQUA/OpenVoiceUI",
+      "url": "https://github.com/MCERQUA/OpenVoiceUI",
+      "summary": "Voice-powered AI assistant platform — connect any LLM, any TTS, with a live web canvas, music generation, and agent orchestration using openclaw. Install: npx openvoiceui setup Topics: ai-agent, ai-assistant, ai-canvas, ai-voice, docker, flask, llm, music-generation, openclaw, pinokio, self-hosted, speech-to-text, stt, text-to-speech, tts, voice-agent, voice-ai, voice-assistant, voice-interface.",
+      "source": "GitHub",
+      "published_at": "2026-11-24T02:09:18Z",
+      "authors": [],
+      "tags": [
+        "music",
+        "speech_generation",
+        "speech_understanding"
+      ],
+      "metrics": {
+        "stars": 88,
+        "forks": 17,
+        "language": "Python",
+        "created_at": "2026-02-25T07:44:53Z",
+        "homepage": "https://openvoiceui.com"
+      },
+      "score": 83.2,
+      "why_cn": "开源方向：音乐智能、语音生成、语音理解；当前约 88 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "af87b5710e5b",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "music generation",
+        "text-to-speech",
+        "speech-to-text"
+      ],
+      "creative_cn": "可快速复刻一个「音乐智能 + 语音生成」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "7612a49da11ff8c4",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "工具 / 框架",
+      "resource_links": {
+        "code": "https://github.com/MCERQUA/OpenVoiceUI",
+        "project": "https://openvoiceui.com"
+      },
+      "first_seen_at": "2026-08-19",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "github",
+      "title": "alexturkey/dubworld",
+      "url": "https://github.com/alexturkey/dubworld",
+      "summary": "Local-first AI video dubbing pipeline: transcription, translation, speech synthesis and timing alignment. Topics: cuda, dubbing, machine-translation, multilingual, offline, speech-recognition, speech-synthesis, subtitles, text-to-speech, turkish, video-dubbing, whisper.",
+      "source": "GitHub",
+      "published_at": "2026-11-23T11:43:31Z",
+      "authors": [],
+      "tags": [
+        "speech_generation",
+        "video_editing"
+      ],
+      "metrics": {
+        "stars": 100,
+        "forks": 14,
+        "language": "Python",
+        "created_at": "2026-10-24T23:47:31Z",
+        "homepage": ""
+      },
+      "score": 82.6,
+      "why_cn": "开源方向：语音生成、视频编辑/理解；当前约 100 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "9579a7c9f252",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "text-to-speech",
+        "speech synthesis",
+        "video dubbing"
+      ],
+      "creative_cn": "可快速复刻一个「语音生成 + 视频编辑/理解」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "c7c8b62ab886c224",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "工具 / 框架",
+      "resource_links": {
+        "code": "https://github.com/alexturkey/dubworld"
+      },
+      "first_seen_at": "2026-10-26",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "github",
+      "title": "Blizaine/Maestro",
+      "url": "https://github.com/Blizaine/Maestro",
+      "summary": "An all-in-one, 100% local AI video, image, and music studio. Director mode plans full music videos and short films from a single prompt. Built on the WanGP pipeline. Install via Pinokio. Topics: ai, ai-video, image-generation, local-ai, ltx-video, music-generation, pinokio, text-to-video, video-generation, wan.",
+      "source": "GitHub",
+      "published_at": "2026-11-24T03:50:52Z",
+      "authors": [],
+      "tags": [
+        "multimodal_creation",
+        "video_generation"
+      ],
+      "metrics": {
+        "stars": 1009,
+        "forks": 190,
+        "language": "Python",
+        "created_at": "2026-07-08T12:02:05Z",
+        "homepage": "https://pinokio.computer"
+      },
+      "score": 81.1,
+      "why_cn": "开源方向：跨模态创作、视频生成；当前约 1,009 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "9331c9688c68",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "music video",
+        "text-to-video"
+      ],
+      "creative_cn": "可快速复刻一个「跨模态创作 + 视频生成」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "c503d1d2df7cd4cf",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "工具 / 框架",
+      "resource_links": {
+        "code": "https://github.com/Blizaine/Maestro",
+        "project": "https://pinokio.computer"
+      },
+      "first_seen_at": "2026-08-18",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "github",
+      "title": "DenisovAV/flutter_edge_ai",
+      "url": "https://github.com/DenisovAV/flutter_edge_ai",
+      "summary": "On-device AI for Flutter — Gemma and other LLMs, multimodal, function calling, embeddings, RAG and speech on Android, iOS, Web, macOS, Windows and Linux. Topics: dart, edge-ai, embeddings, flutter, function-calling, gemma, litert, llm, mediapipe, on-device-ai, onnx, rag, speech-to-text, text-to-speech.",
+      "source": "GitHub",
+      "published_at": "2026-11-24T05:13:04Z",
+      "authors": [],
+      "tags": [
+        "speech_generation",
+        "speech_understanding"
+      ],
+      "metrics": {
+        "stars": 670,
+        "forks": 183,
+        "language": "Dart",
+        "created_at": "2024-04-02T11:20:10Z",
+        "homepage": "https://flutteredge.ai"
+      },
+      "score": 80.5,
+      "why_cn": "开源方向：语音生成、语音理解；当前约 670 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "d4b637862c17",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "text-to-speech",
+        "speech-to-text"
+      ],
+      "creative_cn": "可快速复刻一个「语音生成 + 语音理解」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "14dc1e92c57d9a92",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开源项目",
+      "resource_links": {
+        "code": "https://github.com/DenisovAV/flutter_edge_ai",
+        "project": "https://flutteredge.ai"
+      },
+      "first_seen_at": "2026-10-17",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "github",
+      "title": "livliv-dev/player",
+      "url": "https://github.com/livliv-dev/player",
+      "summary": "A lightweight 2.5D character player for the web, with lip sync and webcam face tracking. Topics: avatar, character, face-tracking, lip-sync, pngtuber, vrm, vtuber, webgl2.",
+      "source": "GitHub",
+      "published_at": "2026-11-23T14:05:24Z",
+      "authors": [],
+      "tags": [
+        "avatar_lipsync"
+      ],
+      "metrics": {
+        "stars": 1621,
+        "forks": 167,
+        "language": "TypeScript",
+        "created_at": "2026-11-04T03:28:33Z",
+        "homepage": "https://livliv-dev.github.io/player/"
+      },
+      "score": 80.3,
+      "why_cn": "开源方向：数字人/口型；当前约 1,621 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "9bf5c2b53653",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "lip sync",
+        "lip-sync"
+      ],
+      "creative_cn": "可快速复刻一个「数字人/口型」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "3a05315648751660",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开源项目",
+      "resource_links": {
+        "code": "https://github.com/livliv-dev/player",
+        "project": "https://livliv-dev.github.io/player/"
+      },
+      "first_seen_at": "2026-11-06",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "github",
+      "title": "sitor-ai/frametell",
+      "url": "https://github.com/sitor-ai/frametell",
+      "summary": "Frametell: turn your ideas and material into vivid explainer videos with an AI director agent. Local-first, any model. Topics: ai-agent, ai-video, edtech, education, electron, explainer-video, llm, local-first, storyboard, text-to-video, tts, video-generation.",
+      "source": "GitHub",
+      "published_at": "2026-11-24T05:23:32Z",
+      "authors": [],
+      "tags": [
+        "video_generation"
+      ],
+      "metrics": {
+        "stars": 535,
+        "forks": 108,
+        "language": "TypeScript",
+        "created_at": "2026-10-10T10:02:14Z",
+        "homepage": "https://frametell.ai"
+      },
+      "score": 80.1,
+      "why_cn": "开源方向：视频生成；当前约 535 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "9de90669b7d8",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "text-to-video"
+      ],
+      "creative_cn": "可快速复刻一个「视频生成」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "0be415f2ac63f2aa",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开源项目",
+      "resource_links": {
+        "code": "https://github.com/sitor-ai/frametell",
+        "project": "https://frametell.ai"
+      },
+      "first_seen_at": "2026-10-17",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "github",
+      "title": "heygen-com/hyperframes",
+      "url": "https://github.com/heygen-com/hyperframes",
+      "summary": "Open-source AI video editor: edit your own footage, or create and remake any video with Claude Code, Codex or the free Studio app. Write HTML, render MP4. By HeyGen. Topics: agent-skills, ai, ai-agents, ai-video, ai-video-editor, animation, claude-code, ffmpeg, gsap, html, html-to-video, mcp, motion-graphics, puppeteer, remotion-alternative, rendering, typescript, video-editing, video-editor, video-generation.",
+      "source": "GitHub",
+      "published_at": "2026-11-24T06:59:16Z",
+      "authors": [],
+      "tags": [
+        "video_editing"
+      ],
+      "metrics": {
+        "stars": 89119,
+        "forks": 8310,
+        "language": "TypeScript",
+        "created_at": "2026-03-10T01:51:06Z",
+        "homepage": "https://hyperframes.heygen.com"
+      },
+      "score": 80.0,
+      "why_cn": "开源方向：视频编辑/理解；当前约 89,119 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "8898dc1fb352",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "video editor"
+      ],
+      "creative_cn": "可快速复刻一个「视频编辑/理解」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "08384cb0a211fbe4",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开源项目",
+      "resource_links": {
+        "code": "https://github.com/heygen-com/hyperframes",
+        "project": "https://hyperframes.heygen.com"
+      },
+      "first_seen_at": "2026-11-23",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "github",
+      "title": "unslothai/unsloth",
+      "url": "https://github.com/unslothai/unsloth",
+      "summary": "Local UI to run and train LLMs and diffusion models. Supports GGUF, MLX, Qwen3.8, DeepSeek-V4.1, MiniMax-H3, Gemma 4, FLUX and more. Topics: agent, ai, chatgpt, deepseek, fine-tuning, gemma, image-generation, llama, llm, llms, openai, python, qwen, reinforcement-learning, self-hosted, stable-diffusion, text-to-speech, tts, ui, unsloth.",
+      "source": "GitHub",
+      "published_at": "2026-11-24T06:56:47Z",
+      "authors": [],
+      "tags": [
+        "speech_generation"
+      ],
+      "metrics": {
+        "stars": 80117,
+        "forks": 7459,
+        "language": "Python",
+        "created_at": "2023-11-29T16:50:09Z",
+        "homepage": "https://unsloth.ai/docs"
+      },
+      "score": 80.0,
+      "why_cn": "开源方向：语音生成；当前约 80,117 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "b01295803dfe",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "text-to-speech"
+      ],
+      "creative_cn": "可快速复刻一个「语音生成」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "b6352b465927b1d1",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开源项目",
+      "resource_links": {
+        "code": "https://github.com/unslothai/unsloth",
+        "project": "https://unsloth.ai/docs"
+      },
+      "first_seen_at": "2026-08-18",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "github",
+      "title": "hypit-ai/hypit",
+      "url": "https://github.com/hypit-ai/hypit",
+      "summary": "Clone any viral video with AI agents. Not just a script, the whole workflow: swap the face, the words, the B-roll, ship 100 variants in one command, and get your 100M views. Topics: agentic-ai, ai, ai-agents, ai-video, compiler, dsl, ffmpeg, generative-ai, llm, markup-language, monorepo, plugin-system, programming-language, text-to-video, typescript, video, video-automation, video-clone, video-editing, video-generation.",
+      "source": "GitHub",
+      "published_at": "2026-11-24T06:32:36Z",
+      "authors": [],
+      "tags": [
+        "video_generation"
+      ],
+      "metrics": {
+        "stars": 31275,
+        "forks": 3702,
+        "language": "TypeScript",
+        "created_at": "2026-07-29T18:49:19Z",
+        "homepage": "https://hypit.ai"
+      },
+      "score": 79.9,
+      "why_cn": "开源方向：视频生成；当前约 31,275 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "25076801f08f",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "text-to-video"
+      ],
+      "creative_cn": "可快速复刻一个「视频生成」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "c266634ed45898c1",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开源项目",
+      "resource_links": {
+        "code": "https://github.com/hypit-ai/hypit",
+        "project": "https://hypit.ai"
+      },
+      "first_seen_at": "2026-09-11",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "github",
+      "title": "ggml-org/whisper.cpp",
+      "url": "https://github.com/ggml-org/whisper.cpp",
+      "summary": "Port of OpenAI's Whisper model in C/C++ Topics: inference, openai, speech-recognition, speech-to-text, transformer, whisper.",
+      "source": "GitHub",
+      "published_at": "2026-11-24T04:46:14Z",
+      "authors": [],
+      "tags": [
+        "speech_understanding"
+      ],
+      "metrics": {
+        "stars": 55465,
+        "forks": 6345,
+        "language": "C++",
+        "created_at": "2022-09-25T18:26:37Z",
+        "homepage": ""
+      },
+      "score": 79.7,
+      "why_cn": "开源方向：语音理解；当前约 55,465 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "c4ca4f607a3d",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "speech-to-text"
+      ],
+      "creative_cn": "可快速复刻一个「语音理解」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "a2f0acf28fb9d970",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开源项目",
+      "resource_links": {
+        "code": "https://github.com/ggml-org/whisper.cpp"
+      },
+      "first_seen_at": "2026-08-18",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "github",
+      "title": "mrbizarro/Phosphene",
+      "url": "https://github.com/mrbizarro/Phosphene",
+      "summary": "Phosphene is a free, open-source Mac app for making AI videos, pictures, speech and songs offline. Run LTX-2.5 and MiniMax H3 (Hailuo) locally on Apple Silicon: text-to-video and image-to-video with sound, lip-sync, character LoRA training. Mac app or Pinokio. No cloud, no API key, no NVIDIA GPU. Works with Claude Code, Codex and any MCP agent. Topics: ai-filmmaking, ai-video, ai-video-generator, apple-silicon, hailuo, image-to-video, lip-sync, local-ai, lora-training, ltx-2, ltx-2-5, ltx-video, macos, minimax-h3, mlx, music-generation, offline-ai, pinokio, text-to-video, video-generation.",
+      "source": "GitHub",
+      "published_at": "2026-11-24T02:00:20Z",
+      "authors": [],
+      "tags": [
+        "video_generation",
+        "avatar_lipsync"
+      ],
+      "metrics": {
+        "stars": 478,
+        "forks": 69,
+        "language": "Python",
+        "created_at": "2026-04-29T11:59:51Z",
+        "homepage": "https://phosphene.video/?utm_source=github&utm_medium=referral"
+      },
+      "score": 79.4,
+      "why_cn": "开源方向：视频生成、数字人/口型；当前约 478 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "126029cd0666",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "text-to-video",
+        "image-to-video",
+        "lip-sync"
+      ],
+      "creative_cn": "可快速复刻一个「视频生成 + 数字人/口型」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "2b6d9d53e14d66be",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开发工具",
+      "resource_links": {
+        "code": "https://github.com/mrbizarro/Phosphene",
+        "project": "https://phosphene.video/?utm_source=github&utm_medium=referral"
+      },
+      "first_seen_at": "2026-10-30",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "github",
+      "title": "BinWang28/audio-ai-hub",
+      "url": "https://github.com/BinWang28/audio-ai-hub",
+      "summary": "The hub for audio AI research: papers, open models, benchmarks & datasets across audio LLMs, speech recognition, TTS, music & audio generation. Topics: audio-ai, audio-generation, audio-llm, music-generation, paper-list, speech-recognition, tts.",
+      "source": "GitHub",
+      "published_at": "2026-11-23T14:54:58Z",
+      "authors": [],
+      "tags": [
+        "audio_generation",
+        "speech_understanding"
+      ],
+      "metrics": {
+        "stars": 967,
+        "forks": 55,
+        "language": "Python",
+        "created_at": "2024-06-15T06:26:43Z",
+        "homepage": "https://binwang28.github.io/audio-ai-hub/"
+      },
+      "score": 79.4,
+      "why_cn": "开源方向：音频/音效生成、语音理解；当前约 967 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "6f2de8593c40",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "audio generation",
+        "speech recognition"
+      ],
+      "creative_cn": "可快速复刻一个「音频/音效生成 + 语音理解」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "5798eceef6022b55",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "评测工具",
+      "resource_links": {
+        "code": "https://github.com/BinWang28/audio-ai-hub",
+        "project": "https://binwang28.github.io/audio-ai-hub/"
+      },
+      "first_seen_at": "2026-08-18",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "github",
+      "title": "facefusion/facefusion",
+      "url": "https://github.com/facefusion/facefusion",
+      "summary": "Industry leading face manipulation platform Topics: ai, deep-fake, deepfake, face-swap, faceswap, lip-sync, lipsync.",
+      "source": "GitHub",
+      "published_at": "2026-11-24T00:10:28Z",
+      "authors": [],
+      "tags": [
+        "avatar_lipsync"
+      ],
+      "metrics": {
+        "stars": 30804,
+        "forks": 5037,
+        "language": "Python",
+        "created_at": "2023-08-17T19:59:55Z",
+        "homepage": "https://facefusion.io"
+      },
+      "score": 79.1,
+      "why_cn": "开源方向：数字人/口型；当前约 30,804 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "755a8636d575",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "lip-sync"
+      ],
+      "creative_cn": "可快速复刻一个「数字人/口型」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "1e719ac9b23703fc",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "工具 / 框架",
+      "resource_links": {
+        "code": "https://github.com/facefusion/facefusion",
+        "project": "https://facefusion.io"
+      },
+      "first_seen_at": "2026-08-20",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "github",
+      "title": "receptron/mulmocast-cli",
+      "url": "https://github.com/receptron/mulmocast-cli",
+      "summary": "AI-powered podcast & video generator. Topics: ai-agents, ai-video, cli, lip-sync, podcast, presentation, slides, text-to-video, tts, typescript, video-generation, voice-cloning.",
+      "source": "GitHub",
+      "published_at": "2026-11-23T20:01:39Z",
+      "authors": [],
+      "tags": [
+        "avatar_lipsync",
+        "video_generation"
+      ],
+      "metrics": {
+        "stars": 482,
+        "forks": 81,
+        "language": "TypeScript",
+        "created_at": "2025-04-18T23:55:45Z",
+        "homepage": "https://mulmocast.com"
+      },
+      "score": 78.7,
+      "why_cn": "开源方向：数字人/口型、视频生成；当前约 482 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "83d1be1952e4",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "lip-sync",
+        "text-to-video"
+      ],
+      "creative_cn": "可快速复刻一个「数字人/口型 + 视频生成」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "a43b6a1988fc0c9e",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开发工具",
+      "resource_links": {
+        "code": "https://github.com/receptron/mulmocast-cli",
+        "project": "https://mulmocast.com"
+      },
+      "first_seen_at": "2026-10-17",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "github",
+      "title": "doodersrage/castcut",
+      "url": "https://github.com/doodersrage/castcut",
+      "summary": "Local-first AI filmmaking workbench on ComfyUI: consistent characters across every still and clip, plan a Day or a Story, talking clips with kept voices, and a real editor to cut, subtitle and finish the film. Topics: ai-filmmaking, character-consistency, comfyui, image-generation, image-to-video, lip-sync, llm, local-first, nextjs, qwen-image, self-hosted, tauri, text-to-video, video-editor, video-generation, wan-video.",
+      "source": "GitHub",
+      "published_at": "2026-11-23T13:54:00Z",
+      "authors": [],
+      "tags": [
+        "creator_tools",
+        "video_generation",
+        "avatar_lipsync"
+      ],
+      "metrics": {
+        "stars": 18,
+        "forks": 2,
+        "language": "TypeScript",
+        "created_at": "2026-07-17T23:07:07Z",
+        "homepage": "https://doodersrage.github.io/castcut/"
+      },
+      "score": 78.6,
+      "why_cn": "开源方向：创作者工具、视频生成、数字人/口型；当前约 18 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "1097d5e4259e",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "ai filmmaking",
+        "ai film",
+        "text-to-video",
+        "image-to-video",
+        "lip-sync"
+      ],
+      "creative_cn": "可快速复刻一个「创作者工具 + 视频生成」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "7cf51b95cf42d559",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开源项目",
+      "resource_links": {
+        "code": "https://github.com/doodersrage/castcut",
+        "project": "https://doodersrage.github.io/castcut/"
+      },
+      "first_seen_at": "2026-11-06",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "github",
+      "title": "interviewflowai/talking-avatar",
+      "url": "https://github.com/interviewflowai/talking-avatar",
+      "summary": "Give your voice agent a face. Talking Avatar turns any voice, from any text-to-speech engine or voice agent, into a lifelike talking avatar on your page, in real time. Topics: 3d-avatar, ai-avatar, audio-to-viseme, avatar, browser, conversational-ai, facial-animation, lip-sync, lipsync, react, realtime, sdk, speech-animation, talking-avatar, threejs, typescript, viseme, voice-agent, webaudio, webgl.",
+      "source": "GitHub",
+      "published_at": "2026-11-23T04:42:51Z",
+      "authors": [],
+      "tags": [
+        "avatar_lipsync",
+        "speech_generation"
+      ],
+      "metrics": {
+        "stars": 18,
+        "forks": 5,
+        "language": "TypeScript",
+        "created_at": "2026-10-02T08:19:32Z",
+        "homepage": "https://talking-avatar.dev"
+      },
+      "score": 78.5,
+      "why_cn": "开源方向：数字人/口型、语音生成；当前约 18 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "e22e968903f3",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "talking avatar",
+        "lip-sync",
+        "text-to-speech"
+      ],
+      "creative_cn": "可快速复刻一个「数字人/口型 + 语音生成」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "d9a479e8f20f3907",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开发工具",
+      "resource_links": {
+        "code": "https://github.com/interviewflowai/talking-avatar",
+        "project": "https://talking-avatar.dev"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "github",
+      "title": "Ehopatoo/capcut-pro-banorin-video-editor",
+      "url": "https://github.com/Ehopatoo/capcut-pro-banorin-video-editor",
+      "summary": "Capcut Pro Banorin Video Editor provides a video editing workspace for timeline-based projects. Topics: auto-captions, captions, content-creation, effects, encoding, filmmaking, media, reels-editor, short-form-video, subtitles, tiktok-editor, vertical-video, video, video-converter, video-editing, video-editor, video-effects, video-processing, video-production, youtube-shorts.",
+      "source": "GitHub",
+      "published_at": "2026-11-24T05:42:47Z",
+      "authors": [],
+      "tags": [
+        "video_editing"
+      ],
+      "metrics": {
+        "stars": 157,
+        "forks": 0,
+        "language": "HTML",
+        "created_at": "2026-11-23T21:52:40Z",
+        "homepage": ""
+      },
+      "score": 77.7,
+      "why_cn": "开源方向：视频编辑/理解；当前约 157 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "fdda8fb2edea",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "video editing",
+        "video editor"
+      ],
+      "creative_cn": "可快速复刻一个「视频编辑/理解」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "4bb38e131e15737a",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开源项目",
+      "resource_links": {
+        "code": "https://github.com/Ehopatoo/capcut-pro-banorin-video-editor"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "github",
+      "title": "NVlabs/Sana",
+      "url": "https://github.com/NVlabs/Sana",
+      "summary": "SANA & Sol: Efficient Generative Models and Full-Stack Training & Inference Engines for Image, Video, World Modeling and Robotics Topics: diffusion, dit, linear-transformer, nvfp4, pytorch, reinforcement-learning, robotics, sana, streaming-video, system-algorithm-deisgn, text-to-image-generation, text-to-video, transformers, video-generation, world-models.",
+      "source": "GitHub",
+      "published_at": "2026-11-24T04:35:28Z",
+      "authors": [],
+      "tags": [
+        "video_generation"
+      ],
+      "metrics": {
+        "stars": 9876,
+        "forks": 815,
+        "language": "Python",
+        "created_at": "2024-10-11T20:19:45Z",
+        "homepage": "https://nvlabs.github.io/Sana/docs/"
+      },
+      "score": 77.7,
+      "why_cn": "开源方向：视频生成；当前约 9,876 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "a3658918efc2",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "text-to-video",
+        "world model"
+      ],
+      "creative_cn": "可快速复刻一个「视频生成」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "8981b62bffc914b4",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开源项目",
+      "resource_links": {
+        "code": "https://github.com/NVlabs/Sana",
+        "project": "https://nvlabs.github.io/Sana/docs/"
+      },
+      "first_seen_at": "2026-08-18",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "github",
+      "title": "anomalyco/hex",
+      "url": "https://github.com/anomalyco/hex",
+      "summary": "Local voice dictation for mac, windows and linux Topics: dictation, linux, local-first, macos, rust, speech-recognition, speech-to-text, voice-control.",
+      "source": "GitHub",
+      "published_at": "2026-11-24T06:52:23Z",
+      "authors": [],
+      "tags": [
+        "speech_understanding"
+      ],
+      "metrics": {
+        "stars": 8371,
+        "forks": 570,
+        "language": "Rust",
+        "created_at": "2026-07-17T23:48:56Z",
+        "homepage": "https://anoma.ly/hex"
+      },
+      "score": 77.6,
+      "why_cn": "开源方向：语音理解；当前约 8,371 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "0f4537518a87",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "speech-to-text"
+      ],
+      "creative_cn": "可快速复刻一个「语音理解」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "1fea31842070b1aa",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开源项目",
+      "resource_links": {
+        "code": "https://github.com/anomalyco/hex",
+        "project": "https://anoma.ly/hex"
+      },
+      "first_seen_at": "2026-09-05",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "github",
+      "title": "alexturkey/VideoTurko",
+      "url": "https://github.com/alexturkey/VideoTurko",
+      "summary": "MiniMax H3 on a 4 GB GTX 1050 Ti: stable-diffusion.cpp memory patches, up to 209 frames (8.7 s) in one pass Topics: gtx-1050-ti, image-to-video, local-ai, low-vram, minimax-h3, offline, stable-diffusion-cpp, text-to-video.",
+      "source": "GitHub",
+      "published_at": "2026-11-24T06:34:38Z",
+      "authors": [],
+      "tags": [
+        "video_generation"
+      ],
+      "metrics": {
+        "stars": 131,
+        "forks": 32,
+        "language": "Python",
+        "created_at": "2026-11-19T22:28:23Z",
+        "homepage": ""
+      },
+      "score": 77.5,
+      "why_cn": "开源方向：视频生成；当前约 131 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "55d4f44261ed",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "text-to-video",
+        "image-to-video"
+      ],
+      "creative_cn": "可快速复刻一个「视频生成」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "b2b1b54d09b4fe68",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开源项目",
+      "resource_links": {
+        "code": "https://github.com/alexturkey/VideoTurko"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "github",
+      "title": "kaomei/stickman-video-director",
+      "url": "https://github.com/kaomei/stickman-video-director",
+      "summary": "AI Agent Skill (Claude Code, Codex & more): Turn any script into animated stickman videos for faceless YouTube, Shorts & TikTok. 14+ styles with voiceover, captions & SFX. Free & open-source (MIT). Topics: agent-skills, ai-animation-generator, ai-video-production, animation, claude-code, claude-skills, codex-skill, content-creation, creator-tools, explainer-video, faceless-youtube, generative-ai, stick-figure, stickman, storytelling, text-to-video, tiktok, video-generation, youtube-automation, youtube-shorts.",
+      "source": "GitHub",
+      "published_at": "2026-11-24T05:48:03Z",
+      "authors": [],
+      "tags": [
+        "video_generation"
+      ],
+      "metrics": {
+        "stars": 7802,
+        "forks": 1370,
+        "language": "JavaScript",
+        "created_at": "2026-08-03T07:44:33Z",
+        "homepage": "https://telegram.me/stickmanskill"
+      },
+      "score": 77.4,
+      "why_cn": "开源方向：视频生成；当前约 7,802 Stars，可优先判断许可证、推理显存和 Demo 完整度。",
+      "item_id": "4090fdf76f7e",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "text-to-video"
+      ],
+      "creative_cn": "可快速复刻一个「视频生成」最小工作流，并记录部署成本、速度与可控参数。",
+      "enrichment_fingerprint": "a693682dfcd0504f",
+      "icon": "🧩",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "开源项目",
+      "resource_links": {
+        "code": "https://github.com/kaomei/stickman-video-director",
+        "project": "https://telegram.me/stickmanskill"
+      },
+      "first_seen_at": "2026-10-30",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "paper",
+      "title": "LiveAudio: From Bidirectional to Autoregressive Diffusion for Real-Time Streaming Video-to-Audio Generation",
+      "url": "https://arxiv.org/abs/2611.30714v1",
+      "summary": "Video-to-audio generation synthesizes sound that matches a video in content and timing, with applications ranging from film post-production to live streaming, games and interactive world models. Interactive applications receive video continuously and need the sound to follow it in real time, yet most existing video-to-audio models are bidirectional and must observe an entire clip before producing any sound. We propose LiveAudio, a streaming video-to-audio framework that generates high-quality and synchronized audio in real time while the video is playing. In contrast to prior streaming models trained from scratch, LiveAudio converts a bidirectional model into a streaming generator so as to build on its audio quality and synchronization. LiveAudio generates audio block by block, and each block depends only on the video that has already been played. The streaming generator is obtained from the bidirectional model through progressive causal fine-tuning and distillation, so that each block needs only a few sampling steps. Experiments on VGGSound show that LiveAudio outperforms existing streaming models in audio quality and synchronization, and surpasses the bidirectional model it starts from in synchronization. On a single A100 GPU, it runs in real time with a real-time factor of 0.79 and a time to first frame of 143 ms. Audio samples are available at https://streamaudio.github.io.",
+      "source": "arXiv",
+      "published_at": "2026-11-23T13:55:45Z",
+      "authors": [
+        "Yuxuan Jiang",
+        "Zehua Chen",
+        "Yusheng Dai",
+        "Andong Wang",
+        "Weibei Dou",
+        "Jun Zhu"
+      ],
+      "tags": [
+        "audio_generation",
+        "multimodal_creation",
+        "video_generation"
+      ],
+      "metrics": {},
+      "score": 75.9,
+      "why_cn": "研究方向：音频/音效生成、跨模态创作、视频生成。建议重点查看方法创新、数据集与客观/主观评测设置。",
+      "item_id": "bb43f42f28b5",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "audio generation",
+        "video-to-audio",
+        "world model"
+      ],
+      "creative_cn": "可尝试把「音频/音效生成 + 跨模态创作」方法做成可交互 Demo，对比原始输入、生成结果和失败样例。",
+      "enrichment_fingerprint": "bcfaec43b17fe910",
+      "icon": "📄",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "模型 / 方法",
+      "resource_links": {
+        "paper": "https://arxiv.org/abs/2611.30714v1",
+        "hf_paper": "https://huggingface.co/papers/2611.30714"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "paper",
+      "title": "Synthetic Twins: Closing the Gap Between TTS Test Sets and Real Recordings in Turkish ASR Evaluation",
+      "url": "https://arxiv.org/abs/2611.30694v1",
+      "summary": "Speech synthesized by text-to-speech engines is a low-cost substitute for recorded test sets in automatic speech recognition, yet an off-the-shelf synthetic test set is worth only a few dozen real recordings for estimating the real error rate of a recognizer. This paper examines which properties of real recordings are missing from synthetic speech and how much of the gap can be closed. For 507 Turkish Common Voice recordings, synthetic twins are built: a ladder of synthetic copies that adds, one factor at a time, the pitch of the speaker, a clone of the same speaker, the real recording channel and the speaking rate. At each step, the agreement between ASR behaviour on the copy and on the real recording is measured. Across three zero-shot cloning engines and panels of six and 19 recognizers, the speaker clone is the step that improves agreement on which sentences are hard, raising the Spearman correlation from .41 to .55 for Chatterbox. Matching the channel or adding generic noise corrects the error level when the synthetic speech is easier than real speech. The twin with the highest worth is equivalent to 70 to 122 real recordings, depending on the recognizer panel, compared with about 9 for a stock voice. The findings replicate on VoxForge, a second corpus in which speaker identity is known rather than inferred: the clone raises sentence agreement from .31 to .50 and the worth from 8 to about 50 recordings. Agreement on which sentences are hard is distinct from agreement on how hard they are. The paper concludes with a practical recipe and a reporting checklist for synthetic ASR test sets.",
+      "source": "arXiv",
+      "published_at": "2026-11-23T13:43:42Z",
+      "authors": [
+        "Nur Yağmur Tuncer",
+        "Mustafa Sertaç Türkel",
+        "Fatma Nur Korkmaz",
+        "Ahmet Tuğrul Bayrak"
+      ],
+      "tags": [
+        "speech_understanding",
+        "speech_generation"
+      ],
+      "metrics": {},
+      "score": 68.8,
+      "why_cn": "研究方向：语音理解、语音生成。建议重点查看方法创新、数据集与客观/主观评测设置。",
+      "item_id": "11542cf6b54a",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "speech recognition",
+        "automatic speech recognition",
+        "text-to-speech"
+      ],
+      "creative_cn": "可尝试把「语音理解 + 语音生成」方法做成可交互 Demo，对比原始输入、生成结果和失败样例。",
+      "enrichment_fingerprint": "8d99a0e1923b9401",
+      "icon": "📄",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "数据集",
+      "resource_links": {
+        "paper": "https://arxiv.org/abs/2611.30694v1",
+        "hf_paper": "https://huggingface.co/papers/2611.30694"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "paper",
+      "title": "Ultrasound Watermark: Real-time Acoustic Watermarking against Voice Scams on Smartphones",
+      "url": "https://arxiv.org/abs/2611.30106v1",
+      "summary": "Recent advances in text-to-speech (TTS), voice conversion (VC), and AI-driven speech synthesis enable adversaries to convincingly impersonate trusted individuals during phone calls. Existing defenses often rely on offline analysis, degrade under telephony distortions, or remain vulnerable to adaptive attacks. To address these limitations, we present Ultrasound Watermark, a real-time, smartphone-native framework that protects live calls by binding speech to the caller's physical articulatory motion through acoustic watermarking. During a call, the smartphone emits ultrasonic signals and captures reflections from facial articulatory movements using only its built-in speaker and microphone. Ultrasound Watermark extracts motion features from these reflections and fuses them with outgoing speech to generate a dynamic watermark. Because the ultrasonic measurements are physically and temporally coupled with speech production, they are difficult to spoof without the underlying articulatory motion. A synchronized generator-detector architecture enforces cross-modal speech-motion consistency against replay, synthesized speech, and articulation-mimicking attacks. Ultrasound Watermark operates continuously with less than 200 ms latency overhead and requires no additional hardware. We implement Ultrasound Watermark on iOS and Android and evaluate it using over 2.5 hours of synchronized speech-ultrasound recordings from 22 speakers across eight smartphones and four real-world environments. Results demonstrate robustness to diverse attacks and telephony distortions while preserving perceptual audio quality.",
+      "source": "arXiv",
+      "published_at": "2026-11-23T06:03:11Z",
+      "authors": [
+        "Renzhi Hao",
+        "Shirui Cao",
+        "Yizhu Wen",
+        "Rishav Gupta",
+        "Dharani Nadendla",
+        "Mehran Kafai",
+        "Hanqing Guo",
+        "Dong Li"
+      ],
+      "tags": [
+        "speech_generation",
+        "speech_editing"
+      ],
+      "metrics": {},
+      "score": 67.9,
+      "why_cn": "研究方向：语音生成、语音编辑/转换。建议重点查看方法创新、数据集与客观/主观评测设置。",
+      "item_id": "b34c83d6df96",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "text-to-speech",
+        "speech synthesis",
+        "voice conversion"
+      ],
+      "creative_cn": "可尝试把「语音生成 + 语音编辑/转换」方法做成可交互 Demo，对比原始输入、生成结果和失败样例。",
+      "enrichment_fingerprint": "96e86c2fb90193da",
+      "icon": "📄",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "模型 / 方法",
+      "resource_links": {
+        "paper": "https://arxiv.org/abs/2611.30106v1",
+        "hf_paper": "https://huggingface.co/papers/2611.30106"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "paper",
+      "title": "SWIFT: A Handcrafted, Arithmetic-Minimal FPGA Engine for Real-Time Audio Deepfake Detection",
+      "url": "https://arxiv.org/abs/2611.29315v1",
+      "summary": "Generative voice cloning threatens voice-based authentication, yet current deepfake detectors rely on power-hungry, high-precision models unsuited to edge hardware. We present SWIFT (Streaming Whiten-Integer Forensic Trust-Engine), a handcrafted detector that works in the high-frequency noise domain where synthesis artifacts concentrate. A first-order integer high-pass residual drives nine families of fixed-point descriptors, among them integer lifting-wavelet cepstral quantiles, Mahalanobis anomaly distances, Poincaré phase-space geometry, and phase jitter, fused by calibrated gradient-boosted trees and a sparse L1-regularised meta-learner. Under leakage-controlled nested cross-validation, with one shared preprocessing chain for real and fake audio, this reference model reaches accuracy of up to 99.86% and an Equal Error Rate (EER) as low as 0.03% across eight benchmarks. Its integer front-end and a fixed-point linear classifier run on the programmable logic of a PYNQ-Z2 (Zynq-7020) board, with a 7.85 microseconds per-frame datapath latency (127.4k frames/s) at 1.734 W and 11.2% LUT utilisation. Integer-only audio deepfake feature extraction is thus feasible at the edge without pretrained neural models or floating-point units.",
+      "source": "arXiv",
+      "published_at": "2026-11-22T08:22:17Z",
+      "authors": [
+        "Chirantan Banerjee",
+        "Soumita Chatterjee",
+        "Bhargab B. Bhattacharya",
+        "Hafizur Rahaman"
+      ],
+      "tags": [
+        "safety_evaluation",
+        "speech_generation"
+      ],
+      "metrics": {},
+      "score": 65.2,
+      "why_cn": "研究方向：安全与评测、语音生成。建议重点查看方法创新、数据集与客观/主观评测设置。",
+      "item_id": "3cb1a46f0829",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "audio deepfake",
+        "deepfake detection",
+        "voice cloning"
+      ],
+      "creative_cn": "可尝试把「安全与评测 + 语音生成」方法做成可交互 Demo，对比原始输入、生成结果和失败样例。",
+      "enrichment_fingerprint": "0e5ba1c157dd6fb8",
+      "icon": "📄",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "基准 / 评测",
+      "resource_links": {
+        "paper": "https://arxiv.org/abs/2611.29315v1",
+        "hf_paper": "https://huggingface.co/papers/2611.29315"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "paper",
+      "title": "Do Waste Classifiers Recognise Items They Have Never Seen? Object-Disjoint Evaluation on Household and Medical Waste",
+      "url": "https://arxiv.org/abs/2611.30911v1",
+      "summary": "Automatic waste classification supports source separation, which enables recycling and keeps hazardous medical items out of household waste. Waste classification studies often report near-perfect accuracy on random image splits, which put photographs of one item in both training and test sets. To measure how well classifiers recognise items they have never seen, we built BanglaWaste-23, with 4,160 images of 172 objects in 23 household and medical waste classes from Bangladesh. Every image also records which physical item it shows. We evaluated 11 ImageNet-pretrained models and two models trained from scratch (a compact custom network and MobileNetV3-L) using object-disjoint five-fold cross-validation and a random split. On unseen objects, the best pretrained model reached a macro-averaged F1 score of 98.8%, and six models were statistically tied. The random split overstated from-scratch accuracy by 15 to 19 percentage points. The from-scratch models also missed 11 to 13% of medical items, against under 1% for pretrained models. On a second dataset from Dhaka, pretrained accuracy fell by 15 to 22 points. Classifiers should therefore be evaluated on unseen objects, with random-split results read as an upper bound. The data are on Zenodo and the code at https://github.com/saadbaust/BanglaWaste-23.",
+      "source": "arXiv",
+      "published_at": "2026-11-23T16:06:40Z",
+      "authors": [
+        "Nusrat Jahan",
+        "Mst. Eshrat Jahan Esha",
+        "Masuma Sadia",
+        "Saad Ahmed",
+        "Md Zahim Hassan",
+        "S M Jahangir Alam"
+      ],
+      "tags": [
+        "speech_editing"
+      ],
+      "metrics": {},
+      "score": 61.1,
+      "why_cn": "研究方向：语音编辑/转换。建议重点查看方法创新、数据集与客观/主观评测设置。",
+      "item_id": "cab750e7cb90",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "source separation"
+      ],
+      "creative_cn": "可尝试把「语音编辑/转换」方法做成可交互 Demo，对比原始输入、生成结果和失败样例。",
+      "enrichment_fingerprint": "62995ad05ee5ffdb",
+      "icon": "📄",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "数据集",
+      "resource_links": {
+        "paper": "https://arxiv.org/abs/2611.30911v1",
+        "hf_paper": "https://huggingface.co/papers/2611.30911"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "paper",
+      "title": "DexLatentWorld: 3D Cross-Embodiment Latent Action World Models for Zero-Shot Robotic Manipulation",
+      "url": "https://arxiv.org/abs/2611.30907v1",
+      "summary": "World models facilitate planning and control in robotic manipulation by enabling agents to anticipate the consequences of their actions. However, they typically rely on action-labelled interaction data that is costly to acquire and difficult to scale. These models are also often tied to the specific embodiment they were trained on, limiting transferability to previously unseen robot morphologies. We introduce a 3D latent-action world model that learns continuous action representations directly from point-cloud observations of retargeted human manipulation demonstrations. A contrastive objective is used to encourage consistent representations of motion across embodiments. The resulting unified latent action space serves directly as the search space for model-predictive control, where sampled latent actions condition particle-based future predictions. Executable robot commands are then recovered from the predicted geometric motion without requiring an embodiment-specific action decoder. Through extensive evaluations, we demonstrate that the learned latent actions exhibit controllable and compositional motion, transfer to unseen robot embodiments, and support zero-shot manipulation with unseen gripper geometries. Following task-agnostic adaptation, our model achieves 90%, 92%, and 60% success on reaching, grasping, and placing, respectively, compared with DexWM's reported 72%, 58%, and 28%. Finally, we demonstrate zero-shot real-world manipulation with an unseen dexterous hand, achieving an 86% success rate across 50 trials on five diverse tasks involving pushing, grasping, and lifting everyday objects. These results highlight the potential of geometry-grounded latent actions as a unified, transferable interface for world-model-based robotic manipulation. Project materials, including demonstration videos and source code, are available at https://vinaymohan0409.github.io/DexLatentWorld/.",
+      "source": "arXiv",
+      "published_at": "2026-11-23T16:05:37Z",
+      "authors": [
+        "Vinay Udit Mohan",
+        "Xuchuan Huang",
+        "Rolandos Alexandros Potamias"
+      ],
+      "tags": [
+        "video_generation"
+      ],
+      "metrics": {},
+      "score": 61.1,
+      "why_cn": "研究方向：视频生成。建议重点查看方法创新、数据集与客观/主观评测设置。",
+      "item_id": "e62473abd66e",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "world model"
+      ],
+      "creative_cn": "可尝试把「视频生成」方法做成可交互 Demo，对比原始输入、生成结果和失败样例。",
+      "enrichment_fingerprint": "3043ac8e8e3a5228",
+      "icon": "📄",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "模型 / 方法",
+      "resource_links": {
+        "paper": "https://arxiv.org/abs/2611.30907v1",
+        "hf_paper": "https://huggingface.co/papers/2611.30907"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "paper",
+      "title": "World Models as Native Latent Action Models",
+      "url": "https://arxiv.org/abs/2611.30898v1",
+      "summary": "Large and diverse video sources, such as egocentric human video and heterogeneous robot recordings, carry rich dynamics but come either without actions or without a shared action space. Latent action models (LAMs) can recover these dynamics, but they train their inverse- and forward-dynamics models (IDM, FDM) from scratch, trading off pixel reconstruction against latent capacity and accuracy. Pretrained video world models natively generate high-fidelity dynamics, yet represent them densely, entangled across all layers. Viewing the world model as a LAM, we show that these dynamics can be extracted with minimal changes to the model. Native LAM operates one pretrained video diffusion transformer as both IDM and FDM, with learnable dynamics registers as the only causal bridge between the two, and trains on counterfactual temporal pairs that differ in motion alone, so that the registers distill a video's dynamics into a compact native latent action. We further propose a pretraining paradigm for vision-language-action (VLA) policies, Pretraining Actions from World models (PAWlicy), in which Native LAM serves as a dynamics teacher on large-scale video; unlike world action models, it never generates video. Native latent actions outperform existing LAMs on the LARY benchmark in both action classification and control regression, and replay the same motion on new robots, in new scenes, and from human hands to robots, although no transfer objective is used in training. With a 3.8B model, PAWlicy reaches a 93.6% average success rate on RoboTwin 2.0 trained with domain-randomized demonstrations, the highest among VLAs. On RoboDojo, it is competitive on every dimension we evaluate, and its Precision, evaluated by us, is on par with the leading leaderboard entries. On real robots, it improves over the pi_0.5 baseline on both tasks. Both stages use only public data and a publicly released world model.",
+      "source": "arXiv",
+      "published_at": "2026-11-23T16:01:06Z",
+      "authors": [
+        "Qinyue Li",
+        "Weijie Qiao",
+        "Qingyi Tao",
+        "Zerui Gong",
+        "Zhe Yang",
+        "Quanzhou Li",
+        "Taolin Zhang",
+        "Jinglin He",
+        "Zhonghua Wu",
+        "Chen Change Loy"
+      ],
+      "tags": [
+        "video_generation"
+      ],
+      "metrics": {},
+      "score": 61.1,
+      "why_cn": "研究方向：视频生成。建议重点查看方法创新、数据集与客观/主观评测设置。",
+      "item_id": "fea5eba77785",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "video diffusion",
+        "world model"
+      ],
+      "creative_cn": "可尝试把「视频生成」方法做成可交互 Demo，对比原始输入、生成结果和失败样例。",
+      "enrichment_fingerprint": "be5a2983c4b71b23",
+      "icon": "📄",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "基准 / 评测",
+      "resource_links": {
+        "paper": "https://arxiv.org/abs/2611.30898v1",
+        "hf_paper": "https://huggingface.co/papers/2611.30898"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "paper",
+      "title": "Can Multimodal Fusion MakeSense for Embodied Vision in Degraded Sensing?",
+      "url": "https://arxiv.org/abs/2611.30836v1",
+      "summary": "Embodied vision systems rely on complementary sensors to perceive and act as conditions change. Even models that accept arbitrary sensor subsets can exhibit negative fusion: adding a sensor increases prediction error. We propose MakeSense, a multimodal fusion framework that preserves sensor-specific evidence in private streams and combines information through shared bottleneck tokens. Training pairs full and subset views of the same degraded observations, penalizing higher error with more sensors. Where geometry permits, the distance readout uses range measurements alone, while the rest of the prediction draws on all available inputs. Paired tests across five datasets reveal helpful and harmful sensor additions. MakeSense reduces negative fusion on MM-Fi. With lightweight adapters and per-dataset training, the same design improves UAV localization on MMAUD, cooperative 3D detection on V2X-Real, few-shot pose transfer to RELI11D, and command prediction on Humanoid-Everyday, where a world model trained on the frozen core's outputs forecasts future fused states more accurately than a linear baseline at longer tested horizons. MakeSense supports embodied sensing across human activity, aerial systems, robotics, and autonomous driving.",
+      "source": "arXiv",
+      "published_at": "2026-11-23T15:20:31Z",
+      "authors": [
+        "Cheng-Ru Chou",
+        "Shih-Yu Lai",
+        "Pei-Lin Chiang",
+        "Shou-Po Tsai",
+        "Jing-Zhe Huang",
+        "Fukuharu Tanaka",
+        "Hirozumi Yamaguchi",
+        "Bing-Yu Chen",
+        "Yu-Lun Liu",
+        "Hsun-Ping Hsieh"
+      ],
+      "tags": [
+        "video_generation"
+      ],
+      "metrics": {},
+      "score": 61.0,
+      "why_cn": "研究方向：视频生成。建议重点查看方法创新、数据集与客观/主观评测设置。",
+      "item_id": "e21046b067f5",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "world model"
+      ],
+      "creative_cn": "可尝试把「视频生成」方法做成可交互 Demo，对比原始输入、生成结果和失败样例。",
+      "enrichment_fingerprint": "84997976dd56713a",
+      "icon": "📄",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "数据集",
+      "resource_links": {
+        "paper": "https://arxiv.org/abs/2611.30836v1",
+        "hf_paper": "https://huggingface.co/papers/2611.30836"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "paper",
+      "title": "BiSAT: Bidirectionally Aligned Semantic-Acoustic Tokenization for Speech Language Models",
+      "url": "https://arxiv.org/abs/2611.30723v1",
+      "summary": "Speech language models (LMs) generate speech as sequences of discrete tokens. Their tokenizer must therefore preserve both acoustic detail and linguistic content at a low bitrate. Semantic-enhanced tokenizers may lose acoustic detail, whereas acoustic-oriented tokenizers retain acoustic variation that makes language modeling harder. Unified tokenizers combine both, but representing acoustic detail and linguistic content within a single feature space can cause interference between the two objectives, and existing approaches typically align acoustic representations to fixed semantic targets from a frozen teacher. We propose Bidirectionally Aligned Semantic-Acoustic Tokenization (BiSAT), a unified tokenization framework with separate acoustic and semantic branches aligned by a shared-index mechanism. This design learns acoustic and semantic representations in separate continuous spaces while producing a single discrete code sequence, and it jointly optimizes both encoders without relying on fixed semantic teacher targets. Based on BiSAT, we develop BiSAT-TTS, a zero-shot text-to-speech system comprising an autoregressive text-speech LM and a conditional flow-matching acoustic decoder. Reconstruction, downstream understanding, and diagnostic analyses show that BiSAT effectively preserves semantic and acoustic information in the code stream, performs well on in-the-wild and out-of-domain speech, and learns complementary codebook representations. The frozen-code understanding results also support its feasibility and potential for code-based reward modeling in reinforcement learning post-training. BiSAT-TTS performs comparably to state-of-the-art speech LM-based TTS baselines with less training data, further supporting BiSAT's effectiveness for speech language modeling. The audio demos are available at https://seekmind-lab.github.io/bisat-demo.",
+      "source": "arXiv",
+      "published_at": "2026-11-23T14:03:02Z",
+      "authors": [
+        "Y. Lu",
+        "L. Wang",
+        "S. Okada"
+      ],
+      "tags": [
+        "speech_generation"
+      ],
+      "metrics": {},
+      "score": 60.9,
+      "why_cn": "研究方向：语音生成。建议重点查看方法创新、数据集与客观/主观评测设置。",
+      "item_id": "dbbca11f7f61",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "text-to-speech",
+        "speech language model"
+      ],
+      "creative_cn": "可尝试把「语音生成」方法做成可交互 Demo，对比原始输入、生成结果和失败样例。",
+      "enrichment_fingerprint": "2bc67b858bb94fec",
+      "icon": "📄",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "模型 / 方法",
+      "resource_links": {
+        "paper": "https://arxiv.org/abs/2611.30723v1",
+        "hf_paper": "https://huggingface.co/papers/2611.30723"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "paper",
+      "title": "Optimising VLM Harnesses to Localise Errors in Generated Videos",
+      "url": "https://arxiv.org/abs/2611.30673v1",
+      "summary": "Identifying subtle errors in generated videos is an important step toward automated video generation, where errors must be detected to assess and refine generated clips. Recent work shows that pretrained vision-language models (VLMs) can localise such errors, but their effectiveness depends strongly on the workflow used: choices about which frames to inspect, which tools and model calls to make, and how to combine predictions can lead to substantially different results. We study VLM harnesses for video error localisation. Instead of relying on manually designed harnesses, we propose Harness Search and Merge (HSM), an algorithm that automatically constructs them by searching over executable evaluation programs. An LLM orchestrator refines candidate harnesses independently on random training subsets, records findings in a memory, and constructively merges complementary candidates. We evaluate HSM on Spotlight, a recently proposed benchmark for localising errors in generated videos. HSM achieves 0.234 +- 0.012 F1, exceeding the strongest benchmark strategy (0.173 +- 0.016), and retains its lead on an unseen video generator (0.213 +- 0.008 versus 0.140 +- 0.003). On IPV-Bench, it achieves strong localisation performance with lower false-alarm rates than existing optimisation baselines. Together, these results show that searching over complete VLM harnesses can outperform existing evaluation strategies, transfer to an unseen video generator, and reduce false alarms on real videos.",
+      "source": "arXiv",
+      "published_at": "2026-11-23T13:28:34Z",
+      "authors": [
+        "Ankit Yadav",
+        "Nikhil Cherian Kurian",
+        "Arpit Garg",
+        "Lingqiao Liu"
+      ],
+      "tags": [
+        "video_generation"
+      ],
+      "metrics": {},
+      "score": 60.8,
+      "why_cn": "研究方向：视频生成。建议重点查看方法创新、数据集与客观/主观评测设置。",
+      "item_id": "5602ebcb8fc2",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "video generation"
+      ],
+      "creative_cn": "可尝试把「视频生成」方法做成可交互 Demo，对比原始输入、生成结果和失败样例。",
+      "enrichment_fingerprint": "b166a4818e0a02b7",
+      "icon": "📄",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "基准 / 评测",
+      "resource_links": {
+        "paper": "https://arxiv.org/abs/2611.30673v1",
+        "hf_paper": "https://huggingface.co/papers/2611.30673"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "paper",
+      "title": "Zhengrong: World Models with Pole-Based Action-Response Factorization for Direct Visual Planning",
+      "url": "https://arxiv.org/abs/2611.30666v1",
+      "summary": "Direct visual world models predict the effects of candidate action sequences without recursive latent rollout, yet they leave the temporal structure of action effects unspecified. We introduce Zhengrong (Zhengrong-PoleWM), a world model that decomposes a latent trajectory into an initial-condition anchor, a free response, and delayed responses to action innovations. Nonlinear networks map visual history and causal action prefixes to response coefficients. A shared bank of stable conjugate poles determines how each response evolves with elapsed time. This factorization preserves nonlinear interactions across actions, anchors predictions exactly at the initial state, prevents future actions from affecting earlier predictions, and yields bounded responses to finite control plans. We derive an exact re-anchoring identity that identifies the additional basis direction $Ψ_κ(s)$ needed to represent shifted trajectory tails. Across four offline image-goal control benchmarks (Cube, TwoRoom, PushT, and Reacher), Zhengrong-PoleWM achieves $90.83\\% \\pm 0.47\\%$ macro-average success over two training seeds at epoch 20, exceeding the strongest baseline (QQWorld) by 6.08 percentage points. Selecting checkpoints by validation loss yields $91.21\\% \\pm 1.00\\%$. In a controlled first-epoch Cube study without restart regularization, neural and pole response heads outperform a generic direct predictor by 20.67 and 23.34 percentage points, respectively. On an NVIDIA A100 GPU, median latency for a full 30-iteration cross-entropy method search ranges from 74 to 87 ms across the four tasks. The mean of these medians is 77.5 ms, a 15.8% latency reduction relative to Fast-LeWM and a $7.1\\times$ speedup over autoregressive LeWM.",
+      "source": "arXiv",
+      "published_at": "2026-11-23T13:24:06Z",
+      "authors": [
+        "Yu Zhang",
+        "Jingrui Li",
+        "Congyu Wang",
+        "Yuhang Cheng",
+        "Wenbo Chen",
+        "Xiaobo Zhang",
+        "Jing Zou",
+        "Yuxi Dai"
+      ],
+      "tags": [
+        "video_generation"
+      ],
+      "metrics": {},
+      "score": 60.8,
+      "why_cn": "研究方向：视频生成。建议重点查看方法创新、数据集与客观/主观评测设置。",
+      "item_id": "c8f58fc87cda",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "world model"
+      ],
+      "creative_cn": "可尝试把「视频生成」方法做成可交互 Demo，对比原始输入、生成结果和失败样例。",
+      "enrichment_fingerprint": "2042636e6665f140",
+      "icon": "📄",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "基准 / 评测",
+      "resource_links": {
+        "paper": "https://arxiv.org/abs/2611.30666v1",
+        "hf_paper": "https://huggingface.co/papers/2611.30666"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "paper",
+      "title": "CineAct: Interaction-State Agents for Playable, Branching Film Generation",
+      "url": "https://arxiv.org/abs/2611.30613v1",
+      "summary": "Open video generators such as MiniMax-H3 produce short clips of only several to a dozen seconds per run. To synthesize longer sequences, existing methods either rely on agentic systems following preset scripts, or roll out autoregressively from the previous clip's last frame, losing off-screen states and accumulating hallucinations across turns. Consequently, users still cannot take an explicit goal, choose how to accomplish it, and see that choice persist across subsequent clips. We study goal-grounded interactive video generation, where one goal admits multiple valid approaches, the user's chosen approach must be executed on screen, and its consequences must persist across clips. To this end, we propose CineAct, a state-first agentic framework in which language-model agents handle reasoning while frozen image and video generators serve purely as renderers. Before interaction, the Architect initializes the world as a spatial layout with cameras, an asset library, and a scene graph; at each turn, the system deduces the planned state change, generates a target end frame with an image generator and rigorously verifies it, and synthesizes intermediate motion with an FL2V model. We further introduce a multi-space benchmark covering two suites: long-horizon step execution and open-intent branching admissibility. Experiments show that explicit world-state modeling boosts multi-step rollout consistency over the pixel-only baseline (+11.4 automated, +23.1 human points) and raises paired branching success toward a shared goal by +30.8 points.",
+      "source": "arXiv",
+      "published_at": "2026-11-23T12:49:13Z",
+      "authors": [
+        "Junyan Lin",
+        "Jianqi Ma",
+        "Shujie Duan",
+        "Hanxin Zhu",
+        "Zhihao Hu",
+        "Jinming Liu",
+        "Shuai Li",
+        "Jun Zhang",
+        "Xin Jin",
+        "Chang Wen Chen",
+        "Weidong Zhang"
+      ],
+      "tags": [
+        "video_generation"
+      ],
+      "metrics": {},
+      "score": 60.7,
+      "why_cn": "研究方向：视频生成。建议重点查看方法创新、数据集与客观/主观评测设置。",
+      "item_id": "3ef0f59e32a7",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "video generation"
+      ],
+      "creative_cn": "可尝试把「视频生成」方法做成可交互 Demo，对比原始输入、生成结果和失败样例。",
+      "enrichment_fingerprint": "18036b03b768b335",
+      "icon": "📄",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "基准 / 评测",
+      "resource_links": {
+        "paper": "https://arxiv.org/abs/2611.30613v1",
+        "hf_paper": "https://huggingface.co/papers/2611.30613"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "paper",
+      "title": "ViDiHand2: Unifying Video Diffusion Priors and Hand Geometry for 3D Hand Motion Reconstruction in the Wild",
+      "url": "https://arxiv.org/abs/2611.30597v1",
+      "summary": "Learning robot manipulation from egocentric human videos requires accurate metric 3D hand motion. Recent methods leverage pretrained video diffusion model (VDM) priors to recover occluded hands directly from full-frame videos, but their appearance-based depth regression generalizes poorly to unseen cameras. In this work, we propose ViDiHand2, a geometry-driven framework that reformulates VDM-based hand depth estimation from direct regression into fine-grained geometric constraint solving. Specifically, we introduce Fine-Grained Geometric Lifting and Clip-Level Ray Fitting, which recover metric depth by enforcing geometric consistency between pixel-aligned 2D joints and the metric structure of MANO hands, while leveraging temporal observations across the clip. Since the lifting relies on these 2D joints, to improve robustness under occlusion and image truncation, we further develop Confidence-Gated Fusion to adaptively combine geometrically lifted joints with MANO predictions according to localization confidence. Finally, we enhance the VDM backbone to better capture spatial-temporal representations and produce the per-frame 2D joint and MANO predictions that both steps rely on. Extensive experiments on seven public datasets demonstrate that ViDiHand2 consistently outperforms 18 baselines, reducing in-the-wild absolute joint error by 42% and detection failures by 8.82x compared with the best baseline on each metric, while running at 57 FPS. The code is available at https://github.com/NTUYWANG103/ViDiHand.",
+      "source": "arXiv",
+      "published_at": "2026-11-23T12:33:36Z",
+      "authors": [
+        "Yuxi Wang",
+        "Yufei Liu",
+        "Chengkai Jin",
+        "Qingyue Chen",
+        "Wenqi Ouyang",
+        "Tianyi Wei",
+        "Kerui Ren",
+        "Siyuan Huang",
+        "Zhiqi Shen",
+        "Hongsheng Li",
+        "Xingang Pan"
+      ],
+      "tags": [
+        "video_generation"
+      ],
+      "metrics": {},
+      "score": 60.7,
+      "why_cn": "研究方向：视频生成。建议重点查看方法创新、数据集与客观/主观评测设置。",
+      "item_id": "97c5c4e7ff68",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "video diffusion"
+      ],
+      "creative_cn": "可尝试把「视频生成」方法做成可交互 Demo，对比原始输入、生成结果和失败样例。",
+      "enrichment_fingerprint": "dae31933014e9b64",
+      "icon": "📄",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "数据集",
+      "resource_links": {
+        "paper": "https://arxiv.org/abs/2611.30597v1",
+        "hf_paper": "https://huggingface.co/papers/2611.30597"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "paper",
+      "title": "Write, Evolve, Read: Streaming Cameras into a Persistent World State for 4D Occupancy Forecasting",
+      "url": "https://arxiv.org/abs/2611.30573v1",
+      "summary": "4D occupancy forecasting predicts the 3D semantic occupancy of a driving scene seconds ahead. Over a few seconds, the scene changes little while the vehicle moves, so most of the space ahead has already been seen. Sorting the future into unchanged, changed, and unseen space, we find that current camera-based world models fall short on the unchanged part: they fail to hold on to what they have already seen, rather than to forecast what will change. We therefore make what the model has seen its state. PersistWorld streams camera frames into a persistent 3D world state anchored in the scene, writing each frame once instead of rebuilding the state from past frames. The state is learned end to end with the forecast, and an evolver predicts it at any queried time along the ego trajectory. On Occ3D-nuScenes, PersistWorld raises the IoU of the best camera-based world model by 19 points at 1-3 s and by 18 to 24 points up to 8 s, while running more than twice as fast. Code and models: https://github.com/wangzian828/PersistWorld. Project page: https://wangzian828.github.io/PersistWorld",
+      "source": "arXiv",
+      "published_at": "2026-11-23T12:17:40Z",
+      "authors": [
+        "ZiAn Wang",
+        "Tianyi Wang",
+        "Zhihao Chen",
+        "Manni Cui",
+        "Junkai Chen",
+        "ZhiJin Chen",
+        "Ruiqi Liu",
+        "Junfei Wu",
+        "Huanyu Zhang",
+        "Shu Wu"
+      ],
+      "tags": [
+        "video_generation"
+      ],
+      "metrics": {},
+      "score": 60.7,
+      "why_cn": "研究方向：视频生成。建议重点查看方法创新、数据集与客观/主观评测设置。",
+      "item_id": "92f47e58af53",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "world model"
+      ],
+      "creative_cn": "可尝试把「视频生成」方法做成可交互 Demo，对比原始输入、生成结果和失败样例。",
+      "enrichment_fingerprint": "f93ee938ec4e7717",
+      "icon": "📄",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "模型 / 方法",
+      "resource_links": {
+        "paper": "https://arxiv.org/abs/2611.30573v1",
+        "hf_paper": "https://huggingface.co/papers/2611.30573"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "paper",
+      "title": "RAPID: Codec-Aware Video Decoding for Efficient Long-Video Understanding",
+      "url": "https://arxiv.org/abs/2611.30557v1",
+      "summary": "Recent vision-language models (VLMs) can process hour-long videos, but the large number of input frames incurs substantial inference overhead. Existing approaches to efficient long-video understanding largely overlook video decoding, which can take longer than LLM prefill. We propose RAPID (Reference- and Access-Point-Informed Decoding), a codec-aware framework that exploits information embedded in compressed bitstreams to reduce both frame decoding and selection costs. RAPID consists of two components. RAPID-Dec exploits reference-frame information and random access points to skip unnecessary frames and decode the retained frames in parallel while preserving exact reconstruction of the target frames. It achieves up to a 3.7x decoding speedup over the fastest baseline on H.264/AVC videos. RAPID-Sel uses keyframes as coarse representatives of video segments, avoiding the dense candidate decoding and scoring required by existing frame selection methods. It achieves comparable accuracy with up to a 3.0x preprocessing speedup. Together, RAPID achieves a 4.9x time to first token (TTFT) speedup on hour-long videos over a state-of-the-art frame selection method using the fastest baseline decoder.",
+      "source": "arXiv",
+      "published_at": "2026-11-23T12:02:25Z",
+      "authors": [
+        "Yuna Lee",
+        "Yulhwa Kim"
+      ],
+      "tags": [
+        "video_editing"
+      ],
+      "metrics": {},
+      "score": 60.6,
+      "why_cn": "研究方向：视频编辑/理解。建议重点查看方法创新、数据集与客观/主观评测设置。",
+      "item_id": "2111c921a6f7",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "video understanding"
+      ],
+      "creative_cn": "可尝试把「视频编辑/理解」方法做成可交互 Demo，对比原始输入、生成结果和失败样例。",
+      "enrichment_fingerprint": "608e506a8487c398",
+      "icon": "📄",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "模型 / 方法",
+      "resource_links": {
+        "paper": "https://arxiv.org/abs/2611.30557v1",
+        "hf_paper": "https://huggingface.co/papers/2611.30557"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "paper",
+      "title": "SVUBench: A Comprehensive Benchmark for Proactive Streaming Video Understanding",
+      "url": "https://arxiv.org/abs/2611.30541v1",
+      "summary": "Proactive streaming video understanding requires models to interpret unfolding events, respond timely, and retrieve relevant historical evidence. To systematically evaluate these capabilities, we introduce SVUBench, a comprehensive proactive streaming video benchmark comprising 12,131 questions and 62,881 answer points across ten proactive tasks spanning Perception, Understanding, and Reasoning. Constructed through model-assisted annotation and human verification, SVUBench introduces two complementary interaction modes. Basic evaluates sustained proactive responses from video onset, while Trajectory requires historical recovery and continuous response updates following task activation during streaming. A Duration-Scaled Challenge further evaluates these capabilities across four video duration tiers. We develop the Proactive Response Score (PRS) with task-adaptive answer windows to jointly assess answer correctness, response timeliness, historical consistency, and content quality. Extensive experiments and analysis reveal the strengths and limitations of existing models, highlighting directions for advancing proactive streaming video understanding.",
+      "source": "arXiv",
+      "published_at": "2026-11-23T11:48:14Z",
+      "authors": [
+        "Yuxuan Liang",
+        "Bohan Zhang",
+        "Haiyang Yu",
+        "Bocheng Hu",
+        "Ke Niu",
+        "Xu Li",
+        "Zhengtao Yao",
+        "Yan Wen",
+        "Haotian Chen",
+        "Xiaolei Chen",
+        "Jiacong Wang",
+        "Zhe Liu",
+        "Jingqun Tang",
+        "Benlei Cui",
+        "Fan Shi",
+        "Xiangyang Xue"
+      ],
+      "tags": [
+        "video_editing"
+      ],
+      "metrics": {},
+      "score": 60.6,
+      "why_cn": "研究方向：视频编辑/理解。建议重点查看方法创新、数据集与客观/主观评测设置。",
+      "item_id": "4eba5662b40d",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "video understanding"
+      ],
+      "creative_cn": "可尝试把「视频编辑/理解」方法做成可交互 Demo，对比原始输入、生成结果和失败样例。",
+      "enrichment_fingerprint": "702b9b0e5656c223",
+      "icon": "📄",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "基准 / 评测",
+      "resource_links": {
+        "paper": "https://arxiv.org/abs/2611.30541v1",
+        "hf_paper": "https://huggingface.co/papers/2611.30541"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "paper",
+      "title": "Assembly-JEPA: Using World Models for Fine-Grained Industrial Image Verification",
+      "url": "https://arxiv.org/abs/2611.30530v1",
+      "summary": "Automated verification of industrial assembly processes remains a challenging problem due to substantial visual variability, limited availability of labeled defect data, and the fine-grained nature of many assembly errors. Existing approaches often rely on object detection, CAD models, or supervised classification pipelines, which can struggle to generalize across changing products and assembly configurations. In this work, we propose a novel self-supervised assembly verification framework based on Joint Embedding Predictive Architectures (JEPAs). Starting from the JEPA-based world model LeWorldModel, we investigate how the architecture must be adapted to verify the correctness of fine-grained assembly operations. To this end, we formulate assembly verification as a predictive world modeling task operating on before-and-after observations of assembly processes. Experimental results on industrial assembly tasks demonstrate that the proposed approach reliably detects both fine-grained incorrect assembly states and action-state mismatches, achieving an AUROC of 86.9% on a newly introduced assembly verification dataset. These results indicate that JEPA-based predictive representations constitute a promising foundation for robust and data-efficient industrial assembly verification.",
+      "source": "arXiv",
+      "published_at": "2026-11-23T11:42:46Z",
+      "authors": [
+        "Michael Hollmer",
+        "Andreas Fischer"
+      ],
+      "tags": [
+        "video_generation"
+      ],
+      "metrics": {},
+      "score": 60.6,
+      "why_cn": "研究方向：视频生成。建议重点查看方法创新、数据集与客观/主观评测设置。",
+      "item_id": "963fdc876bd4",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "world model"
+      ],
+      "creative_cn": "可尝试把「视频生成」方法做成可交互 Demo，对比原始输入、生成结果和失败样例。",
+      "enrichment_fingerprint": "3c77abcc2a6ace2e",
+      "icon": "📄",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "数据集",
+      "resource_links": {
+        "paper": "https://arxiv.org/abs/2611.30530v1",
+        "hf_paper": "https://huggingface.co/papers/2611.30530"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "paper",
+      "title": "ColonoWorld: Camera-Controlled Full-Procedure Colonoscopy Video Generation",
+      "url": "https://arxiv.org/abs/2611.30372v1",
+      "summary": "Navigation systems in colonoscopy are advancing from guiding the endoscopist to steering the scope autonomously. Since an incorrect motion can injure the patient, developing and evaluating these systems calls for a world model of colonoscopy. Such a model must follow a commanded scope motion, keep the colon anatomy consistent, and show lesions and procedural events. Yet camera-controlled generators trained on general scenes lose the colon's structure under motion, and endoscopic generators offer no camera control. We present ColonoWorld, a colonoscopy world model conditioned on a camera trajectory and a coarse 3D tube of the colon, trained on in vivo videos. From a whole-colon tube, it generates a full cecum-to-rectum procedure, even for unseen colon shapes. It also places polyps, instruments, and irrigation at specified locations and times. ColonoWorld outperforms state-of-the-art video generators, reducing camera trajectory error by 32% and FVD by 29%. Our code and annotations will be released at https://aidaslab.github.io/ColonoWorld.",
+      "source": "arXiv",
+      "published_at": "2026-11-23T09:40:32Z",
+      "authors": [
+        "Jihwan Hong",
+        "Sunghwan Steve Cho",
+        "Ping Shu Ho",
+        "Joo Seong Kim",
+        "Bokyung Kim",
+        "Nam-Joon Kim",
+        "Simon See",
+        "Ji Won Kim",
+        "Jaeyoung Do"
+      ],
+      "tags": [
+        "video_generation"
+      ],
+      "metrics": {},
+      "score": 60.3,
+      "why_cn": "研究方向：视频生成。建议重点查看方法创新、数据集与客观/主观评测设置。",
+      "item_id": "332e117c7424",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "video generation",
+        "world model",
+        "camera control"
+      ],
+      "creative_cn": "可尝试把「视频生成」方法做成可交互 Demo，对比原始输入、生成结果和失败样例。",
+      "enrichment_fingerprint": "625adf3b880d2078",
+      "icon": "📄",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "基准 / 评测",
+      "resource_links": {
+        "paper": "https://arxiv.org/abs/2611.30372v1",
+        "hf_paper": "https://huggingface.co/papers/2611.30372"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "paper",
+      "title": "SceneCast: Learning Indoor Scene Synthesis from Curated Synthetic Videos with LLM Reward",
+      "url": "https://arxiv.org/abs/2611.30345v1",
+      "summary": "3D indoor scene synthesis requires generating objects to form a complete and coherent scene. Existing approaches rely heavily on manually annotated datasets, leading to high costs and limited generalization. We present SceneCast, an annotation-free framework that trains on large-scale, unlabeled videos, addressing two key challenges: (1) Videos provide only partial views of a scene, requiring the model to extrapolate unseen 3D regions, which is inherently error-prone; (2) Raw videos available online are uncurated, suffering from uncontrolled conditions and variable data quality. First, we design a Transformer-based model that predicts objects sequentially and is fine-tuned with reinforcement learning (RL), where an LLM acts as a spatial common-sense evaluator. The LLM provides reward signals through chain-of-thought reasoning and code-executable geometric checks to refine object configurations. Second, we introduce \\trim, a data curation approach that generates training videos with controllable video generation models. Crucially, it retains only high-quality prefix clips via multi-criteria quality assessment with an entropy-based weighting strategy. Evaluated on curated synthetic video sets, our annotation-free approach outperforms state-of-the-art supervised methods in scene quality.",
+      "source": "arXiv",
+      "published_at": "2026-11-23T09:18:04Z",
+      "authors": [
+        "Ziyang Zong",
+        "Canming Xia",
+        "Haoran Xu",
+        "Guang Tan"
+      ],
+      "tags": [
+        "video_generation"
+      ],
+      "metrics": {},
+      "score": 60.3,
+      "why_cn": "研究方向：视频生成。建议重点查看方法创新、数据集与客观/主观评测设置。",
+      "item_id": "4173701809df",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "video generation"
+      ],
+      "creative_cn": "可尝试把「视频生成」方法做成可交互 Demo，对比原始输入、生成结果和失败样例。",
+      "enrichment_fingerprint": "df13e03a9fda3175",
+      "icon": "📄",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "数据集",
+      "resource_links": {
+        "paper": "https://arxiv.org/abs/2611.30345v1",
+        "hf_paper": "https://huggingface.co/papers/2611.30345"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "paper",
+      "title": "Draft Forcing: Target-guided Speculative Drafting and Learned Verifier for Autoregressive Video Generation",
+      "url": "https://arxiv.org/abs/2611.30328v1",
+      "summary": "Autoregressive video diffusion models enable streaming synthesis chunk by chunk, yet invoking the large model for every chunk remains costly. While chunk-level speculative decoding can offload chunks to a lightweight draft model, existing approaches suffer from two limitations: (1) an off-the-shelf draft diverges from the target's trajectory, compounding errors in history; and (2) they either omit verification or rely on costly post-decode aesthetic scores rather than verifying consistency against the target. We address both with Draft Forcing, a framework coupling target-guided drafting with an on-policy trained verifier. Specifically, to align the draft for high acceptance, we opt for feature-level drafting, conditioning it on multi-layer target hidden states persisted from committed chunks, whose outputs are pushed to match target trajectories with multi-aspect losses. For verification, we propose an on-policy trained feature-space verifier predicting CDF-calibrated frame-wise relative RMSE against the target. It is trained on speculative rollouts as contexts anneal from random to inference-aligned mixtures, and gates proposals without VAE decoding. On the 14B Self-Forcing target, Draft Forcing achieves $1.63\\times$ DiT and $1.57\\times$ end-to-end speedups on VBench with minimal quality loss, and up to $1.93\\times$ DiT ($1.82\\times$ end-to-end) when combined with orthogonal KV compression. It generalizes to accelerate a streaming variant of MiniMax-H3, generating over $50\\%$ draft frames with competitive quality.",
+      "source": "arXiv",
+      "published_at": "2026-11-23T09:05:22Z",
+      "authors": [
+        "Chenkai Xu",
+        "Yuji Ren",
+        "Zihui Liu",
+        "Yijie Jin",
+        "Yuhao Shen",
+        "Xin Wang",
+        "Yajing Chen",
+        "Keyang Luo",
+        "Shengju Qian",
+        "Litong Gong",
+        "Tiezheng Ge",
+        "Zhijie Deng"
+      ],
+      "tags": [
+        "video_generation"
+      ],
+      "metrics": {},
+      "score": 60.3,
+      "why_cn": "研究方向：视频生成。建议重点查看方法创新、数据集与客观/主观评测设置。",
+      "item_id": "2e54d764a620",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "video generation",
+        "video diffusion"
+      ],
+      "creative_cn": "可尝试把「视频生成」方法做成可交互 Demo，对比原始输入、生成结果和失败样例。",
+      "enrichment_fingerprint": "98e9ef256366b2c2",
+      "icon": "📄",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "模型 / 方法",
+      "resource_links": {
+        "paper": "https://arxiv.org/abs/2611.30328v1",
+        "hf_paper": "https://huggingface.co/papers/2611.30328"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "paper",
+      "title": "Seeing Together, Acting Apart: Shared Environmental Understanding for Multi-Robot Navigation",
+      "url": "https://arxiv.org/abs/2611.30310v1",
+      "summary": "Multi-robot embodied systems are typically designed to collaborate by coordinating actions, sharing trajectories, or learning joint policies. We ask a complementary question: can collaboration emerge before decision-making, by first building a shared understanding of the environment? We introduce Shared Environmental Understanding, a policy-agnostic representation that aggregates partial egocentric observations from multiple robots into a shared latent world model. This shifts collaboration from the policy space to the representation space, enabling decentralized decision-making with shared environmental context. To this end, we propose Shared Environment Encoding and Retrieval (SEER), a framework that organizes multi-robot observations into a shared memory, retrieves relevant context via spatio-temporal similarity, and encodes it using a predictive latent world model. The resulting representations are injected into downstream navigation agents as tokens. Experimental results demonstrate that SEER captures action-relevant environmental structure and consistently improves navigation performance across both specialized VLN agents and general vision-language model agents, while preserving single-agent capabilities.",
+      "source": "arXiv",
+      "published_at": "2026-11-23T08:58:12Z",
+      "authors": [
+        "Haihong Hao",
+        "Lei Chen",
+        "Mingfei Han",
+        "Chenglong Yan",
+        "Dong An",
+        "Yuqiang Yang",
+        "Changlin Li",
+        "Minghao Guo",
+        "Salman Khan",
+        "Xiaojun Chang"
+      ],
+      "tags": [
+        "video_generation"
+      ],
+      "metrics": {},
+      "score": 60.2,
+      "why_cn": "研究方向：视频生成。建议重点查看方法创新、数据集与客观/主观评测设置。",
+      "item_id": "2141819bfd77",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "world model"
+      ],
+      "creative_cn": "可尝试把「视频生成」方法做成可交互 Demo，对比原始输入、生成结果和失败样例。",
+      "enrichment_fingerprint": "57d7599c500d6d21",
+      "icon": "📄",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "模型 / 方法",
+      "resource_links": {
+        "paper": "https://arxiv.org/abs/2611.30310v1",
+        "hf_paper": "https://huggingface.co/papers/2611.30310"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "paper",
+      "title": "PathStream: Towards Streaming Diagnostic Copilots for Whole-Slide Pathology",
+      "url": "https://arxiv.org/abs/2611.30167v1",
+      "summary": "Pathologists reach a diagnosis by integrating morphological evidence across regions and magnifications along viewing trajectories. Existing pathology AI rarely reflects this process: models predict from selected image regions, answer questions within fixed visual contexts, or navigate slides autonomously. We formalize pathologist-led streaming diagnosis, in which the pathologist controls navigation while a copilot selectively describes incoming views and synthesizes accumulated evidence into a final diagnosis. We record five pathologists' viewing trajectories on 1,791 TCGA whole-slide images (WSIs) spanning ten organs, with response labels, morphological descriptions, and session-level findings and diagnoses. We construct PathStreamBench to assess response timing, morphological description, and session-level diagnosis, alongside auxiliary video understanding. We introduce PathStream, which jointly learns streaming responses and diagnosis through two-stage training, with a diagnosis-attention loss guiding attention during diagnosis to relevant visual and textual evidence accumulated as the examination unfolds. PathStream outperforms 14 vision-language models and three domain-fine-tuned baselines on the core tasks, achieving a trajectory WSI Relevance score of 77.87, surpassing the strongest domain-fine-tuned baseline's 62.76. Without additional training, its diagnostic capabilities generalize to new educational pathology videos, three external centers, and an unseen organ.",
+      "source": "arXiv",
+      "published_at": "2026-11-23T07:13:20Z",
+      "authors": [
+        "Dankai Liao",
+        "YuFeng Wu",
+        "Ziyue Wang",
+        "Guanxi Liu",
+        "Tianyi Zhang",
+        "Zeyu Liu",
+        "Linghan Cai",
+        "Yueming Jin"
+      ],
+      "tags": [
+        "video_editing"
+      ],
+      "metrics": {},
+      "score": 60.0,
+      "why_cn": "研究方向：视频编辑/理解。建议重点查看方法创新、数据集与客观/主观评测设置。",
+      "item_id": "50e774d8546a",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "video understanding"
+      ],
+      "creative_cn": "可尝试把「视频编辑/理解」方法做成可交互 Demo，对比原始输入、生成结果和失败样例。",
+      "enrichment_fingerprint": "d5d07181358cf7cd",
+      "icon": "📄",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "模型 / 方法",
+      "resource_links": {
+        "paper": "https://arxiv.org/abs/2611.30167v1",
+        "hf_paper": "https://huggingface.co/papers/2611.30167"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "paper",
+      "title": "UUBench: Understanding the Unspoken toward Full-Duplex Multimodal Interaction",
+      "url": "https://arxiv.org/abs/2611.30157v1",
+      "summary": "Effective real-time, full-duplex multimodal interaction requires systems to understand not only what users say, but also the communicative needs conveyed through prosody, facial expressions, gestures, and context, and to generate audiovisual responses that appropriately address those needs. Existing evaluations offer limited insight into whether systems translate an understanding of such unspoken needs into effective responses. We introduce UUBench, a benchmark for assessing how well multimodal interactive systems Understand the Unspoken intent and address users' implicit communicative needs. The inherent subjectivity of implicit intent inference poses a key challenge for evaluation. To address this, we introduce Process-Oriented Scoring, which grounds the assessment of intent fulfillment in observable auditory and visual cues, such as prosody and gestures. Rather than relying solely on a single overall score, it evaluates how well a response addresses the communicative needs conveyed by each applicable primitive dimension. We aggregate the dimension-level scores according to each dimension's relevance to the annotated evidence. Beyond intent fulfillment, Outcome-Oriented Scoring evaluates the naturalness, appropriateness, and human-likeness of the reply itself under audio-only, visual-only, and audiovisual conditions. To make these judgments traceable to observable evidence, we propose a Fact-Grounded Scoring JEV module, which uses structured, timestamped audiovisual observations of the user and the digital human's reply to assess one dimension or criterion at a time. UUBench provides a foundation for assessing whether multimodal interactive systems respond effectively to meaning beyond literal wording, supporting progress toward context-aware, real-time, full-duplex interaction.",
+      "source": "arXiv",
+      "published_at": "2026-11-23T07:03:50Z",
+      "authors": [
+        "Ye Pan",
+        "Chenfei Liao",
+        "Bin Ren",
+        "Hanqian Li",
+        "Haocong He",
+        "Jialei Chen",
+        "Jinlin He",
+        "Kunyu Peng",
+        "Mengyu Jin",
+        "Shijie Li",
+        "Wenqian Cui",
+        "Yuanqi Yao",
+        "Yuqian Fu",
+        "Kailong Ruan",
+        "Yuan Gao",
+        "Wei Wang",
+        "Xuming Hu",
+        "Irwin King",
+        "Nicu Sebe",
+        "Xu Zheng"
+      ],
+      "tags": [
+        "avatar_lipsync"
+      ],
+      "metrics": {},
+      "score": 60.0,
+      "why_cn": "研究方向：数字人/口型。建议重点查看方法创新、数据集与客观/主观评测设置。",
+      "item_id": "708ae5dc06ce",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "digital human"
+      ],
+      "creative_cn": "可尝试把「数字人/口型」方法做成可交互 Demo，对比原始输入、生成结果和失败样例。",
+      "enrichment_fingerprint": "1bb54b14817bf4ed",
+      "icon": "📄",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "基准 / 评测",
+      "resource_links": {
+        "paper": "https://arxiv.org/abs/2611.30157v1",
+        "hf_paper": "https://huggingface.co/papers/2611.30157"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "paper",
+      "title": "AxE: Benchmarking Agent-Environment Generalization of Video World Models via Grounded Events",
+      "url": "https://arxiv.org/abs/2611.30120v1",
+      "summary": "Edge cases are not the long tail; they are the norm. An embodied system deployed across changing environments, bodies, objects, and tasks will routinely encounter combinations that were absent from its training data. General-purpose physical intelligence therefore requires world models that reuse prior knowledge, predict consequences, and adapt with little or no additional training. Yet current evaluations of conditional video generation emphasize visual quality, prompt alignment, or isolated physical plausibility, leaving systematic generalization difficult to measure. We introduce AxE Bench, a benchmark that organizes condition changes along eight factors of the acting agent and of its environment, and pairs every original condition with controlled variants that change one side or both. WBench-plus applies the same structure to an existing multi-turn benchmark, pairing each WBench scenario with variants on the environment side, through its world setting or camera behavior, or on the agent side, through its interaction instructions. Additionally, to score generated futures, we develop an evaluation harness that combines vision-language reasoning with targeted computer-vision evidence, converting each video into temporally localized events and comparing generated events with reference events in both time and semantics. We summarize each model with the AxE Score, event Fidelity weighted by its Stability across original-variant pairs. Across twenty models, generated events match reference events far more often in timing than in content: no model exceeds a Fidelity of 13.01, the highest Stability is 0.55, and the highest AxE Score is 7.10. Together, these components turn world-model generalization from an informal aspiration into a falsifiable evaluation program for real and simulated interactions. Our project website can be found at: AxEBench.github.io",
+      "source": "arXiv",
+      "published_at": "2026-11-23T06:23:09Z",
+      "authors": [
+        "Haiyu Xu",
+        "Yiyang Chen",
+        "Jiayi Zhou",
+        "Jiaming Ji",
+        "Juntao Dai",
+        "Yaodong Yang",
+        "Boyuan Chen"
+      ],
+      "tags": [
+        "video_generation"
+      ],
+      "metrics": {},
+      "score": 59.9,
+      "why_cn": "研究方向：视频生成。建议重点查看方法创新、数据集与客观/主观评测设置。",
+      "item_id": "d8b60e407338",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "video generation",
+        "world model"
+      ],
+      "creative_cn": "可尝试把「视频生成」方法做成可交互 Demo，对比原始输入、生成结果和失败样例。",
+      "enrichment_fingerprint": "38a1a89e03472bdc",
+      "icon": "📄",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "基准 / 评测",
+      "resource_links": {
+        "paper": "https://arxiv.org/abs/2611.30120v1",
+        "hf_paper": "https://huggingface.co/papers/2611.30120"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "paper",
+      "title": "SWAM: State-aware World Action Model for Multi-Agent 3D Environments",
+      "url": "https://arxiv.org/abs/2611.30042v1",
+      "summary": "Interactive world models generate virtual environments autoregressively from player actions and visual history. However, visual history alone cannot reliably capture the evolving states of independently acting non-player characters (NPCs) in real games, particularly when they are outside the camera view. Recent multi-agent world models address this challenge through joint multi-view generation or persistent shared state, but often rely on external observations, like maps or scene geometry, or predefined state transitions. We present SWAM, a State-aware World Action Model that separates agent-state evolution from autoregressive visual generation in interactive 3D environments. A lightweight state model propagates character dynamics from actions without consuming generated frames, combining motion priors with learned scene-dependent corrections. The predicted states then guide an autoregressive diffusion transformer alongside visual history through a novel conditioning scheme. Rather than requiring an explicit scene geometry map or visibility tests, the conditioning indicates where characters may appear, allowing the diffusion model to learn their appearance and occlusion. This design enables NPCs to evolve independently of visual generation while maintaining consistent observations across visibility changes, interactions, and respawns. Evaluations in a custom Godot-based first-person shooter game demonstrate improvements in visual fidelity, NPC consistency, and long-horizon stability over existing approaches.",
+      "source": "arXiv",
+      "published_at": "2026-11-23T04:49:25Z",
+      "authors": [
+        "Jenna Kang",
+        "Bingxuan Li",
+        "Colin Groth",
+        "Anatolii Evdokimov",
+        "Sai Zhang",
+        "Qi Sun"
+      ],
+      "tags": [
+        "video_generation"
+      ],
+      "metrics": {},
+      "score": 59.7,
+      "why_cn": "研究方向：视频生成。建议重点查看方法创新、数据集与客观/主观评测设置。",
+      "item_id": "c5766a62b3e9",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "world model"
+      ],
+      "creative_cn": "可尝试把「视频生成」方法做成可交互 Demo，对比原始输入、生成结果和失败样例。",
+      "enrichment_fingerprint": "51a90232ddeaa599",
+      "icon": "📄",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "模型 / 方法",
+      "resource_links": {
+        "paper": "https://arxiv.org/abs/2611.30042v1",
+        "hf_paper": "https://huggingface.co/papers/2611.30042"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "paper",
+      "title": "Teaching How to Reason, Beyond What to Answer: Evidence-Faithful On-Policy Distillation for streaming video understanding",
+      "url": "https://arxiv.org/abs/2611.30040v1",
+      "summary": "Moment Retrieval (MR) aims to localize the temporal segment in a video that corresponds to a given textual description. However, a textual query often provides only a sparse semantic description of the target event, whereas the video contains rich and fine-grained visual variations. This mismatch creates an inherent gap between textual semantics and visual content, making a single textual input insufficient for precise cross-modal alignment. As a result, when multiple temporally adjacent or semantically similar segments exist, the model may struggle to distinguish the target moment from confusing candidates. To address this challenge, we propose a Multi-Perspective Auxiliary Representation (MPAR) framework, which aims to bridge this alignment gap by enriching a single textual input with complementary visual cues from multiple perspectives. Specifically, MPAR consists of three key components: (1) Auxiliary Representation Initialization (ARI) constructs multiple learnable representation slots from the original query, preserving the query intent while preparing flexible carriers for subsequent visual cue injection; (2) Visual-Induced Semantic Structuring (VISS) injects target-specific visual attributes into each representation while preserving semantic coherence with the original query; and (3) Multi-Perspective Semantic Aligner (MPSA) aligns each auxiliary representation with corresponding video regions to enhance discriminative localization. By constructing multi-perspective auxiliary representations and guiding the model to attend to relevant visual regions across these representations, our model achieves more accurate moment localization. Extensive experiments on MR benchmarks demonstrate that our MPAR outperforms state-of-the-art methods, validating the effectiveness of MPAR.",
+      "source": "arXiv",
+      "published_at": "2026-11-23T04:47:16Z",
+      "authors": [
+        "Mengnan Liu",
+        "Sanping Zhou",
+        "Kun Xia",
+        "Jiaxuan Lin",
+        "Gang Hua",
+        "Le Wang"
+      ],
+      "tags": [
+        "video_editing"
+      ],
+      "metrics": {},
+      "score": 59.7,
+      "why_cn": "研究方向：视频编辑/理解。建议重点查看方法创新、数据集与客观/主观评测设置。",
+      "item_id": "559a635af40b",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "video understanding"
+      ],
+      "creative_cn": "可尝试把「视频编辑/理解」方法做成可交互 Demo，对比原始输入、生成结果和失败样例。",
+      "enrichment_fingerprint": "2602b2b43f0679a7",
+      "icon": "📄",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "基准 / 评测",
+      "resource_links": {
+        "paper": "https://arxiv.org/abs/2611.30040v1",
+        "hf_paper": "https://huggingface.co/papers/2611.30040"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "paper",
+      "title": "MOVER: Planning Beyond Motion",
+      "url": "https://arxiv.org/abs/2611.30022v1",
+      "summary": "Residual world models forecast a driving scene through its temporal change, so feature components that stay constant over time vanish from the residual pathway. We ask whether evidence with weak temporal change, such as a waiting pedestrian or a stopped vehicle, can be used more effectively for planning, and introduce MOVER, a complementary event-routing mechanism. A training-time teacher measures how each spatially grounded event query responds when a past frame is removed from shared history and contrasts that sensitivity with the event's pooled temporal residual, prioritizing events that depend on history but receive weak residual evidence. A student predicts the resulting priorities from unperturbed history, so the teacher adds no inference cost. Under fixed total routing mass, one distribution scales a low-rank future bird's-eye-view update and biases trajectory-conditioned event reading. On nuScenes, MOVER reduces ResWorld's UniAD-style average L2 from 0.65 to 0.55 m and its collision rate from 0.23% to 0.12% without direct planner ego status (0.50 m and 0.09% with it), adding 4.1 ms per frame. Matched controls show that the complementary teacher outperforms either signal alone and that the allocation acts mainly during training. Adapted to BridgeDrive-LEAD, MOVER reaches a 96.52 +/- 0.65 driving score over three seeds on the 220-route Bench2Drive closed-loop benchmark, exceeding matched controls in each paired seed by a margin within seed variation.",
+      "source": "arXiv",
+      "published_at": "2026-11-23T04:24:06Z",
+      "authors": [
+        "Xiangyu Li",
+        "Yu Jiang",
+        "Tianyi Wang",
+        "Liang He",
+        "Qixing Huang",
+        "Zhaomiao Guo"
+      ],
+      "tags": [
+        "video_generation"
+      ],
+      "metrics": {},
+      "score": 59.7,
+      "why_cn": "研究方向：视频生成。建议重点查看方法创新、数据集与客观/主观评测设置。",
+      "item_id": "4dcd0e27ff66",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "world model"
+      ],
+      "creative_cn": "可尝试把「视频生成」方法做成可交互 Demo，对比原始输入、生成结果和失败样例。",
+      "enrichment_fingerprint": "997b0cfba1983232",
+      "icon": "📄",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "基准 / 评测",
+      "resource_links": {
+        "paper": "https://arxiv.org/abs/2611.30022v1",
+        "hf_paper": "https://huggingface.co/papers/2611.30022"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "paper",
+      "title": "3AGameFactory-Motion: Agentic Rigging and Reliable Complex Motion Generation for Diverse 3D Assets",
+      "url": "https://arxiv.org/abs/2611.30013v1",
+      "summary": "Animating arbitrary 3D assets from instructions requires both structural inference and motion control, yet existing motion benchmarks mostly cover conventional human or animal skeletons with simple instructions. We introduce DivDynBench, which evaluates rigging and motion generation across six morphology categories, with instructions requiring multi-phase part coordination and explicit timing, angle, repetition, and trajectory constraints. With large language models, we systematically compare three common paradigms: specialized motion generation, video generation followed by motion recovery, and direct agent-driven generation. We analyze their control capabilities, cross-morphology adaptability, and generation costs. Guided by this comparison, we propose an Agentic Motion Framework in which an agent writes compact parametric skeleton and motion programs, and a deterministic executor performs rigging, kinematic solving, and geometric correction. Compact parameter control reduces generation overhead and improves rigging reliability and motion-control accuracy, providing practical guidance for deploying complex 3D motion generation.",
+      "source": "arXiv",
+      "published_at": "2026-11-23T04:16:51Z",
+      "authors": [
+        "Bohan Zeng",
+        "Kaixin Zhu",
+        "Yifan Yang",
+        "Dongge Yu",
+        "Zihao Wu",
+        "Yifan Dai",
+        "Zhou Liu",
+        "Junbo Niu",
+        "Xiaochen Ma",
+        "Shiran Ge",
+        "Zimo Meng",
+        "Junzhu Liang",
+        "Huanyao Zhang",
+        "Jinhang Liu",
+        "Tianqi Xiao",
+        "Jinhao Zhang",
+        "Tianyi Bai",
+        "Zhixiong Zeng",
+        "Penghao Zhao",
+        "Yuanbo Peng",
+        "Key Zhang",
+        "Wentao Zhang"
+      ],
+      "tags": [
+        "video_generation"
+      ],
+      "metrics": {},
+      "score": 59.7,
+      "why_cn": "研究方向：视频生成。建议重点查看方法创新、数据集与客观/主观评测设置。",
+      "item_id": "49adc2711dc7",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "video generation"
+      ],
+      "creative_cn": "可尝试把「视频生成」方法做成可交互 Demo，对比原始输入、生成结果和失败样例。",
+      "enrichment_fingerprint": "c2c256d3fe12fcff",
+      "icon": "📄",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "基准 / 评测",
+      "resource_links": {
+        "paper": "https://arxiv.org/abs/2611.30013v1",
+        "hf_paper": "https://huggingface.co/papers/2611.30013"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "paper",
+      "title": "Antiphony: A Dual-Process Agent for Deepfake Video Detection with Real-Video Calibration",
+      "url": "https://arxiv.org/abs/2611.29999v1",
+      "summary": "Reliable video deepfake detection requires generalization to unseen generators while limiting false alarms on authentic footage. Although existing detectors capture diverse visual cues, they may produce overconfident errors under generator shift, limiting the reliability of confidence-based fusion. Threshold calibration is further complicated by shifts in authentic capture domains and the lack of future-generator examples. To address these challenges, we present Antiphony, a framework that combines calibrated fusion of four visual experts with selective investigation. Authentic videos serve as a shared reference for score fusion and threshold calibration, enabling threshold updates without target deepfakes. For this expert-fusion stage, we establish finite-sample false-alarm control when the scoring procedure is fixed independently of calibration and authentic samples are exchangeable. To refine decisions near the calibrated threshold, a tool-using multimodal investigator examines these videos and contributes an additional fusion score. We train the investigator on generator-held-out predictions and counterfactual expert outputs, to improve robustness to unreliable expert evidence. Across six benchmark protocols, Antiphony achieves a mean benchmark score of 88.3%, exceeding the strongest evaluated MLLM and conventional detector baselines by 14.7 and 11.5 points, respectively. It also outperforms ARGUS by 20.2 points on average and by 3.6 balanced-accuracy points on FaceVid's 20 unseen generators.",
+      "source": "arXiv",
+      "published_at": "2026-11-23T04:03:18Z",
+      "authors": [
+        "Xinyu Yan",
+        "Yurong Hao",
+        "Zherui Li",
+        "Yebo Wu",
+        "Tiantong Wu",
+        "Jiaming Zhang",
+        "Zihao Zeng",
+        "Zheng Lin",
+        "Zijie Wang",
+        "Pengpeng Qiao",
+        "Yang Cao",
+        "Wei Yang Bryan Lim"
+      ],
+      "tags": [
+        "safety_evaluation"
+      ],
+      "metrics": {},
+      "score": 59.6,
+      "why_cn": "研究方向：安全与评测。建议重点查看方法创新、数据集与客观/主观评测设置。",
+      "item_id": "c10e2d215ebd",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "video deepfake",
+        "deepfake detection"
+      ],
+      "creative_cn": "可尝试把「安全与评测」方法做成可交互 Demo，对比原始输入、生成结果和失败样例。",
+      "enrichment_fingerprint": "97e5a9baa4d0b89b",
+      "icon": "📄",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "基准 / 评测",
+      "resource_links": {
+        "paper": "https://arxiv.org/abs/2611.29999v1",
+        "hf_paper": "https://huggingface.co/papers/2611.29999"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "paper",
+      "title": "Scoring L2 Pronunciation Without Synthesis: Counterfactual Velocity Contrast in Frozen Flow-Matching TTS",
+      "url": "https://arxiv.org/abs/2611.29985v1",
+      "summary": "Flow-matching text-to-speech (TTS) models learn how native speakers realize a text, yet this knowledge is used only for synthesis. We show that a frozen TTS model can score non-native (L2) pronunciation without generating audio. For a learner utterance, we compare the model's velocity-prediction error under the target text with its error under a counterfactual text (dropped or swapped) on the same noised input; the difference behaves like a generative goodness-of-pronunciation score. The signal is confined to a narrow band of high-noise timesteps, which a native-speech criterion locates and a closed-form rule transfers across backbones. On speaker-disjoint speechocean762, four frozen TTS models reach $r{=}0.58$--$0.63$ with human scores, within the range of zero-shot ASR and phone-level baselines, and adding them to those baselines in a label-free fusion raises $r$ from $0.698$ to $0.757$. Cached frame scores also flag word-level errors at no extra TTS cost.",
+      "source": "arXiv",
+      "published_at": "2026-11-23T03:48:08Z",
+      "authors": [
+        "Zehan Liu"
+      ],
+      "tags": [
+        "speech_generation"
+      ],
+      "metrics": {},
+      "score": 59.6,
+      "why_cn": "研究方向：语音生成。建议重点查看方法创新、数据集与客观/主观评测设置。",
+      "item_id": "2f000be4307f",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "text-to-speech"
+      ],
+      "creative_cn": "可尝试把「语音生成」方法做成可交互 Demo，对比原始输入、生成结果和失败样例。",
+      "enrichment_fingerprint": "fd648495a3fa3b6a",
+      "icon": "📄",
+      "product_name_cn": "",
+      "company_cn": "",
+      "what_is_it_cn": "",
+      "resource_type_cn": "模型 / 方法",
+      "resource_links": {
+        "paper": "https://arxiv.org/abs/2611.29985v1",
+        "hf_paper": "https://huggingface.co/papers/2611.29985"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "product",
+      "title": "How BBC Studios Brought a Live AI Avatar to Broadcast Television for the First Time",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPcUhFdVBDSTUxdEEwLXVDcENSQ19tVXhqT0FFTVpaS0dzZXdReFhmVDd1N3lkdGl1eG5RR0haLWl3TkR3cDFyVzItZnFXUHZidG5ZaVd3T05zWWlEVTk2dGUzYjc0N3hTSkxOaHhKVXhyWjA2QmZoNXhfRXVWLTdxYlM1cHBONnoxVmVGcjY1UFRHVUZBR2RZSkI5NTRHV2VvZUVCRGIxUFBnN3BoRE85Z05idlQ?oc=5",
+      "summary": "How BBC Studios Brought a Live AI Avatar to Broadcast Television for the First Time Runway",
+      "source": "Runway",
+      "published_at": "2026-11-23T20:33:50Z",
+      "authors": [],
+      "tags": [
+        "avatar_lipsync"
+      ],
+      "metrics": {},
+      "score": 58.7,
+      "why_cn": "产品方向：数字人/口型。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
+      "item_id": "8c1fe5902064",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "ai avatar"
+      ],
+      "creative_cn": "可拆解其「数字人/口型」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
+      "enrichment_fingerprint": "e3d5fef933539f6e",
+      "icon": "🧑‍🎤",
+      "product_name_cn": "How BBC Studios Brought a Live AI Avatar to Broadcast Television for the First Time",
+      "company_cn": "Runway",
+      "what_is_it_cn": "一项围绕数字人/口型的产品、功能更新或创意工具，具体开放范围以原文为准。",
+      "resource_type_cn": "产品 / 功能",
+      "resource_links": {
+        "source": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPcUhFdVBDSTUxdEEwLXVDcENSQ19tVXhqT0FFTVpaS0dzZXdReFhmVDd1N3lkdGl1eG5RR0haLWl3TkR3cDFyVzItZnFXUHZidG5ZaVd3T05zWWlEVTk2dGUzYjc0N3hTSkxOaHhKVXhyWjA2QmZoNXhfRXVWLTdxYlM1cHBONnoxVmVGcjY1UFRHVUZBR2RZSkI5NTRHV2VvZUVCRGIxUFBnN3BoRE85Z05idlQ?oc=5"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "product",
+      "title": "NoSLATE Pitches Hybrid AI Filmmaking With New SAP Spot",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE43YWJtMDhGNmNzdEx5eUZ6cDFFd1FnNW55UXRadV9mV0xwQVFTVk9pMUtIN3Qtd1NlVDRNbTQtemg0V3hOMTVaRVdlcHpTeE9uTExtaDZlejhiQ3UwZUFiZ24wNDQ2enZOOTQ2M3VORVRiTkxxaDhyMVI3RQ?oc=5",
+      "summary": "NoSLATE Pitches Hybrid AI Filmmaking With New SAP Spot DesignRush",
+      "source": "DesignRush",
+      "published_at": "2026-11-23T20:29:26Z",
+      "authors": [],
+      "tags": [
+        "creator_tools"
+      ],
+      "metrics": {},
+      "score": 58.7,
+      "why_cn": "产品方向：创作者工具。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
+      "item_id": "b3a5f262ef31",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "ai filmmaking",
+        "ai film"
+      ],
+      "creative_cn": "可拆解其「创作者工具」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
+      "enrichment_fingerprint": "2a2743386b9acac3",
+      "icon": "🛠️",
+      "product_name_cn": "NoSLATE Pitches Hybrid AI Filmmaking With New SAP Spot",
+      "company_cn": "DesignRush",
+      "what_is_it_cn": "一项围绕创作者工具的产品、功能更新或创意工具，具体开放范围以原文为准。",
+      "resource_type_cn": "产品 / 功能",
+      "resource_links": {
+        "source": "https://news.google.com/rss/articles/CBMie0FVX3lxTE43YWJtMDhGNmNzdEx5eUZ6cDFFd1FnNW55UXRadV9mV0xwQVFTVk9pMUtIN3Qtd1NlVDRNbTQtemg0V3hOMTVaRVdlcHpTeE9uTExtaDZlejhiQ3UwZUFiZ24wNDQ2enZOOTQ2M3VORVRiTkxxaDhyMVI3RQ?oc=5"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "product",
+      "title": "AI filmmaking: how director Perry Bhandal works solo using gen AI tools",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNQk5mSUhZcndwTWxtRmpnazZCOUhIYkpCS19WUUFnOHJNVVdFSjdpemJWOGpjVzJDRW9XRHFwZ1huMElIOWVZSEdsVzJhakNXd1pjMXRGUzNVaDZJdzh6OEV4aGJEUzRuYnhTek1FaFBsNnlZcVRGLXNhX3JlcERiZTFlSk9SY1BMQU9nWVFBX0w1UzgtemlhZWFXYUpHVm92WXdHTWpzTkZNbUg5aTh3eXpaMWRMc2h6c3k0SkltRDJNdDdPdUdoMmQwQ1hDY1dK?oc=5",
+      "summary": "AI filmmaking: how director Perry Bhandal works solo using gen AI tools Broadcast",
+      "source": "Broadcast",
+      "published_at": "2026-11-23T16:00:22Z",
+      "authors": [],
+      "tags": [
+        "creator_tools"
+      ],
+      "metrics": {},
+      "score": 58.1,
+      "why_cn": "产品方向：创作者工具。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
+      "item_id": "7d2895ce9e85",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "ai filmmaking",
+        "ai film"
+      ],
+      "creative_cn": "可拆解其「创作者工具」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
+      "enrichment_fingerprint": "00198a8fadfaf695",
+      "icon": "🛠️",
+      "product_name_cn": "AI filmmaking: how director Perry Bhandal works solo using gen AI tools",
+      "company_cn": "Broadcast",
+      "what_is_it_cn": "一项围绕创作者工具的产品、功能更新或创意工具，具体开放范围以原文为准。",
+      "resource_type_cn": "产品 / 功能",
+      "resource_links": {
+        "source": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNQk5mSUhZcndwTWxtRmpnazZCOUhIYkpCS19WUUFnOHJNVVdFSjdpemJWOGpjVzJDRW9XRHFwZ1huMElIOWVZSEdsVzJhakNXd1pjMXRGUzNVaDZJdzh6OEV4aGJEUzRuYnhTek1FaFBsNnlZcVRGLXNhX3JlcERiZTFlSk9SY1BMQU9nWVFBX0w1UzgtemlhZWFXYUpHVm92WXdHTWpzTkZNbUg5aTh3eXpaMWRMc2h6c3k0SkltRDJNdDdPdUdoMmQwQ1hDY1dK?oc=5"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "product",
+      "title": "Filmmaker Bruce Bellocchi’s XIII Media Group Announces AICINEO — An All-in-One AI Filmmaking and Entertainment Platform",
+      "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPT3Q2SlFTY1E4Zm1hZUxsemdFMml2eF80NnVPTFlReDdUU19peGZBRXgzdGRSR0pGcU1JcUtHaTdiMk1xcTcxTzlSVDYtY3JxVnloT3RBMUNRSWdUUllVak1QS25EVXY3ZnZUa1lJcHNKMWZQVmdZTmNMeS1JczdyVEtlQlRIVU1yUVJGa3hrM0FvdGludzFOdk9TamZXUjRENk5qRWlIb0xqb19kZllZZkpYV2R1b1FKY2didUp4U0ZGdjRsZll3VnozSzVFb2J6LXVDQ3BubE5uc3BjSVJ2S0xzZkRWbVNudzJHSG16U3c?oc=5",
+      "summary": "Filmmaker Bruce Bellocchi’s XIII Media Group Announces AICINEO — An All-in-One AI Filmmaking and Entertainment Platform Issuewire",
+      "source": "Issuewire",
+      "published_at": "2026-11-23T14:23:54Z",
+      "authors": [],
+      "tags": [
+        "creator_tools"
+      ],
+      "metrics": {},
+      "score": 57.9,
+      "why_cn": "产品方向：创作者工具。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
+      "item_id": "32a4ca079825",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "ai filmmaking",
+        "ai film"
+      ],
+      "creative_cn": "可拆解其「创作者工具」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
+      "enrichment_fingerprint": "044df617ccf58c76",
+      "icon": "🛠️",
+      "product_name_cn": "Filmmaker Bruce Bellocchi’s XIII Media Group Announces AICINEO — An All-in-One AI Filmmaking and Entertainment Platform",
+      "company_cn": "Issuewire",
+      "what_is_it_cn": "一项围绕创作者工具的产品、功能更新或创意工具，具体开放范围以原文为准。",
+      "resource_type_cn": "产品 / 功能",
+      "resource_links": {
+        "source": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPT3Q2SlFTY1E4Zm1hZUxsemdFMml2eF80NnVPTFlReDdUU19peGZBRXgzdGRSR0pGcU1JcUtHaTdiMk1xcTcxTzlSVDYtY3JxVnloT3RBMUNRSWdUUllVak1QS25EVXY3ZnZUa1lJcHNKMWZQVmdZTmNMeS1JczdyVEtlQlRIVU1yUVJGa3hrM0FvdGludzFOdk9TamZXUjRENk5qRWlIb0xqb19kZllZZkpYV2R1b1FKY2didUp4U0ZGdjRsZll3VnozSzVFb2J6LXVDQ3BubE5uc3BjSVJ2S0xzZkRWbVNudzJHSG16U3c?oc=5"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "product",
+      "title": "Nuance Labs AI Avatar, Emma, Sparks Digital Blackface Debate",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPYU5IUlRXZmhXVnplbmhTejVsOXZSdzZFYTgwTWlFZGVTckJVcnl5aVlDS0tYaEJJcFpUMnVjaElwV1N2cEJKSV9EYlZES1ZfM0FVXzU1TWVvWUdPT0NUeWJhekVlbVFwTm1kcDEzbHNrTVJlV2FBUTFvUnRXOVNUZG8tTQ?oc=5",
+      "summary": "Nuance Labs AI Avatar, Emma, Sparks Digital Blackface Debate St. Louis Riverfront Times",
+      "source": "St. Louis Riverfront Times",
+      "published_at": "2026-11-23T13:49:36Z",
+      "authors": [],
+      "tags": [
+        "avatar_lipsync"
+      ],
+      "metrics": {},
+      "score": 57.9,
+      "why_cn": "产品方向：数字人/口型。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
+      "item_id": "6fdd82159c2f",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "ai avatar"
+      ],
+      "creative_cn": "可拆解其「数字人/口型」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
+      "enrichment_fingerprint": "9b1f5003e30f5e60",
+      "icon": "🧑‍🎤",
+      "product_name_cn": "Nuance Labs AI Avatar, Emma, Sparks Digital Blackface Debate",
+      "company_cn": "St. Louis Riverfront Times",
+      "what_is_it_cn": "一项围绕数字人/口型的产品、功能更新或创意工具，具体开放范围以原文为准。",
+      "resource_type_cn": "产品 / 功能",
+      "resource_links": {
+        "source": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPYU5IUlRXZmhXVnplbmhTejVsOXZSdzZFYTgwTWlFZGVTckJVcnl5aVlDS0tYaEJJcFpUMnVjaElwV1N2cEJKSV9EYlZES1ZfM0FVXzU1TWVvWUdPT0NUeWJhekVlbVFwTm1kcDEzbHNrTVJlV2FBUTFvUnRXOVNUZG8tTQ?oc=5"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "product",
+      "title": "EloElo launches AI film studio to tap India’s micro-drama market",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5acVJ5THBmT244dnIwQ1VzaFl4bVdNb3NPRkItdjRTTjNfVHlGMTB1LTRzUWVoSnBLbF93ZU1QTUhMenc4V0VhbGpCQ0hPRGJsSC1JZGloNWRDN3J0ZXZ6eURka0swck5xRi10bXlaaGEyVFJ6UGRCRE9fcw?oc=5",
+      "summary": "EloElo launches AI film studio to tap India’s micro-drama market Indian Broadcasting World",
+      "source": "Indian Broadcasting World",
+      "published_at": "2026-11-23T07:32:35Z",
+      "authors": [],
+      "tags": [
+        "creator_tools"
+      ],
+      "metrics": {},
+      "score": 57.1,
+      "why_cn": "产品方向：创作者工具。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
+      "item_id": "414ab476bffc",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "ai film"
+      ],
+      "creative_cn": "可拆解其「创作者工具」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
+      "enrichment_fingerprint": "9190ed928dbda318",
+      "icon": "🛠️",
+      "product_name_cn": "EloElo launches AI film studio to tap India’s micro-drama market",
+      "company_cn": "Indian Broadcasting World",
+      "what_is_it_cn": "一项围绕创作者工具的产品、功能更新或创意工具，具体开放范围以原文为准。",
+      "resource_type_cn": "产品 / 功能",
+      "resource_links": {
+        "source": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5acVJ5THBmT244dnIwQ1VzaFl4bVdNb3NPRkItdjRTTjNfVHlGMTB1LTRzUWVoSnBLbF93ZU1QTUhMenc4V0VhbGpCQ0hPRGJsSC1JZGloNWRDN3J0ZXZ6eURka0swck5xRi10bXlaaGEyVFJ6UGRCRE9fcw?oc=5"
+      },
+      "first_seen_at": "2026-11-24",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "product",
+      "title": "AI VIDEO- CONTENT CREDENTIALS ISSUE WHILE ECPORTING",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNUEdYaFgyMHN4WnZmTmJTdDMtUXZ3blc5a3MxWEVwdk1ZX0VBb2RJS18yZEp1U1VkZDhSMjR3cHU5VWM4VnFxRE1ScGdjNm56UkcwZGpLUFd5VVJzSHdCTWlPSFI1NGxQZ0tjOFVhRWVHbTdSV3VFT1dVd2NGeXZYaDBLbE9GUTB4dEJuVW5FR0pRZWszMXdGaEUxMTdwbTlpN0RhVA?oc=5",
+      "summary": "AI VIDEO- CONTENT CREDENTIALS ISSUE WHILE ECPORTING Adobe",
+      "source": "Adobe",
+      "published_at": "2026-11-22T02:58:45Z",
+      "authors": [],
+      "tags": [
+        "safety_evaluation"
+      ],
+      "metrics": {},
+      "score": 53.5,
+      "why_cn": "产品方向：安全与评测。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
+      "item_id": "833771f948ed",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "content credentials"
+      ],
+      "creative_cn": "可拆解其「安全与评测」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
+      "enrichment_fingerprint": "366e6df79b8000f3",
+      "icon": "🛡️",
+      "product_name_cn": "AI VIDEO- CONTENT CREDENTIALS ISSUE WHILE ECPORTING",
+      "company_cn": "Adobe",
+      "what_is_it_cn": "一项围绕安全与评测的产品、功能更新或创意工具，具体开放范围以原文为准。",
+      "resource_type_cn": "产品 / 功能",
+      "resource_links": {
+        "source": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNUEdYaFgyMHN4WnZmTmJTdDMtUXZ3blc5a3MxWEVwdk1ZX0VBb2RJS18yZEp1U1VkZDhSMjR3cHU5VWM4VnFxRE1ScGdjNm56UkcwZGpLUFd5VVJzSHdCTWlPSFI1NGxQZ0tjOFVhRWVHbTdSV3VFT1dVd2NGeXZYaDBLbE9GUTB4dEJuVW5FR0pRZWszMXdGaEUxMTdwbTlpN0RhVA?oc=5"
+      },
+      "first_seen_at": "2026-11-23",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "product",
+      "title": "Paul Schrader embraces AI filmmaking despite fears it can imitate his scripts",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOTHMxRHlPcnpDaW5jV0lRQjhNMGRaQ1A2SFd5OGROSElIX0l4bUVKRExFZ2hNZ0owYjl2QnJQd1BlZ1o3b0xSY0RnZXpmeTFpWmVxemtOQ09vdVlUbFpxRFVDaDRkTHpOc2xoNmRhWHRZRTBmbFB4NWVzUFJkMUYzM3hTaVNxekZBdmUwQk5SWHQtUjNNT0dFN3ZkMm05NlRZLVN4Rl9uMGxUVkV3WkVrWg?oc=5",
+      "summary": "Paul Schrader embraces AI filmmaking despite fears it can imitate his scripts Superpower Daily",
+      "source": "Superpower Daily",
+      "published_at": "2026-11-21T12:41:19Z",
+      "authors": [],
+      "tags": [
+        "creator_tools"
+      ],
+      "metrics": {},
+      "score": 51.7,
+      "why_cn": "产品方向：创作者工具。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
+      "item_id": "1458704d1a77",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "ai filmmaking",
+        "ai film"
+      ],
+      "creative_cn": "可拆解其「创作者工具」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
+      "enrichment_fingerprint": "b81ee02a3998c9c4",
+      "icon": "🛠️",
+      "product_name_cn": "Paul Schrader embraces AI filmmaking despite fears it can imitate his scripts",
+      "company_cn": "Superpower Daily",
+      "what_is_it_cn": "一项围绕创作者工具的产品、功能更新或创意工具，具体开放范围以原文为准。",
+      "resource_type_cn": "产品 / 功能",
+      "resource_links": {
+        "source": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOTHMxRHlPcnpDaW5jV0lRQjhNMGRaQ1A2SFd5OGROSElIX0l4bUVKRExFZ2hNZ0owYjl2QnJQd1BlZ1o3b0xSY0RnZXpmeTFpWmVxemtOQ09vdVlUbFpxRFVDaDRkTHpOc2xoNmRhWHRZRTBmbFB4NWVzUFJkMUYzM3hTaVNxekZBdmUwQk5SWHQtUjNNT0dFN3ZkMm05NlRZLVN4Rl9uMGxUVkV3WkVrWg?oc=5"
+      },
+      "first_seen_at": "2026-11-22",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "product",
+      "title": "Top AI Avatar Tools for Corporate Training in 2026: Pricing",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5JekZkV2dnNklpV3c2US1LSWg4blRsMl9HSFJQSVM2MENtT1IxVjJVenl3UWVuZFVBZ21iRGJRTk5lcXZoQ1dXWlA2SXRGM3Ezd3NUUjl6bkRTcWc4X0g3Y1dLeUpWTENBdGg3NVZCQUxGamNkSlhRbHNqbGlWdw?oc=5",
+      "summary": "Top AI Avatar Tools for Corporate Training in 2026: Pricing HeyGen",
+      "source": "HeyGen",
+      "published_at": "2026-11-21T11:23:48Z",
+      "authors": [],
+      "tags": [
+        "avatar_lipsync"
+      ],
+      "metrics": {},
+      "score": 51.5,
+      "why_cn": "产品方向：数字人/口型。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
+      "item_id": "62b61725fe87",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "ai avatar"
+      ],
+      "creative_cn": "可拆解其「数字人/口型」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
+      "enrichment_fingerprint": "4bbb5eafcadebbbe",
+      "icon": "🧑‍🎤",
+      "product_name_cn": "Top AI Avatar Tools for Corporate Training in 2026: Pricing",
+      "company_cn": "HeyGen",
+      "what_is_it_cn": "一项围绕数字人/口型的产品、功能更新或创意工具，具体开放范围以原文为准。",
+      "resource_type_cn": "产品 / 功能",
+      "resource_links": {
+        "source": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5JekZkV2dnNklpV3c2US1LSWg4blRsMl9HSFJQSVM2MENtT1IxVjJVenl3UWVuZFVBZ21iRGJRTk5lcXZoQ1dXWlA2SXRGM3Ezd3NUUjl6bkRTcWc4X0g3Y1dLeUpWTENBdGg3NVZCQUxGamNkSlhRbHNqbGlWdw?oc=5"
+      },
+      "first_seen_at": "2026-11-22",
+      "last_seen_at": "2026-11-24"
+    },
+    {
+      "kind": "product",
+      "title": "Sourashtra Text-to-Speech: 4 Models, 28+ Hours Released",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQd2oxeGl3UlRHQ1RHclFtRHhUa2JIU09zbHNYdUgybDgyRWpsMDFDSFZOeThlRC12Vlh3OTQ3ZVdXWjl1NzBBNTM1UFJaSjc4c3IyMmlEVGJjY2VVMDlMYk9ELXFLLXRKdUg1NnB6NXI1R3RFVWhwZTdUOE1Fbk11REt1OWR3X3E3blpoYXhYUGExRGc?oc=5",
+      "summary": "Sourashtra Text-to-Speech: 4 Models, 28+ Hours Released shattered.io",
+      "source": "shattered.io",
+      "published_at": "2026-11-21T10:23:35Z",
+      "authors": [],
+      "tags": [
+        "speech_generation"
+      ],
+      "metrics": {},
+      "score": 51.4,
+      "why_cn": "产品方向：语音生成。建议关注实际工作流、输入输出可控性、API/定价与可分享性。",
+      "item_id": "abe64e97359c",
+      "title_cn": "",
+      "summary_cn": "",
+      "keywords_cn": [
+        "text-to-speech"
+      ],
+      "creative_cn": "可拆解其「语音生成」输入—编辑—发布链路，验证是否能形成新的内容模板或交互体验。",
+      "enrichment_fingerprint": "6257293d88e8aa1c",
+      "icon": "🎙️",
+      "product_name_cn": "Sourashtra Text-to-Speech: 4 Models, 28+ Hours Released",
+      "company_cn": "shattered.io",
+      "what_is_it_cn": "一项围绕语音生成的产品、功能更新或创意工具，具体开放范围以原文为准。",
+      "resource_type_cn": "产品 / 功能",
+      "resource_links": {
+        "source": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQd2oxeGl3UlRHQ1RHclFtRHhUa2JIU09zbHNYdUgybDgyRWpsMDFDSFZOeThlRC12Vlh3OTQ3ZVdXWjl1NzBBNTM1UFJaSjc4c3IyMmlEVGJjY2VVMDlMYk9ELXFLLXRKdUg1NnB6NXI1R3RFVWhwZTdUOE1Fbk11REt1OWR3X3E3blpoYXhYUGExRGc?oc=5"
+      },
+      "first_seen_at": "2026-11-22",
+      "last_seen_at": "2026-11-24"
+    }
+  ],
+  "errors": []
+}
